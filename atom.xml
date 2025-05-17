@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Logic Blog</title>
+  <icon>https://yakir.top/images/favicon-200x200.png</icon>
+  
+  <link href="https://yakir.top/atom.xml" rel="self"/>
+  
+  <link href="https://yakir.top/"/>
+  <updated>2025-05-17T08:42:39.740Z</updated>
+  <id>https://yakir.top/</id>
+  
+  <author>
+    <name>Logic</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="https://yakir.top/posts/c018.html"/>
+    <id>https://yakir.top/posts/c018.html</id>
+    <published>2024-01-21T14:49:15.000Z</published>
+    <updated>2025-05-17T08:42:39.740Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Docker-Engine&quot;&gt;&lt;a href=&quot;#Docker-Engine&quot; class=&quot;headerlink&quot; title=&quot;Docker Engine&quot;&gt;&lt;/a&gt;Docker Engine&lt;/h3&gt;&lt;h4 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;install docker engine&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;https://docs.docker.com/engine/install/debian/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;Storage&quot;&gt;&lt;a href=&quot;#Storage&quot; class=&quot;headerlink&quot; title=&quot;Storage&quot;&gt;&lt;/a&gt;Storage&lt;/h4&gt;&lt;h5 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h5&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;show docker volume info&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker volume ls&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DRIVER    VOLUME NAME&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;local     jenkins_home&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;local     yakir-test&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;how to use&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;default volume, directory = /var/lib/docker/volumes/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v yakir-test:/container-app/my-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--volume yakir-test:/container-app/my-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--mount&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;bind&lt;/span&gt; mounts&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v /local_path/app.conf:/container-app/app.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--volume /local_path/app.conf:/container-app/app.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--mount&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;memory volume&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--tmpfs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Container" scheme="https://yakir.top/categories/container/"/>
+    
+    
+    <category term="Docker" scheme="https://yakir.top/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes-网络</title>
+    <link href="https://yakir.top/posts/5d90.html"/>
+    <id>https://yakir.top/posts/5d90.html</id>
+    <published>2023-02-08T15:20:49.000Z</published>
+    <updated>2025-05-17T08:42:39.762Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h3&gt;&lt;h4 id=&quot;1）容器网络基本概念&quot;&gt;&lt;a href=&quot;#1）容器网络基本概念&quot; class=&quot;headerlink&quot; title=&quot;1）容器网络基本概念&quot;&gt;&lt;/a&gt;1）容器网络基本概念&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Linux Network Namespace&lt;ul&gt;
+&lt;li&gt;linux 网络设备：network interface device，loopback device，bridge device，veth device，tun&amp;#x2F;tap device，vxlan device，ip tunnel device 等等可完成网络数据包收发，提供额外修改数据包功能设备&lt;/li&gt;
+&lt;li&gt;linux 路由表（三层 ip 包路由寻址功能），arp 表（提供 ip 对应的 mac 信息），fdb（提供基于 mac 转发功能中 mac 地址对应的网络接口） 等&lt;/li&gt;
+&lt;li&gt;linux 协议栈：对网络协议包的封装与解析，如二层 ethernet 包，三层 ip icmp包，四层 tcp&amp;#x2F;udp 包等&lt;/li&gt;
+&lt;li&gt;linux iptable：基于内核模块 netfilter 完成对 linux 的 firewall 管理，例如控制 ingress 与 engress，nat 地址转换，端口映射等&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Openssl 原理与操作</title>
+    <link href="https://yakir.top/posts/b8bc.html"/>
+    <id>https://yakir.top/posts/b8bc.html</id>
+    <published>2022-12-08T14:52:20.000Z</published>
+    <updated>2025-05-17T08:42:39.780Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、原理&quot;&gt;&lt;a href=&quot;#一、原理&quot; class=&quot;headerlink&quot; title=&quot;一、原理&quot;&gt;&lt;/a&gt;一、原理&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;br&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html&quot;&gt;https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html&quot;&gt;https://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.nixops.me/articles/ssl-cetificate-create-and-signed.html&quot;&gt;https://www.nixops.me/articles/ssl-cetificate-create-and-signed.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img data-src=&quot;/posts/b8bc/openssl-1.jpeg&quot; class&gt;
+
+&lt;h3 id=&quot;二、证书操作&quot;&gt;&lt;a href=&quot;#二、证书操作&quot; class=&quot;headerlink&quot; title=&quot;二、证书操作&quot;&gt;&lt;/a&gt;二、证书操作&lt;/h3&gt;&lt;h4 id=&quot;1、第三方签发-SSL-证书&quot;&gt;&lt;a href=&quot;#1、第三方签发-SSL-证书&quot; class=&quot;headerlink&quot; title=&quot;1、第三方签发 SSL 证书&quot;&gt;&lt;/a&gt;1、第三方签发 SSL 证书&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;生成私钥，加密参数 -des3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl genrsa -out a.com.key 2048&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;生成 csr 文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl genrsa -out a.com.key 2048 openssl req -new -sha256 -key a.com.key -out a.com.csr&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;查看 csr 信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl req -noout -text -in a.com.csr&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;提交 csr 文件到 CA 或第三方证书机构获取数字签名后的公钥 crt 文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;部署 crt 与 key 文件至 web 服务器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Operations" scheme="https://yakir.top/categories/operations/"/>
+    
+    
+    <category term="openssl" scheme="https://yakir.top/tags/openssl/"/>
+    
+    <category term="Linux" scheme="https://yakir.top/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes - kube-eventer 事件中心组件</title>
+    <link href="https://yakir.top/posts/2ead.html"/>
+    <id>https://yakir.top/posts/2ead.html</id>
+    <published>2022-09-30T13:42:20.000Z</published>
+    <updated>2025-05-17T08:42:39.778Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;什么是事件：Kubernetes 的架构设计基于状态机，不同的状态之间进行转换则会生成相应的事件，正常的状态之间转换会生成 Normal 等级的事件，正常状态与异常状态之间的转换会生成Warning等级的事件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;kube-eventer 组件：Alicloud开源组件，用于获取 Kubernetes 集群中事件消息，并转存至自定义中间件或存储中。（Kubernetes 集群默认只保存1小时内事件）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;组件官方地址：&lt;a href=&quot;https://github.com/AliyunContainerService/kube-eventer&quot;&gt;https://github.com/AliyunContainerService/kube-eventer&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;部署前提与软件&quot;&gt;&lt;a href=&quot;#部署前提与软件&quot; class=&quot;headerlink&quot; title=&quot;部署前提与软件&quot;&gt;&lt;/a&gt;部署前提与软件&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Kubernetes 集群&lt;/td&gt;
+&lt;td&gt;应用集群&lt;/td&gt;
+&lt;td&gt;使用 minikube 测试集群&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;kube-eventer&lt;/td&gt;
+&lt;td&gt;收集 Kubernetes 集群事件&lt;/td&gt;
+&lt;td&gt;集群第三方组件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kafka &amp;#x2F; Elasticsearch &amp;#x2F; influxDB&lt;/td&gt;
+&lt;td&gt;中间件：存储事件消息&lt;/td&gt;
+&lt;td&gt;存储组件（选型 Kafka）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;kube-eventer-py&lt;/td&gt;
+&lt;td&gt;从队列获取事件消息发送至 telegram 告警群组&lt;/td&gt;
+&lt;td&gt;事件消费者&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>可观测性-Fluentd 日志组件</title>
+    <link href="https://yakir.top/posts/41fe.html"/>
+    <id>https://yakir.top/posts/41fe.html</id>
+    <published>2022-07-11T13:56:17.000Z</published>
+    <updated>2025-05-17T08:42:39.778Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、组件说明&quot;&gt;&lt;a href=&quot;#一、组件说明&quot; class=&quot;headerlink&quot; title=&quot;一、组件说明&quot;&gt;&lt;/a&gt;一、组件说明&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Fluentd&lt;/strong&gt;&lt;br&gt;负责从 Kubernetes 搜集日志，每个 node 节点上面的 fluentd 监控并收集该节点上面的系统+容器日志，并将处理过后的日志信息发送给 Elasticsearch。&lt;/p&gt;
+&lt;img data-src=&quot;/posts/41fe/fluent1.png&quot; class&gt;
+&lt;blockquote&gt;
+&lt;p&gt;fluentd 数据流逻辑：source –&amp;gt; parser –&amp;gt; filter –&amp;gt; output&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Elasticsearch&lt;/strong&gt;&lt;br&gt;搜索引擎，负责存储日志并提供查询接口。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kibana&lt;/strong&gt;&lt;br&gt;提供了一个 Web GUI，用户可以浏览和搜索存储在 Elasticsearch 中的日志。 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;主要的日志收集方案：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在节点上运行一个 agent 来收集日志（daemonSet）&lt;/li&gt;
+&lt;li&gt;在 Pod 中包含一个 sidecar 容器来收集应用日志&lt;/li&gt;
+&lt;li&gt;直接在应用程序中将日志信息推送到采集后端（一般不采用该方式）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Observability" scheme="https://yakir.top/tags/observability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>可观测性-监控组件 Prometheus</title>
+    <link href="https://yakir.top/posts/6bfb.html"/>
+    <id>https://yakir.top/posts/6bfb.html</id>
+    <published>2022-06-28T14:02:38.000Z</published>
+    <updated>2025-05-17T08:42:39.780Z</updated>
+    
+    
+    <summary type="html">&lt;h4 id=&quot;一、组件说明&quot;&gt;&lt;a href=&quot;#一、组件说明&quot; class=&quot;headerlink&quot; title=&quot;一、组件说明&quot;&gt;&lt;/a&gt;一、组件说明&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Prometheus Server&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;核心组件，负责实现对监控数据的获取，存储与查询。&lt;/li&gt;
+&lt;li&gt;支持静态配置管理监控目标，也可通过 Service Discovery 方式动态管理监控目录，获取数据。&lt;/li&gt;
+&lt;li&gt;可从其他 Prometheus Server 获取数据&lt;/li&gt;
+&lt;li&gt;对外提供 PromQL 实现数据查询和分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Exporter&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直接采集，内置用于想 Prometheus 暴露监控数据的 Endpoints，如 node-exporter&lt;/li&gt;
+&lt;li&gt;间接采集，通过 Prometheus 提供的客户端库监控采集程序，如 mysql-exporter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;AlertManager&lt;/strong&gt;&lt;br&gt;基于 PromQL 创建告警规则，满足规则产生告警并推送，支持 mail、webhook 等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PushGateway&lt;/strong&gt;&lt;br&gt;原获取数据方式为基于 Prometheus Server 从 Exporter pull 数据，当网络或其他原因 Server 无法与 Exporter 直接通信时，使用 PushGateway 方式中转。&lt;br&gt;Prometheus server 定期从配置好的 jobs 和 exporters 中拉取 metrics，或者接收来自 Pushgateway 发送过来的 metrics，或者从其它的 Prometheus server 中拉 metrics&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;metrics：实际监控指标数据，如 cpu 利用率&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Observability" scheme="https://yakir.top/tags/observability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于 Ubuntu + Containerd 部署 Kubernetes 集群</title>
+    <link href="https://yakir.top/posts/28d6.html"/>
+    <id>https://yakir.top/posts/28d6.html</id>
+    <published>2022-06-07T14:17:15.000Z</published>
+    <updated>2025-05-17T08:42:39.803Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、环境准备&quot;&gt;&lt;a href=&quot;#一、环境准备&quot; class=&quot;headerlink&quot; title=&quot;一、环境准备&quot;&gt;&lt;/a&gt;一、环境准备&lt;/h3&gt;&lt;h4 id=&quot;1-multipass-虚拟机创建&quot;&gt;&lt;a href=&quot;#1-multipass-虚拟机创建&quot; class=&quot;headerlink&quot; title=&quot;1. multipass  虚拟机创建&quot;&gt;&lt;/a&gt;1. multipass  虚拟机创建&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;生成密钥对&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -b 4096 -f ~/k8s_rsa -C k8s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;创建 Master 节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 2 -m 2G -d 20G -n master --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;创建 Node 节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 1 -m 2G -d 20G -n node1 --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 1 -m 2G -d 20G -n node2 --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;–cloud-init ：导入本地生成的公钥文件到初始化系统中，可以使用密钥免密 SSH&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ 简述与使用</title>
+    <link href="https://yakir.top/posts/9bae.html"/>
+    <id>https://yakir.top/posts/9bae.html</id>
+    <published>2022-06-06T12:33:11.000Z</published>
+    <updated>2025-05-17T08:42:39.799Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、RabbitMQ-介绍&quot;&gt;&lt;a href=&quot;#一、RabbitMQ-介绍&quot; class=&quot;headerlink&quot; title=&quot;一、RabbitMQ 介绍&quot;&gt;&lt;/a&gt;一、RabbitMQ 介绍&lt;/h3&gt;&lt;h4 id=&quot;什么是消息队列&quot;&gt;&lt;a href=&quot;#什么是消息队列&quot; class=&quot;headerlink&quot; title=&quot;什么是消息队列&quot;&gt;&lt;/a&gt;什么是消息队列&lt;/h4&gt;&lt;p&gt;消息（Message）是指在应用间传送的数据。消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。&lt;/p&gt;
+&lt;p&gt;消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回，由消息系统来确保消息的可靠传递。消息发布者只管把消息发布到 MQ 中而不用管谁来取，消息使用者只管从 MQ 中取消息而不管是谁发布的。这样发布者和使用者都不用知道对方的存在。&lt;/p&gt;
+&lt;h4 id=&quot;为何用消息队列&quot;&gt;&lt;a href=&quot;#为何用消息队列&quot; class=&quot;headerlink&quot; title=&quot;为何用消息队列&quot;&gt;&lt;/a&gt;为何用消息队列&lt;/h4&gt;&lt;p&gt;以常见的订单系统为例，用户点击【下单】按钮之后的业务逻辑可能包括：扣减库存、生成相应单据、发红包、发短信通知。在业务发展初期这些逻辑可能放在一起同步执行，随着业务的发展订单量增长，需要提升系统服务的性能，这时可以将一些不需要立即生效的操作拆分出来异步执行，比如发放红包、发短信通知等。这种场景下就可以用 MQ ，在下单的主流程（比如扣减库存、生成相应单据）完成之后发送一条消息到 MQ 让主流程快速完结，而由另外的单独线程拉取MQ的消息（或者由 MQ 推送消息），当发现 MQ 中有发红包或发短信之类的消息时，执行相应的业务逻辑。&lt;/p&gt;
+&lt;p&gt;以上是用于业务解耦的情况，其它常见场景包括最终一致性、广播、错峰流控等等。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Middleware" scheme="https://yakir.top/categories/middleware/"/>
+    
+    
+    <category term="RabbitMQ" scheme="https://yakir.top/tags/rabbitmq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流量网关方案与灰度发布</title>
+    <link href="https://yakir.top/posts/dc02.html"/>
+    <id>https://yakir.top/posts/dc02.html</id>
+    <published>2022-06-06T12:28:44.000Z</published>
+    <updated>2025-05-17T08:42:39.740Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;流量网关方案与灰度发布方式&quot;&gt;&lt;a href=&quot;#流量网关方案与灰度发布方式&quot; class=&quot;headerlink&quot; title=&quot;流量网关方案与灰度发布方式&quot;&gt;&lt;/a&gt;流量网关方案与灰度发布方式&lt;/h3&gt;&lt;h4 id=&quot;一、Alicloud原生-Ingress-方式&quot;&gt;&lt;a href=&quot;#一、Alicloud原生-Ingress-方式&quot; class=&quot;headerlink&quot; title=&quot;一、Alicloud原生 Ingress 方式&quot;&gt;&lt;/a&gt;一、Alicloud原生 Ingress 方式&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;前置要求&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;集群已安装 Ingress 组件&lt;/li&gt;
+&lt;li&gt;明确灰度发布规则（使用 cookie 值匹配 A&amp;#x2F;B 测试规则）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;操作步骤&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;部署新旧版本 Deployment 和 Service&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过 Edas 创建新应用，并暴露 service（无需 SLB 暴露）。已 app1 应用为例：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;资源&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;旧版本&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;新版本&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Edas 应用&lt;/td&gt;
+&lt;td&gt;app1-test&lt;/td&gt;
+&lt;td&gt;app1-new-test&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deployment&lt;/td&gt;
+&lt;td&gt;app1-test-group-x-xxx&lt;/td&gt;
+&lt;td&gt;app1-new-test-group-x-xxx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Service&lt;/td&gt;
+&lt;td&gt;app1-svc&lt;/td&gt;
+&lt;td&gt;app1-new-svc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/cncf/alicloud/"/>
+    
+    
+    <category term="Istio" scheme="https://yakir.top/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes &amp; ACK 学习记录</title>
+    <link href="https://yakir.top/posts/754e.html"/>
+    <id>https://yakir.top/posts/754e.html</id>
+    <published>2022-05-31T15:04:28.000Z</published>
+    <updated>2025-05-17T08:42:39.760Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、ACK集群网络规划&quot;&gt;&lt;a href=&quot;#一、ACK集群网络规划&quot; class=&quot;headerlink&quot; title=&quot;一、ACK集群网络规划&quot;&gt;&lt;/a&gt;一、ACK集群网络规划&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://help.aliyun.com/document_detail/86500.html&quot;&gt;https://help.aliyun.com/document_detail&amp;#x2F;86500.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;二、RBAC授权&quot;&gt;&lt;a href=&quot;#二、RBAC授权&quot; class=&quot;headerlink&quot; title=&quot;二、RBAC授权&quot;&gt;&lt;/a&gt;二、RBAC授权&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://yuque.antfin.com/kifo8h/nee5aa/mvx5t5&quot;&gt;https://yuque.antfin.com/kifo8h/nee5aa/mvx5t5&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;三、网络&quot;&gt;&lt;a href=&quot;#三、网络&quot; class=&quot;headerlink&quot; title=&quot;三、网络&quot;&gt;&lt;/a&gt;三、网络&lt;/h3&gt;&lt;h4 id=&quot;容器网络CNI&quot;&gt;&lt;a href=&quot;#容器网络CNI&quot; class=&quot;headerlink&quot; title=&quot;容器网络CNI&quot;&gt;&lt;/a&gt;容器网络CNI&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://help.aliyun.com/document_detail/195424.html&quot;&gt;https://help.aliyun.com/document_detail&amp;#x2F;195424.html&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/tags/alicloud/"/>
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACK 集群日志接入 SLS</title>
+    <link href="https://yakir.top/posts/4a2a.html"/>
+    <id>https://yakir.top/posts/4a2a.html</id>
+    <published>2022-05-31T14:38:39.000Z</published>
+    <updated>2025-05-17T08:42:39.711Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、接入前提&quot;&gt;&lt;a href=&quot;#一、接入前提&quot; class=&quot;headerlink&quot; title=&quot;一、接入前提&quot;&gt;&lt;/a&gt;一、接入前提&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;ACK 集群开启日志服务组件Logtail&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建集群时启用Logtail（初始化ACK 集群时操作，新集群建议开启）&lt;img data-src=&quot;/posts/4a2a/acksls1.png&quot; class&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/alicloud/"/>
+    
+    
+    <category term="ACK" scheme="https://yakir.top/tags/ack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VPC 网络规划案例</title>
+    <link href="https://yakir.top/posts/64a8.html"/>
+    <id>https://yakir.top/posts/64a8.html</id>
+    <published>2022-05-04T14:17:00.000Z</published>
+    <updated>2025-05-17T08:42:39.737Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;网段规划概述&quot;&gt;&lt;a href=&quot;#网段规划概述&quot; class=&quot;headerlink&quot; title=&quot;网段规划概述&quot;&gt;&lt;/a&gt;网段规划概述&lt;/h3&gt;&lt;h4 id=&quot;1）规划网段的目的&quot;&gt;&lt;a href=&quot;#1）规划网段的目的&quot; class=&quot;headerlink&quot; title=&quot;1）规划网段的目的&quot;&gt;&lt;/a&gt;1）规划网段的目的&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;方便查看管理，相当于对某一个&amp;#x2F;多个IDC 机房的IP 规划，根据IP 地址可以一目了然的判断出归属。&lt;/li&gt;
+&lt;li&gt;便于同集群&amp;#x2F;VPC 内网段判断网络、路由走向、以及网络隔离策略（白名单）。&lt;/li&gt;
+&lt;li&gt;区分多VPC&amp;#x2F;网络 环境，方便在打通网络时区分子网网段。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;2）规范化设计的方式&quot;&gt;&lt;a href=&quot;#2）规范化设计的方式&quot; class=&quot;headerlink&quot; title=&quot;2）规范化设计的方式&quot;&gt;&lt;/a&gt;2）规范化设计的方式&lt;/h4&gt;&lt;p&gt;首先需要分清两类，是否有ACK 等集群类资源单独规划：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如无集群资源（即只有RDS、ECS 等常规资源），按正常内网网段定义VPC与交换机即可&lt;/li&gt;
+&lt;li&gt;有集群资源，最好划分单独交换机部署常规资源，&lt;strong&gt;独立交换机&lt;/strong&gt;部署集群资源。&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/alicloud/"/>
+    
+    <category term="Network" scheme="https://yakir.top/categories/alicloud/network/"/>
+    
+    
+    <category term="VPC" scheme="https://yakir.top/tags/vpc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Helm 应用部署</title>
+    <link href="https://yakir.top/posts/ce0f.html"/>
+    <id>https://yakir.top/posts/ce0f.html</id>
+    <published>2022-05-04T13:46:04.000Z</published>
+    <updated>2025-05-17T08:42:39.754Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、Helm-安装与模板&quot;&gt;&lt;a href=&quot;#一、Helm-安装与模板&quot; class=&quot;headerlink&quot; title=&quot;一、Helm 安装与模板&quot;&gt;&lt;/a&gt;一、Helm 安装与模板&lt;/h3&gt;&lt;h4 id=&quot;1）Helm-安装部署&quot;&gt;&lt;a href=&quot;#1）Helm-安装部署&quot; class=&quot;headerlink&quot; title=&quot;1）Helm 安装部署&quot;&gt;&lt;/a&gt;1）Helm 安装部署&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://helm.sh/zh/docs/intro/install/&quot;&gt;安装二进制命令&lt;/a&gt;（本地需要连接上kubernetes 集群）&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/tags/alicloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Flow 工作流</title>
+    <link href="https://yakir.top/posts/539.html"/>
+    <id>https://yakir.top/posts/539.html</id>
+    <published>2022-05-04T13:14:23.000Z</published>
+    <updated>2025-05-17T08:42:39.740Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、gitflow：版本分支管理策略（相当于对git的包装）&quot;&gt;&lt;a href=&quot;#一、gitflow：版本分支管理策略（相当于对git的包装）&quot; class=&quot;headerlink&quot; title=&quot;一、gitflow：版本分支管理策略（相当于对git的包装）&quot;&gt;&lt;/a&gt;一、gitflow：版本分支管理策略（相当于对git的包装）&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;GitFlow描述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;常用分支包括master、develop、feature、release、hotfix（support分支不常用）&lt;/li&gt;
+&lt;li&gt;其中master、develop是远程分支，feature、release、hotfix是本地分支。&lt;ul&gt;
+&lt;li&gt;远程分支是指需要push到gitlab、github远程仓库中&lt;/li&gt;
+&lt;li&gt;本地分支指开发人员的本地开发时使用的git版本控制环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Operations" scheme="https://yakir.top/categories/operations/"/>
+    
+    
+    <category term="git" scheme="https://yakir.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Alicloud-RAM 与 STS 权限</title>
+    <link href="https://yakir.top/posts/fdc.html"/>
+    <id>https://yakir.top/posts/fdc.html</id>
+    <published>2022-03-20T15:37:32.000Z</published>
+    <updated>2025-05-17T08:42:39.731Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h3&gt;&lt;p&gt;当通过OpenApi接口来调用云资源时（即替代控制台的操作），当前的方式有两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过 AK+SK 方式直接调用，只要该AK所属的账号有相关权限即可调用对应资源（授权分为系统策略和自定义策略）&lt;/li&gt;
+&lt;li&gt;Alicloud账号（RAM用户）&amp;#x2F;Alicloud服务（ECS等）&amp;#x2F;身份提供商（SSO） 通过扮演角色获取角色的临时令牌（即通过调用AssumeRole接口），通过该临时令牌（临时令牌可设定会话时间），通过 STS接口获取到的 临时AK+临时SK+临时STSToken 进行调用对应资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;二、官方概念介绍&quot;&gt;&lt;a href=&quot;#二、官方概念介绍&quot; class=&quot;headerlink&quot; title=&quot;二、官方概念介绍&quot;&gt;&lt;/a&gt;二、官方概念介绍&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;STS概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;AlicloudSTS（Security Token Service）是Alicloud提供的一种临时访问权限管理服务。RAM提供RAM用户和RAM角色两种身份。其中，RAM角色不具备永久身份凭证，而只能通过STS获取可以自定义时效和访问权限的临时身份凭证，即安全令牌（STS Token）&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/alicloud/"/>
+    
+    
+    <category term="RAM" scheme="https://yakir.top/tags/ram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Alicloud-Promotheus &amp; Grafana 监控大盘与告警通知</title>
+    <link href="https://yakir.top/posts/9a8h.html"/>
+    <id>https://yakir.top/posts/9a8h.html</id>
+    <published>2022-03-16T15:21:06.000Z</published>
+    <updated>2025-05-17T08:42:39.782Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;线上ACK 集群部署了StatefulSet 应用（rabbitMQ），由于rabbitMQ 本身自带的management 后台数据展示较为简陋且没有告警功能，因此考虑接入云上产品监控资源数据且对接告警通知功能，主要通过如下产品实现：&lt;ul&gt;
+&lt;li&gt;接入Prometheus 监控+grafana 进行数据图表展示。&lt;/li&gt;
+&lt;li&gt;利用Arms 产品获取Prometheus 的监控指标，按照设定的阈值进行告警通知功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;二、操作过程&quot;&gt;&lt;a href=&quot;#二、操作过程&quot; class=&quot;headerlink&quot; title=&quot;二、操作过程&quot;&gt;&lt;/a&gt;二、操作过程&lt;/h3&gt;&lt;h4 id=&quot;1）接入Prometheus-组件监控，获取数据指标&quot;&gt;&lt;a href=&quot;#1）接入Prometheus-组件监控，获取数据指标&quot; class=&quot;headerlink&quot; title=&quot;1）接入Prometheus 组件监控，获取数据指标&quot;&gt;&lt;/a&gt;1）接入Prometheus 组件监控，获取数据指标&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;进入云产品 &lt;strong&gt;Prometheus监控服务&lt;/strong&gt;，选择对应集群。（ACK集群需要先安装Prometheus 监控组件，安装参考：&lt;a href=&quot;https://help.aliyun.com/document_detail/161304.html&quot;&gt;ARMS Prometheus监控&lt;/a&gt;）&lt;img data-src=&quot;/posts/9a8h/1.png&quot; class&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/alicloud/"/>
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/alicloud/cncf/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NetworkPolicy 隔离策略</title>
+    <link href="https://yakir.top/posts/8aa0.html"/>
+    <id>https://yakir.top/posts/8aa0.html</id>
+    <published>2022-03-07T14:01:06.000Z</published>
+    <updated>2025-05-17T08:42:39.766Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;一次对当前业务使用ACK 集群的业务调研与改造：针对NetworkPolicy 策略的调研，主要用于新建ACK 集群的网络规划与网络隔离&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;1）当前云环境ACK-集群使用现状和痛点&quot;&gt;&lt;a href=&quot;#1）当前云环境ACK-集群使用现状和痛点&quot; class=&quot;headerlink&quot; title=&quot;1）当前云环境ACK 集群使用现状和痛点&quot;&gt;&lt;/a&gt;1）当前云环境ACK 集群使用现状和痛点&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;UAT&amp;#x2F;线上 环境应用较多，且应用没有做集群内隔离，所有应用全部都在ACK 集群的default namespace 中。没有做到逻辑网络隔离。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;集群通过暴露公网SLB 方式进行集群调用，存在浪费资源、管理混乱、安全风险等问题。通过namespace 隔离 + NetworkPolicy 策略通信的方式可以实现集群内部应用自行调用，和VPC 打通之后使用NetworkPolicy 的IP 块策略还可实现跨集群的应用内网调用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;2）实现隔离策略价值&quot;&gt;&lt;a href=&quot;#2）实现隔离策略价值&quot; class=&quot;headerlink&quot; title=&quot;2）实现隔离策略价值&quot;&gt;&lt;/a&gt;2）实现隔离策略价值&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;降低成本：可以通过网络逻辑隔离的方式将应用已namespace 方式进行隔离，减少冗余的物理设备降低成本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;增加效能：避免复杂且多余的网络设计，使应用之间的调用简单且易于排查。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/categories/alicloud/"/>
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/alicloud/cncf/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes-RBAC 权限控制</title>
+    <link href="https://yakir.top/posts/fa45.html"/>
+    <id>https://yakir.top/posts/fa45.html</id>
+    <published>2022-03-01T15:55:02.000Z</published>
+    <updated>2025-05-17T08:42:39.769Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一、RBAC简易概述&quot;&gt;&lt;a href=&quot;#一、RBAC简易概述&quot; class=&quot;headerlink&quot; title=&quot;一、RBAC简易概述&quot;&gt;&lt;/a&gt;一、RBAC简易概述&lt;/h3&gt;&lt;img data-src=&quot;/posts/fa45/gaisu.png&quot; class&gt;
+&lt;h4 id=&quot;1-RBAC-四种-API-对象&quot;&gt;&lt;a href=&quot;#1-RBAC-四种-API-对象&quot; class=&quot;headerlink&quot; title=&quot;1) RBAC 四种 API 对象&quot;&gt;&lt;/a&gt;1) RBAC 四种 API 对象&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Role：一组权限的集合，在一个命名空间中，可以用其来定义一个角色，只能对命名空间内的资源进行授权。如果是集群级别的资源，则需要使用ClusterRole。例如：定义一个角色用来读取Pod的权限&lt;/li&gt;
+&lt;li&gt;ClusterRole：具有和角色一致的命名空间资源的管理能力，还可用于以下特殊元素的授权&lt;ul&gt;
+&lt;li&gt;集群范围的资源，例如Node&lt;/li&gt;
+&lt;li&gt;非资源型的路径，例如：&amp;#x2F;healthz&lt;/li&gt;
+&lt;li&gt;包含全部命名空间的资源，例如Pods&lt;blockquote&gt;
+&lt;p&gt;例如：定义一个集群角色可让用户访问任意secrets&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RoleBinding：角色绑定&lt;/li&gt;
+&lt;li&gt;ClusterRoleBinding：集群角色绑定&lt;blockquote&gt;
+&lt;p&gt;角色绑定和集群角色绑定用于把一个角色绑定在一个目标上，可以是User，Group，Service Account，使用RoleBinding为某个命名空间授权，使用ClusterRoleBinding为集群范围内授权。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Role和ClusterRole是权限规则的定义&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rules代表具体的授权规则，类似于AlicloudRAM中的权限策略Policy&lt;/li&gt;
+&lt;li&gt;Role和ClusterRole区别只在于一个是集群级别的资源控制&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="CNCF" scheme="https://yakir.top/categories/cncf/"/>
+    
+    
+    <category term="Alicloud" scheme="https://yakir.top/tags/alicloud/"/>
+    
+    <category term="Kubernetes" scheme="https://yakir.top/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://yakir.top/posts/3eeb.html"/>
+    <id>https://yakir.top/posts/3eeb.html</id>
+    <published>2022-02-27T15:30:35.000Z</published>
+    <updated>2025-05-17T08:42:39.711Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
