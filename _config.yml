@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'Yakir Blog'
+title: 'Logic Blog'
 subtitle: ''
-description: 'Yakir Blog'
-keywords: 'blog, record'
-author: Yakir
+description: 'write some technical blogs and life records'
+keywords: 'blog,technical, record'
+author: Logic
 language: zh-CN
 timezone: ''
 
@@ -108,7 +108,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:yakir3/yakir3.github.io.git
+  repository: git@github.com:logic3579/logic3579.github.io.git
   branch: gh-pages
 
 # custom
