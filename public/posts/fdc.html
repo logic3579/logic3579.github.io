@@ -27,7 +27,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Alicloud-RAM 与 STS 权限">
 <meta property="og:url" content="https://yakir.top/posts/fdc.html">
-<meta property="og:site_name" content="Yakir Blog">
+<meta property="og:site_name" content="Logic Blog">
 <meta property="og:description" content="一、前言当通过OpenApi接口来调用云资源时（即替代控制台的操作），当前的方式有两种：  通过 AK+SK 方式直接调用，只要该AK所属的账号有相关权限即可调用对应资源（授权分为系统策略和自定义策略） Alicloud账号（RAM用户）&#x2F;Alicloud服务（ECS等）&#x2F;身份提供商（SSO） 通过扮演角色获取角色的临时令牌（即通过调用AssumeRole接口），通过该临时令牌">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yakir.top/posts/fdc/ram1.png">
@@ -39,8 +39,8 @@
 <meta property="og:image" content="https://yakir.top/posts/fdc/ram7.png">
 <meta property="og:image" content="https://yakir.top/posts/fdc/ram8.png">
 <meta property="article:published_time" content="2022-03-20T15:37:32.000Z">
-<meta property="article:modified_time" content="2024-01-21T15:31:32.930Z">
-<meta property="article:author" content="Yakir">
+<meta property="article:modified_time" content="2025-05-17T08:42:39.731Z">
+<meta property="article:author" content="Logic">
 <meta property="article:tag" content="RAM">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yakir.top/posts/fdc/ram1.png">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title>Alicloud-RAM 与 STS 权限 | Yakir Blog</title>
+  <title>Alicloud-RAM 与 STS 权限 | Logic Blog</title>
   
 
 
@@ -89,7 +89,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Yakir Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Logic Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -110,7 +110,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Yakir Blog</h1>
+      <h1 class="site-title">Logic Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -215,12 +215,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Yakir">
-      <meta itemprop="description" content="Yakir Blog">
+      <meta itemprop="name" content="Logic">
+      <meta itemprop="description" content="write some technical blogs and life records">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yakir Blog">
+      <meta itemprop="name" content="Logic Blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-21 23:31:32" itemprop="dateModified" datetime="2024-01-21T23:31:32+08:00">2024-01-21</time>
+                <time title="修改时间：2025-05-17 16:42:39" itemprop="dateModified" datetime="2025-05-17T16:42:39+08:00">2025-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,7 +331,7 @@
 <li>OSS官方推荐使用 Alicloud账号 方式：<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/100624.html">https://help.aliyun.com/document_detail&#x2F;100624.html</a></li>
 </ul>
 </blockquote>
-<h3 id="三、创建STS角色，自定义授权OSS功能测试"><a href="#三、创建STS角色，自定义授权OSS功能测试" class="headerlink" title="三、创建STS角色，自定义授权OSS功能测试"></a>三、创建STS角色，自定义授权OSS功能测试</h3><p>1）测试账号信息<br>账号：<a href="mailto:&#100;&#101;&#118;&#111;&#x70;&#x73;&#x5f;&#116;&#x65;&#115;&#x74;&#x40;&#x78;&#120;&#120;&#46;&#111;&#x6e;&#97;&#x6c;&#105;&#121;&#117;&#x6e;&#46;&#x63;&#111;&#x6d;">&#100;&#101;&#118;&#111;&#x70;&#x73;&#x5f;&#116;&#x65;&#115;&#x74;&#x40;&#x78;&#120;&#120;&#46;&#111;&#x6e;&#97;&#x6c;&#105;&#121;&#117;&#x6e;&#46;&#x63;&#111;&#x6d;</a><br>AK：xxxxx<br>SK：xxxxx<br>ARN：acs:ram::xxxxx:role&#x2F;xxx-sts<br>OSS Bucket名称：oss-test<br>OSS授权目录：dir111&#x2F;dir111_secondline1&#x2F;</p>
+<h3 id="三、创建STS角色，自定义授权OSS功能测试"><a href="#三、创建STS角色，自定义授权OSS功能测试" class="headerlink" title="三、创建STS角色，自定义授权OSS功能测试"></a>三、创建STS角色，自定义授权OSS功能测试</h3><p>1）测试账号信息<br>账号：<a href="mailto:&#100;&#x65;&#118;&#x6f;&#112;&#115;&#x5f;&#x74;&#101;&#x73;&#x74;&#64;&#x78;&#x78;&#x78;&#46;&#x6f;&#x6e;&#x61;&#108;&#105;&#x79;&#x75;&#110;&#x2e;&#x63;&#x6f;&#109;">&#100;&#x65;&#118;&#x6f;&#112;&#115;&#x5f;&#x74;&#101;&#x73;&#x74;&#64;&#x78;&#x78;&#x78;&#46;&#x6f;&#x6e;&#x61;&#108;&#105;&#x79;&#x75;&#110;&#x2e;&#x63;&#x6f;&#109;</a><br>AK：xxxxx<br>SK：xxxxx<br>ARN：acs:ram::xxxxx:role&#x2F;xxx-sts<br>OSS Bucket名称：oss-test<br>OSS授权目录：dir111&#x2F;dir111_secondline1&#x2F;</p>
 <p>2）进行授权</p>
 <ul>
 <li>创建RAM用户（子账号），生成AK SK （此步骤忽略）</li>
@@ -399,7 +399,7 @@
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>Yakir
+    <strong>本文作者： </strong>Logic
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -516,10 +516,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Yakir"
+    <img class="site-author-image" itemprop="image" alt="Logic"
       src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Yakir</p>
-  <div class="site-description" itemprop="description">Yakir Blog</div>
+  <p class="site-author-name" itemprop="name">Logic</p>
+  <div class="site-description" itemprop="description">write some technical blogs and life records</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -605,11 +605,11 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Yakir</span>
+  <span class="author" itemprop="copyrightHolder">Logic</span>
 </div>
   <div class="powered-by">Powered by Hexo Next
   </div>

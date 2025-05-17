@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Yakir Blog</title>
+  <title>Logic Blog</title>
   <icon>https://yakir.top/images/favicon-200x200.png</icon>
   
   <link href="https://yakir.top/atom.xml" rel="self"/>
   
   <link href="https://yakir.top/"/>
-  <updated>2024-01-21T15:33:40.702Z</updated>
+  <updated>2025-05-17T08:42:39.740Z</updated>
   <id>https://yakir.top/</id>
   
   <author>
-    <name>Yakir</name>
+    <name>Logic</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://yakir.top/posts/c018.html"/>
     <id>https://yakir.top/posts/c018.html</id>
     <published>2024-01-21T14:49:15.000Z</published>
-    <updated>2024-01-21T15:33:40.702Z</updated>
+    <updated>2025-05-17T08:42:39.740Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Docker-Engine&quot;&gt;&lt;a href=&quot;#Docker-Engine&quot; class=&quot;headerlink&quot; title=&quot;Docker Engine&quot;&gt;&lt;/a&gt;Docker Engine&lt;/h3&gt;&lt;h4 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;install docker engine&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;https://docs.docker.com/engine/install/debian/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -42,7 +42,7 @@
     <link href="https://yakir.top/posts/5d90.html"/>
     <id>https://yakir.top/posts/5d90.html</id>
     <published>2023-02-08T15:20:49.000Z</published>
-    <updated>2024-01-21T15:28:43.154Z</updated>
+    <updated>2025-05-17T08:42:39.762Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h3&gt;&lt;h4 id=&quot;1）容器网络基本概念&quot;&gt;&lt;a href=&quot;#1）容器网络基本概念&quot; class=&quot;headerlink&quot; title=&quot;1）容器网络基本概念&quot;&gt;&lt;/a&gt;1）容器网络基本概念&lt;/h4&gt;&lt;ul&gt;
@@ -66,7 +66,7 @@
     <link href="https://yakir.top/posts/b8bc.html"/>
     <id>https://yakir.top/posts/b8bc.html</id>
     <published>2022-12-08T14:52:20.000Z</published>
-    <updated>2024-01-21T15:28:43.160Z</updated>
+    <updated>2025-05-17T08:42:39.780Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、原理&quot;&gt;&lt;a href=&quot;#一、原理&quot; class=&quot;headerlink&quot; title=&quot;一、原理&quot;&gt;&lt;/a&gt;一、原理&lt;/h3&gt;&lt;blockquote&gt;
@@ -92,7 +92,7 @@
     <link href="https://yakir.top/posts/2ead.html"/>
     <id>https://yakir.top/posts/2ead.html</id>
     <published>2022-09-30T13:42:20.000Z</published>
-    <updated>2024-01-21T15:28:43.156Z</updated>
+    <updated>2025-05-17T08:42:39.778Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;ul&gt;
@@ -147,7 +147,7 @@
     <link href="https://yakir.top/posts/41fe.html"/>
     <id>https://yakir.top/posts/41fe.html</id>
     <published>2022-07-11T13:56:17.000Z</published>
-    <updated>2024-01-21T15:28:43.158Z</updated>
+    <updated>2025-05-17T08:42:39.778Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、组件说明&quot;&gt;&lt;a href=&quot;#一、组件说明&quot; class=&quot;headerlink&quot; title=&quot;一、组件说明&quot;&gt;&lt;/a&gt;一、组件说明&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Fluentd&lt;/strong&gt;&lt;br&gt;负责从 Kubernetes 搜集日志，每个 node 节点上面的 fluentd 监控并收集该节点上面的系统+容器日志，并将处理过后的日志信息发送给 Elasticsearch。&lt;/p&gt;
@@ -180,7 +180,7 @@
     <link href="https://yakir.top/posts/6bfb.html"/>
     <id>https://yakir.top/posts/6bfb.html</id>
     <published>2022-06-28T14:02:38.000Z</published>
-    <updated>2024-01-21T15:28:43.159Z</updated>
+    <updated>2025-05-17T08:42:39.780Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;一、组件说明&quot;&gt;&lt;a href=&quot;#一、组件说明&quot; class=&quot;headerlink&quot; title=&quot;一、组件说明&quot;&gt;&lt;/a&gt;一、组件说明&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Prometheus Server&lt;/strong&gt;&lt;/p&gt;
@@ -215,7 +215,7 @@
     <link href="https://yakir.top/posts/28d6.html"/>
     <id>https://yakir.top/posts/28d6.html</id>
     <published>2022-06-07T14:17:15.000Z</published>
-    <updated>2024-01-21T15:28:43.162Z</updated>
+    <updated>2025-05-17T08:42:39.803Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、环境准备&quot;&gt;&lt;a href=&quot;#一、环境准备&quot; class=&quot;headerlink&quot; title=&quot;一、环境准备&quot;&gt;&lt;/a&gt;一、环境准备&lt;/h3&gt;&lt;h4 id=&quot;1-multipass-虚拟机创建&quot;&gt;&lt;a href=&quot;#1-multipass-虚拟机创建&quot; class=&quot;headerlink&quot; title=&quot;1. multipass  虚拟机创建&quot;&gt;&lt;/a&gt;1. multipass  虚拟机创建&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;生成密钥对&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -b 4096 -f ~/k8s_rsa -C k8s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;创建 Master 节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 2 -m 2G -d 20G -n master --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;创建 Node 节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 1 -m 2G -d 20G -n node1 --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;multipass launch -c 1 -m 2G -d 20G -n node2 --cloud-init - &amp;lt;&amp;lt; EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh_authorized_keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- $(cat ~/.ssh/k8s_rsa.pub)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -237,7 +237,7 @@
     <link href="https://yakir.top/posts/9bae.html"/>
     <id>https://yakir.top/posts/9bae.html</id>
     <published>2022-06-06T12:33:11.000Z</published>
-    <updated>2024-01-21T15:28:43.161Z</updated>
+    <updated>2025-05-17T08:42:39.799Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、RabbitMQ-介绍&quot;&gt;&lt;a href=&quot;#一、RabbitMQ-介绍&quot; class=&quot;headerlink&quot; title=&quot;一、RabbitMQ 介绍&quot;&gt;&lt;/a&gt;一、RabbitMQ 介绍&lt;/h3&gt;&lt;h4 id=&quot;什么是消息队列&quot;&gt;&lt;a href=&quot;#什么是消息队列&quot; class=&quot;headerlink&quot; title=&quot;什么是消息队列&quot;&gt;&lt;/a&gt;什么是消息队列&lt;/h4&gt;&lt;p&gt;消息（Message）是指在应用间传送的数据。消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。&lt;/p&gt;
@@ -259,7 +259,7 @@
     <link href="https://yakir.top/posts/dc02.html"/>
     <id>https://yakir.top/posts/dc02.html</id>
     <published>2022-06-06T12:28:44.000Z</published>
-    <updated>2024-01-21T15:29:17.071Z</updated>
+    <updated>2025-05-17T08:42:39.740Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;流量网关方案与灰度发布方式&quot;&gt;&lt;a href=&quot;#流量网关方案与灰度发布方式&quot; class=&quot;headerlink&quot; title=&quot;流量网关方案与灰度发布方式&quot;&gt;&lt;/a&gt;流量网关方案与灰度发布方式&lt;/h3&gt;&lt;h4 id=&quot;一、Alicloud原生-Ingress-方式&quot;&gt;&lt;a href=&quot;#一、Alicloud原生-Ingress-方式&quot; class=&quot;headerlink&quot; title=&quot;一、Alicloud原生 Ingress 方式&quot;&gt;&lt;/a&gt;一、Alicloud原生 Ingress 方式&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;前置要求&lt;/strong&gt;&lt;/p&gt;
@@ -313,7 +313,7 @@
     <link href="https://yakir.top/posts/754e.html"/>
     <id>https://yakir.top/posts/754e.html</id>
     <published>2022-05-31T15:04:28.000Z</published>
-    <updated>2024-01-21T15:28:43.153Z</updated>
+    <updated>2025-05-17T08:42:39.760Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、ACK集群网络规划&quot;&gt;&lt;a href=&quot;#一、ACK集群网络规划&quot; class=&quot;headerlink&quot; title=&quot;一、ACK集群网络规划&quot;&gt;&lt;/a&gt;一、ACK集群网络规划&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://help.aliyun.com/document_detail/86500.html&quot;&gt;https://help.aliyun.com/document_detail&amp;#x2F;86500.html&lt;/a&gt;&lt;/p&gt;
@@ -336,7 +336,7 @@
     <link href="https://yakir.top/posts/4a2a.html"/>
     <id>https://yakir.top/posts/4a2a.html</id>
     <published>2022-05-31T14:38:39.000Z</published>
-    <updated>2024-01-21T15:28:43.149Z</updated>
+    <updated>2025-05-17T08:42:39.711Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、接入前提&quot;&gt;&lt;a href=&quot;#一、接入前提&quot; class=&quot;headerlink&quot; title=&quot;一、接入前提&quot;&gt;&lt;/a&gt;一、接入前提&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;ACK 集群开启日志服务组件Logtail&lt;/strong&gt;&lt;/p&gt;
@@ -358,7 +358,7 @@
     <link href="https://yakir.top/posts/64a8.html"/>
     <id>https://yakir.top/posts/64a8.html</id>
     <published>2022-05-04T14:17:00.000Z</published>
-    <updated>2024-01-21T15:31:08.717Z</updated>
+    <updated>2025-05-17T08:42:39.737Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;网段规划概述&quot;&gt;&lt;a href=&quot;#网段规划概述&quot; class=&quot;headerlink&quot; title=&quot;网段规划概述&quot;&gt;&lt;/a&gt;网段规划概述&lt;/h3&gt;&lt;h4 id=&quot;1）规划网段的目的&quot;&gt;&lt;a href=&quot;#1）规划网段的目的&quot; class=&quot;headerlink&quot; title=&quot;1）规划网段的目的&quot;&gt;&lt;/a&gt;1）规划网段的目的&lt;/h4&gt;&lt;ul&gt;
@@ -388,7 +388,7 @@
     <link href="https://yakir.top/posts/ce0f.html"/>
     <id>https://yakir.top/posts/ce0f.html</id>
     <published>2022-05-04T13:46:04.000Z</published>
-    <updated>2024-01-21T15:28:43.152Z</updated>
+    <updated>2025-05-17T08:42:39.754Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、Helm-安装与模板&quot;&gt;&lt;a href=&quot;#一、Helm-安装与模板&quot; class=&quot;headerlink&quot; title=&quot;一、Helm 安装与模板&quot;&gt;&lt;/a&gt;一、Helm 安装与模板&lt;/h3&gt;&lt;h4 id=&quot;1）Helm-安装部署&quot;&gt;&lt;a href=&quot;#1）Helm-安装部署&quot; class=&quot;headerlink&quot; title=&quot;1）Helm 安装部署&quot;&gt;&lt;/a&gt;1）Helm 安装部署&lt;/h4&gt;&lt;ul&gt;
@@ -409,7 +409,7 @@
     <link href="https://yakir.top/posts/539.html"/>
     <id>https://yakir.top/posts/539.html</id>
     <published>2022-05-04T13:14:23.000Z</published>
-    <updated>2024-01-21T15:28:43.152Z</updated>
+    <updated>2025-05-17T08:42:39.740Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、gitflow：版本分支管理策略（相当于对git的包装）&quot;&gt;&lt;a href=&quot;#一、gitflow：版本分支管理策略（相当于对git的包装）&quot; class=&quot;headerlink&quot; title=&quot;一、gitflow：版本分支管理策略（相当于对git的包装）&quot;&gt;&lt;/a&gt;一、gitflow：版本分支管理策略（相当于对git的包装）&lt;/h3&gt;&lt;ol&gt;
@@ -438,7 +438,7 @@
     <link href="https://yakir.top/posts/fdc.html"/>
     <id>https://yakir.top/posts/fdc.html</id>
     <published>2022-03-20T15:37:32.000Z</published>
-    <updated>2024-01-21T15:31:32.930Z</updated>
+    <updated>2025-05-17T08:42:39.731Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h3&gt;&lt;p&gt;当通过OpenApi接口来调用云资源时（即替代控制台的操作），当前的方式有两种：&lt;/p&gt;
@@ -467,7 +467,7 @@
     <link href="https://yakir.top/posts/9a8h.html"/>
     <id>https://yakir.top/posts/9a8h.html</id>
     <published>2022-03-16T15:21:06.000Z</published>
-    <updated>2024-01-21T15:30:17.732Z</updated>
+    <updated>2025-05-17T08:42:39.782Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;ul&gt;
@@ -497,7 +497,7 @@
     <link href="https://yakir.top/posts/8aa0.html"/>
     <id>https://yakir.top/posts/8aa0.html</id>
     <published>2022-03-07T14:01:06.000Z</published>
-    <updated>2024-01-21T15:30:00.082Z</updated>
+    <updated>2025-05-17T08:42:39.766Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、背景&quot;&gt;&lt;a href=&quot;#一、背景&quot; class=&quot;headerlink&quot; title=&quot;一、背景&quot;&gt;&lt;/a&gt;一、背景&lt;/h3&gt;&lt;blockquote&gt;
@@ -532,7 +532,7 @@
     <link href="https://yakir.top/posts/fa45.html"/>
     <id>https://yakir.top/posts/fa45.html</id>
     <published>2022-03-01T15:55:02.000Z</published>
-    <updated>2024-01-21T15:28:43.155Z</updated>
+    <updated>2025-05-17T08:42:39.769Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、RBAC简易概述&quot;&gt;&lt;a href=&quot;#一、RBAC简易概述&quot; class=&quot;headerlink&quot; title=&quot;一、RBAC简易概述&quot;&gt;&lt;/a&gt;一、RBAC简易概述&lt;/h3&gt;&lt;img data-src=&quot;/posts/fa45/gaisu.png&quot; class&gt;
@@ -575,7 +575,7 @@
     <link href="https://yakir.top/posts/3eeb.html"/>
     <id>https://yakir.top/posts/3eeb.html</id>
     <published>2022-02-27T15:30:35.000Z</published>
-    <updated>2024-01-21T15:28:43.148Z</updated>
+    <updated>2025-05-17T08:42:39.711Z</updated>
     
     
       
