@@ -1,0 +1,6 @@
+[submodule "docs/gitbook"]
+	path = docs/gitbook
+	url = https://github.com/logic3579/gitbook.git
+[submodule "docs/about"]
+	path = docs/about
+	url = https://github.com/logic3579/logic3579.git
