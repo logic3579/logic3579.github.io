@@ -27,14 +27,15 @@ export default defineConfig({
      socialLinks: [
       { icon: 'github', link: 'https://github.com/logic3579/logic3579.github.io' }
     ],
-    // search: {
-    //   provider: 'algolia',
-    //   options: {
-    //     appId: '8J64VVRP8K',
-    //     apiKey: '52f578a92b88ad6abde815aae2b0ad7c',
-    //     indexName: 'vitepress'
-    //   }
-    // },
+    search: {
+      provider: 'algolia',
+      options: {
+        // account: logic3579@duck.com
+        appId: 'DV059DHAUJ',
+        apiKey: '1f4946de04485cd13ef66d172cd148a8',
+        indexName: 'yakir'
+      }
+    },
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
