@@ -14,16 +14,16 @@ export default defineConfig({
   head: [
     [
       'link',
-      { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.svg' }
+      { rel: 'icon', type: 'image/svg+xml', href: '/books.svg' }
     ],
     [
       'link',
-      { rel: 'icon', type: 'image/png', href: '/vitepress-logo-mini.png' }
+      { rel: 'icon', type: 'image/png', href: '/books.png' }
     ],
   ],
 
   themeConfig: {
-     logo: { src: '/vitepress-logo-mini.svg', width: 24, height: 24 },
+     logo: { src: '/books.svg', width: 24, height: 24 },
      socialLinks: [
       { icon: 'github', link: 'https://github.com/logic3579/logic3579.github.io' }
     ],
