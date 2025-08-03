@@ -5,13 +5,17 @@
 ## Vitepress
 
 ```bash
-# Prerequisites
-npm add -D vitepress
-bun add -D vitepress
+# Install
+bun i vitepress
 
 # Init
-npx vitepress init
 bun vitepress init
+
+# Run
+bun run docs:dev
+
+# Build
+bun run docs:build
 ```
 
 ## Git submodules

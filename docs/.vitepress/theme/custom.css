@@ -1,0 +1,168 @@
+/* 自定义 CSS 变量 */
+:root {
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #2563eb;
+  --vp-c-brand-3: #1d4ed8;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.1);
+  --vp-c-brand-1-alpha: rgba(59, 130, 246, 0.2);
+  --vp-c-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 暗色主题变量 */
+.dark {
+  --vp-c-brand-1: #60a5fa;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #2563eb;
+  --vp-c-brand-soft: rgba(96, 165, 250, 0.1);
+  --vp-c-brand-1-alpha: rgba(96, 165, 250, 0.2);
+  --vp-c-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* 页面标题样式优化 */
+.VPContent .content-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 页面内容区域优化 */
+.VPContent .content-container {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.VPContent .content {
+  padding: 2rem 0 !important;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .VPContent .content {
+    padding: 1rem 0 !important;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.nav-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.nav-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* 大纲样式优化 - 添加分割线与内容的间距 */
+.outline-marker {
+  left: 0 !important;
+  width: 100% !important;
+  height: 32px !important;
+  background: transparent !important;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.outline-marker.active {
+  border-left-color: var(--vp-c-brand-1) !important;
+  background-color: var(--vp-c-brand-soft) !important;
+}
+
+/* 大纲标题与内容的间距 */
+.outline-title {
+  margin-bottom: 16px !important;
+  padding-left: 12px !important;
+}
+
+/* 大纲链接样式优化 */
+.VPDocOutlineItem .outline-link {
+  position: relative;
+  display: block;
+  padding: 1px 16px 1px 24px !important;
+  /* 二级标题缩进 */
+  margin-left: 0 !important;
+  margin-bottom: 4px !important;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  font-size: 0.9em;
+}
+
+/* 三级标题样式 */
+.VPDocOutlineItem .outline-link[data-level="3"] {
+  padding-left: 40px !important;
+  /* 三级标题增加缩进 */
+  font-size: 0.85em;
+  color: var(--vp-c-text-3);
+}
+
+.VPDocOutlineItem .outline-link:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg-soft);
+}
+
+.VPDocOutlineItem .outline-link.active {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  background-color: var(--vp-c-brand-soft);
+  border-left-color: var(--vp-c-brand-1);
+}
+
+/* 三级标题激活状态 */
+.VPDocOutlineItem .outline-link[data-level="3"].active {
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}
+
+/* 完全移除 outline-marker 的样式 */
+.outline-marker {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 整个大纲容器的内边距 */
+.VPDocAsideOutline .content {
+  padding: 16px 8px !important;
+}
