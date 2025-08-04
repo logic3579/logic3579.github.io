@@ -265,6 +265,14 @@ export const navItems = [
     icon: "https://landscape.cncf.io/images/favicon.png",
   },
   {
+    id: "X6xLBlmT",
+    title: "Istio",
+    description: "开源服务网格",
+    url: "https://istio.io/latest/zh/docs/",
+    category: "CNCF",
+    icon: "https://istio.io/latest/favicons/favicon.svg",
+  },
+  {
     id: "Bji6vmj8",
     title: "Certbot",
     description: "SSL 证书自动化工具",
