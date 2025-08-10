@@ -65,6 +65,14 @@ export const navItems = [
     icon: "https://gw.alicdn.com/imgextra/i4/O1CN01vVn7g32134zNZEeAR_!!6000000006928-55-tps-24-24.svg",
   },
   {
+    id: "ztVLrUVZ",
+    title: "StarsL's Blog",
+    description: "",
+    url: "https://starsl.cn/",
+    category: "Blog",
+    icon: "https://starsl.cn/static/img/favicon.ico",
+  },
+  {
     id: "rjfcrOxc",
     title: "小林coding",
     description: "",
@@ -625,14 +633,6 @@ export const navItems = [
     url: "https://openlibrary.org/",
     category: "Others",
     icon: "https://openlibrary.org/favicon.ico",
-  },
-  {
-    id: "23amkayP",
-    title: "Z-Library",
-    description: "Z-Library",
-    url: "https://lib-4y334mnc7talnwxnoaonfo4f.1lib.ph/",
-    category: "Others",
-    icon: "https://lib-4y334mnc7talnwxnoaonfo4f.1lib.ph/favicon.ico",
   },
   {
     id: "YwVXJJhe",
