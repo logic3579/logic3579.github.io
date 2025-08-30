@@ -65,6 +65,14 @@ export const navItems = [
     icon: "https://gw.alicdn.com/imgextra/i4/O1CN01vVn7g32134zNZEeAR_!!6000000006928-55-tps-24-24.svg",
   },
   {
+    id: "7UlI2G2m",
+    title: "DeepWiki",
+    description: "DeepWiki",
+    url: "https://deepwiki.com/",
+    category: "AI",
+    icon: "https://deepwiki.com/icon.png",
+  },
+  {
     id: "ztVLrUVZ",
     title: "StarsL's Blog",
     description: "",
