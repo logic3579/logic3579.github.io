@@ -23,7 +23,7 @@ export const gitbookSidebar = [
         items: [
             { text: 'Overview', link: '/gitbook/CNCF/README' },
             {
-                text: 'AppDefinition & Development',
+                text: 'AppDefinition and Development',
                 collapsed: true,
                 items: [
                     {
@@ -38,7 +38,6 @@ export const gitbookSidebar = [
                             { text: 'Argo', link: '/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/argo' },
                             { text: 'GitLab', link: '/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/gitlab' },
                             { text: 'Jenkins', link: '/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/jenkins' },
-                            { text: 'Tekton', link: '/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/tekton' }
                         ]
                     },
                     {
@@ -82,7 +81,7 @@ export const gitbookSidebar = [
                 ]
             },
             {
-                text: 'Observability & Analysis',
+                text: 'Observability and Analysis',
                 collapsed: true,
                 items: [
                     {
@@ -98,31 +97,21 @@ export const gitbookSidebar = [
                         ]
                     },
                     {
-                        text: 'Logging',
+                        text: 'Observability',
                         items: [
-                            { text: 'Elastic', link: '/gitbook/CNCF/ObservabilityAnalysis/Logging/elastic' },
-                            { text: 'Fluentd', link: '/gitbook/CNCF/ObservabilityAnalysis/Logging/fluentd' },
-                            { text: 'Logstash', link: '/gitbook/CNCF/ObservabilityAnalysis/Logging/logstash' },
-                            { text: 'Loki', link: '/gitbook/CNCF/ObservabilityAnalysis/Logging/loki' }
+                            { text: 'Elastic', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/elastic' },
+                            { text: 'Fluentd', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/fluentd' },
+                            { text: 'Grafana', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/grafana' },
+                            { text: 'Jaeger', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/jaeger' },
+                            { text: 'Logstash', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/logstash' },
+                            { text: 'Loki', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/loki' },
+                            { text: 'Prometheus', link: '/gitbook/CNCF/ObservabilityAnalysis/Observability/prometheus' }
                         ]
                     },
-                    {
-                        text: 'Monitoring',
-                        items: [
-                            { text: 'Grafana', link: '/gitbook/CNCF/ObservabilityAnalysis/Monitoring/grafana' },
-                            { text: 'Prometheus', link: '/gitbook/CNCF/ObservabilityAnalysis/Monitoring/prometheus' }
-                        ]
-                    },
-                    {
-                        text: 'Tracing',
-                        items: [
-                            { text: 'Jaeger', link: '/gitbook/CNCF/ObservabilityAnalysis/Tracing/jaeger' }
-                        ]
-                    }
                 ]
             },
             {
-                text: 'Orchestration & Management',
+                text: 'Orchestration and Management',
                 collapsed: true,
                 items: [
                     {
