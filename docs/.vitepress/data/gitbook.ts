@@ -313,6 +313,7 @@ export const gitbookSidebar = [
                 items: [
                     { text: 'Boot', link: '/gitbook/Operations/System/boot' },
                     { text: 'iptables', link: '/gitbook/Operations/System/iptables' },
+                    { text: 'KVM', link: '/gitbook/Operations/System/kvm' },
                     { text: 'Linnux From Scratch', link: '/gitbook/Operations/System/lfs' },
                     { text: 'Nix', link: '/gitbook/Operations/System/nix' }
                 ]
