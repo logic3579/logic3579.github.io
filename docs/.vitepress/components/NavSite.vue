@@ -1,13 +1,14 @@
 <template>
   <div class="nav-site">
-    <!-- 搜索栏 -->
+    <!-- Search bar -->
     <div class="search-container">
       <div class="search-box">
         <input
           v-model="searchQuery"
           type="text"
-          placeholder="search key"
+          placeholder="Search navigation..."
           class="search-input"
+          aria-label="Search navigation"
           @keydown="handleKeydown"
           ref="searchInput"
         />
@@ -15,32 +16,37 @@
       </div>
     </div>
 
-    <!-- 分类标签 -->
-    <div class="category-tabs">
+    <!-- Category tabs -->
+    <div class="category-tabs" role="tablist">
       <button
         v-for="category in categories"
         :key="category"
         :class="['tab', { active: activeCategory === category }]"
+        :aria-pressed="activeCategory === category"
+        role="tab"
         @click="setActiveCategory(category)"
       >
         {{ category }}
       </button>
     </div>
 
-    <!-- 导航卡片 -->
-    <div class="nav-grid">
-      <div
+    <!-- Navigation cards -->
+    <div class="nav-grid" v-if="filteredItems.length">
+      <a
         v-for="item in filteredItems"
         :key="item.id"
+        :href="item.url"
+        target="_blank"
+        rel="noopener noreferrer"
         class="nav-card"
-        @click="openLink(item.url)"
       >
         <div class="card-icon">
           <img
-            v-if="item.icon"
+            v-if="item.icon && !failedIcons.has(item.id)"
             :src="item.icon"
             :alt="item.title"
-            @error="handleIconError"
+            loading="lazy"
+            @error="handleIconError(item.id)"
           />
           <div v-else class="default-icon">{{ item.title.charAt(0).toUpperCase() }}</div>
         </div>
@@ -49,41 +55,40 @@
           <p class="card-description">{{ item.description }}</p>
           <span class="card-category">{{ item.category }}</span>
         </div>
-      </div>
+      </a>
     </div>
 
-
+    <!-- Empty state -->
+    <div class="empty-state" v-else>
+      <p>No matching results found</p>
+    </div>
   </div>
-
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick } from 'vue'
-import { navItems as navItemsData } from '../data/navItems.js'
+import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { navItems } from '../data/navItems.js'
 
-// 响应式数据
+// Reactive state
 const searchQuery = ref('')
 const activeCategory = ref('ALL')
 const searchInput = ref(null)
+const failedIcons = reactive(new Set())
 
-// 从数据文件导入导航数据
-const navItems = ref(navItemsData)
-
-// 计算属性
+// Computed
 const categories = computed(() => {
-  const cats = ['ALL', ...new Set(navItems.value.map(item => item.category))]
-  return cats
+  return ['ALL', ...new Set(navItems.map(item => item.category))]
 })
 
 const filteredItems = computed(() => {
-  let items = navItems.value
+  let items = navItems
 
-  // 按分类过滤
+  // Filter by category
   if (activeCategory.value !== 'ALL') {
     items = items.filter(item => item.category === activeCategory.value)
   }
 
-  // 按搜索关键词过滤
+  // Filter by search query
   if (searchQuery.value.trim()) {
     const query = searchQuery.value.toLowerCase()
     items = items.filter(item =>
@@ -96,49 +101,43 @@ const filteredItems = computed(() => {
   return items
 })
 
-// 方法
+// Methods
 const setActiveCategory = (category) => {
   activeCategory.value = category
 }
 
-const openLink = (url) => {
-  window.open(url, '_blank')
-}
-
 const handleKeydown = (event) => {
-  // 支持键盘快捷键
   if (event.key === 'Escape') {
     searchQuery.value = ''
     searchInput.value.blur()
   }
 }
 
-const handleIconError = (event) => {
-  // 图标加载失败时的处理
-  event.target.style.display = 'none'
+const handleIconError = (id) => {
+  failedIcons.add(id)
 }
 
+// Global keyboard handler - auto-focus search on letter/digit key press
+const globalKeyHandler = (event) => {
+  if (event.key.length === 1 && /[a-zA-Z0-9]/.test(event.key) && !event.ctrlKey && !event.metaKey) {
+    if (document.activeElement !== searchInput.value) {
+      searchInput.value.focus()
+    }
+  }
+}
 
-
-// 生命周期
+// Lifecycle
 onMounted(() => {
-
-  // 自动聚焦搜索框
   nextTick(() => {
     if (searchInput.value) {
       searchInput.value.focus()
     }
   })
+  document.addEventListener('keydown', globalKeyHandler)
+})
 
-  // 全局键盘事件监听
-  document.addEventListener('keydown', (event) => {
-    // 按任意字母键自动聚焦搜索框
-    if (event.key.length === 1 && /[a-zA-Z0-9]/.test(event.key) && !event.ctrlKey && !event.metaKey) {
-      if (document.activeElement !== searchInput.value) {
-        searchInput.value.focus()
-      }
-    }
-  })
+onUnmounted(() => {
+  document.removeEventListener('keydown', globalKeyHandler)
 })
 </script>
 
@@ -149,7 +148,7 @@ onMounted(() => {
   padding: 2rem;
 }
 
-/* 搜索栏样式 */
+/* Search bar */
 .search-container {
   margin-bottom: 2rem;
   display: flex;
@@ -188,7 +187,7 @@ onMounted(() => {
   color: var(--vp-c-text-2);
 }
 
-/* 分类标签样式 */
+/* Category tabs */
 .category-tabs {
   display: flex;
   gap: 0.5rem;
@@ -219,7 +218,7 @@ onMounted(() => {
   border-color: var(--vp-c-brand-1);
 }
 
-/* 导航卡片网格 */
+/* Navigation card grid */
 .nav-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -237,6 +236,17 @@ onMounted(() => {
   cursor: pointer;
   transition: all 0.3s ease;
   gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.nav-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.nav-card:nth-child(even) {
+  animation-delay: 0.2s;
 }
 
 .nav-card:hover {
@@ -304,23 +314,38 @@ onMounted(() => {
   font-weight: 500;
 }
 
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--vp-c-text-2);
+  font-size: 1.1rem;
+}
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* 响应式设计 */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-site {
     padding: 1rem;
   }
-  
+
   .nav-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .nav-card {
     padding: 1rem;
   }
-  
-
 }
 </style>

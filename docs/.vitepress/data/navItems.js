@@ -1,9 +1,9 @@
-// navItems data
+// Navigation items data
 export const navItems = [
   {
     id: "nSkoUXgj",
     title: "Claude",
-    description: "Claude ChatGPT",
+    description: "Anthropic AI assistant",
     url: "https://claude.ai/chat/",
     category: "AI",
     icon: "https://claude.ai/favicon.ico",
@@ -11,7 +11,7 @@ export const navItems = [
   {
     id: "ZmXJXgci",
     title: "DeepSeek",
-    description: "DeepSeek ChatGPT",
+    description: "DeepSeek AI assistant",
     url: "https://chat.deepseek.com/",
     category: "AI",
     icon: "https://chat.deepseek.com/favicon.svg",
@@ -19,7 +19,7 @@ export const navItems = [
   {
     id: "KecZK0Qq",
     title: "Gemini",
-    description: "Gemini",
+    description: "Google AI assistant",
     url: "https://gemini.google.com/",
     category: "AI",
     icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg",
@@ -27,7 +27,7 @@ export const navItems = [
   {
     id: "u73aV9GO",
     title: "KIMI",
-    description: "KIMI",
+    description: "Moonshot AI assistant",
     url: "https://www.kimi.com/",
     category: "AI",
     icon: "https://statics.moonshot.cn/kimi-web-seo/favicon.ico",
@@ -43,7 +43,7 @@ export const navItems = [
   {
     id: "9zXod49e",
     title: "OpenAI",
-    description: "OpenAI",
+    description: "AI research and products",
     url: "https://openai.com/",
     category: "AI",
     icon: "https://openai.com/favicon.svg",
@@ -51,7 +51,7 @@ export const navItems = [
   {
     id: "kiCYORct",
     title: "Qwen",
-    description: "Qwen ChatGPT",
+    description: "Alibaba AI assistant",
     url: "https://chat.qwen.ai/",
     category: "AI",
     icon: "https://assets.alicdn.com/g/qwenweb/qwen-webui-fe/0.0.170/favicon.png",
@@ -68,7 +68,7 @@ export const navItems = [
   {
     id: "jrJiDemP",
     title: "Hugging Face",
-    description: "Hugging Face",
+    description: "Open-source ML model hub and community",
     url: "https://huggingface.co/",
     category: "AI",
     icon: "https://huggingface.co/favicon.ico",
@@ -76,7 +76,7 @@ export const navItems = [
   {
     id: "gqWV11Dc",
     title: "半个宇宙",
-    description: "Kmind",
+    description: "Kmind AI platform",
     url: "https://hikos.cn/",
     category: "AI",
     icon: "https://kmind-webs-resources.oss-cn-hangzhou.aliyuncs.com/images/kx-home-v2/webicon.png",
@@ -84,7 +84,7 @@ export const navItems = [
   {
     id: "9F8Lw0Vm",
     title: "百炼",
-    description: "阿里云百炼平台",
+    description: "阿里云百炼 AI 开发平台",
     url: "https://bailian.console.aliyun.com/#/home",
     category: "AI",
     icon: "https://gw.alicdn.com/imgextra/i4/O1CN01vVn7g32134zNZEeAR_!!6000000006928-55-tps-24-24.svg",
@@ -92,7 +92,7 @@ export const navItems = [
   {
     id: "7UlI2G2m",
     title: "DeepWiki",
-    description: "DeepWiki",
+    description: "AI-powered documentation for open source projects",
     url: "https://deepwiki.com/",
     category: "AI",
     icon: "https://deepwiki.com/icon.png",
@@ -100,7 +100,7 @@ export const navItems = [
   {
     id: "ztVLrUVZ",
     title: "StarsL's Blog",
-    description: "",
+    description: "Kubernetes & DevOps blog",
     url: "https://starsl.cn/",
     category: "Blog",
     icon: "https://starsl.cn/static/img/favicon.ico",
@@ -108,7 +108,7 @@ export const navItems = [
   {
     id: "A3ceL23k",
     title: "阮一峰的网络日志",
-    description: "阮一峰的网络日志",
+    description: "科技与人文博客",
     url: "https://www.ruanyifeng.com/blog/",
     category: "Blog",
     icon: "https://www.ruanyifeng.com/favicon.ico",
@@ -116,7 +116,7 @@ export const navItems = [
   {
     id: "rjfcrOxc",
     title: "小林coding",
-    description: "",
+    description: "图解计算机网络、操作系统、MySQL",
     url: "https://xiaolincoding.com/",
     category: "Blog",
     icon: "https://cdn.xiaolincoding.com/icon.webp",
@@ -124,7 +124,7 @@ export const navItems = [
   {
     id: "IcmySfhG",
     title: "烧饼博客",
-    description: "",
+    description: "网络与安全技术博客",
     url: "https://sb.sb/projects/",
     category: "Blog",
     icon: "https://macdn.net/favicon-32x32.png",
@@ -132,7 +132,7 @@ export const navItems = [
   {
     id: "eCCzE5mY",
     title: "阅心笔记",
-    description: "",
+    description: "运维技术笔记",
     url: "https://opswill.com/",
     category: "Blog",
     icon: "https://opswill.com/favicon.ico",
@@ -140,7 +140,7 @@ export const navItems = [
   {
     id: "Ja0FBPOF",
     title: "This Cute World",
-    description: "",
+    description: "云原生与 Linux 技术博客",
     url: "https://thiscute.world/",
     category: "Blog",
     icon: "https://thiscute.world/favicon.ico",
@@ -148,7 +148,7 @@ export const navItems = [
   {
     id: "SswET0kf",
     title: "阳明的博客",
-    description: "",
+    description: "Kubernetes 技术分享",
     url: "https://www.qikqiak.com/",
     category: "Blog",
     icon: "https://picdn.youdianzhishi.com/images/blog-favicon.png",
@@ -156,7 +156,7 @@ export const navItems = [
   {
     id: "JdXoOmja",
     title: "RayAlto's Blog",
-    description: "",
+    description: "C++ & Linux 技术博客",
     url: "https://www.rayalto.org/",
     category: "Blog",
     icon: "https://www.rayalto.org/images/rayalto.logo.svg",
@@ -164,7 +164,7 @@ export const navItems = [
   {
     id: "l2HU8SVl",
     title: "杨杨得亿",
-    description: "",
+    description: "运维开发技术博客",
     url: "https://yangpin.link/",
     category: "Blog",
     icon: "https://yangpin.link/favicon.ico",
@@ -172,7 +172,7 @@ export const navItems = [
   {
     id: "ShMAkg7M",
     title: "洞悉Redis技术内幕",
-    description: "",
+    description: "Redis 底层数据结构与集群架构",
     url: "https://www.itzhai.com/articles/redis-technology-insider-cache-data-structure-concurrency-clustering-and-algorithm.html",
     category: "Blog",
     icon: "https://www.itzhai.com/favicon.ico",
@@ -180,7 +180,7 @@ export const navItems = [
   {
     id: "ixxWhxru",
     title: "洞悉MySQL底层架构",
-    description: "",
+    description: "MySQL 存储引擎与索引原理",
     url: "https://mp.weixin.qq.com/s/6NNvbw22wrr3e-QQG2oMDQ",
     category: "Blog",
     icon: "https://mp.weixin.qq.com/favicon.ico",
@@ -196,7 +196,7 @@ export const navItems = [
   {
     id: "QZdBcIWE",
     title: "小菜学编程",
-    description: "",
+    description: "网络协议与编程基础",
     url: "https://fasionchan.com/network/ethernet/physical-layer/",
     category: "Blog",
     icon: "https://fasionchan.com/images/profile.png",
@@ -204,7 +204,7 @@ export const navItems = [
   {
     id: "DcJ9TWSX",
     title: "dog250",
-    description: "",
+    description: "Linux 内核与网络技术深度分析",
     url: "https://blog.csdn.net/dog250",
     category: "Blog",
     icon: "https://blog.csdn.net/favicon.ico",
@@ -212,7 +212,7 @@ export const navItems = [
   {
     id: "NpgpK0dC",
     title: "CJ Ting's Blog",
-    description: "",
+    description: "TCP/IP 与 Web 开发技术",
     url: "https://cjting.me/2019/08/28/tcp-queue/",
     category: "Blog",
     icon: "https://cjting.me/favicon.ico",
@@ -220,10 +220,10 @@ export const navItems = [
   {
     id: "v2UYMF52",
     title: "Yuan Blog",
-    description: "",
-    url: "http://www.yuan316.com/post/Go%E8%AF%AD%E8%A8%80/",
+    description: "Go 语言技术博客",
+    url: "https://www.yuan316.com/post/Go%E8%AF%AD%E8%A8%80/",
     category: "Blog",
-    icon: "http://www.yuan316.com/favicon.ico",
+    icon: "https://www.yuan316.com/favicon.ico",
   },
   {
     id: "Ja17a3sE",
@@ -276,7 +276,7 @@ export const navItems = [
   {
     id: "aJZ1Qjix",
     title: "Vercel",
-    description: "Vercel平台",
+    description: "Frontend cloud platform",
     url: "https://vercel.com/",
     category: "CloudPlatform",
     icon: "https://vercel.com/favicon.ico",
@@ -292,7 +292,7 @@ export const navItems = [
   {
     id: "VaGFb43R",
     title: "Bandwagong",
-    description: "bandwagong 主机商",
+    description: "Bandwagong VPS hosting",
     url: "https://bwh88.net/order/basic",
     category: "CloudPlatform",
     icon: "https://bwh88.net/favicon.ico",
@@ -300,7 +300,7 @@ export const navItems = [
   {
     id: "qdoLvpis",
     title: "CLAWCLOUD",
-    description: "clawcloud 主机商",
+    description: "ClawCloud VPS hosting",
     url: "https://claw.cloud/clientarea.php",
     category: "CloudPlatform",
     icon: "https://claw.cloud/favicon.ico",
@@ -340,7 +340,7 @@ export const navItems = [
   {
     id: "sI5md45J",
     title: "GitHub",
-    description: "",
+    description: "Code hosting & collaboration platform",
     url: "https://github.com/",
     category: "DevOps",
     icon: "https://github.githubassets.com/favicons/favicon-dark.svg",
@@ -348,7 +348,7 @@ export const navItems = [
   {
     id: "sI5md46K",
     title: "GitBook",
-    description: "",
+    description: "Documentation publishing platform",
     url: "https://gitbook.com/",
     category: "DevOps",
     icon: "https://framerusercontent.com/images/93a6peqhbHQaWP67zttmrKDazq4.png",
@@ -356,7 +356,7 @@ export const navItems = [
   {
     id: "dtmafFQK",
     title: "GitLab",
-    description: "",
+    description: "DevOps lifecycle platform",
     url: "https://gitlab.com/",
     category: "DevOps",
     icon: "https://gitlab.com/assets/favicon-72a2cad5025aa931d6ea56c3201d1f18e68a8cd39788c7c80d5b2b82aa5143ef.png",
@@ -364,7 +364,7 @@ export const navItems = [
   {
     id: "nKFuuC6a",
     title: "Gitee",
-    description: "",
+    description: "Chinese code hosting platform",
     url: "https://gitee.com/",
     category: "DevOps",
     icon: "https://gitee.com/favicon.ico",
@@ -372,7 +372,7 @@ export const navItems = [
   {
     id: "4gGUw2Ks",
     title: "LeetCode",
-    description: "LeetCode",
+    description: "Algorithm practice platform",
     url: "https://leetcode.com/problemset/",
     category: "DevOps",
     icon: "https://leetcode.com/favicon.ico",
@@ -380,7 +380,7 @@ export const navItems = [
   {
     id: "voaov2Zh",
     title: "LeetCodeCN",
-    description: "LeetCodeCN",
+    description: "LeetCode Chinese version",
     url: "https://leetcode.cn/u/peaceful-ridepqu/",
     category: "DevOps",
     icon: "https://leetcode.cn/favicon.ico",
@@ -388,7 +388,7 @@ export const navItems = [
   {
     id: "rjYfChn1",
     title: "Linux.org",
-    description: "Linux.org",
+    description: "Linux community and resources",
     url: "https://linux.org/",
     category: "DevOps",
     icon: "https://linux.org/favicon.ico",
@@ -396,7 +396,7 @@ export const navItems = [
   {
     id: "ehU3CSIN",
     title: "Sysctl Explorer",
-    description: "Sysctl Explorer 参数工具",
+    description: "Linux sysctl parameter reference tool",
     url: "https://sysctl-explorer.net/",
     category: "DevOps",
     icon: "https://sysctl-explorer.net/favicon.ico",
@@ -404,7 +404,7 @@ export const navItems = [
   {
     id: "XlVXqkBe",
     title: "Element",
-    description: "Element UI",
+    description: "Element UI component library",
     url: "https://element.eleme.cn/2.0/#/zh-CN",
     category: "DevOps",
     icon: "https://element.eleme.cn/favicon.ico",
@@ -412,7 +412,7 @@ export const navItems = [
   {
     id: "2l51sFYt",
     title: "MySQL8查询性能调优",
-    description: "MySQL8查询性能调优 - 开源书籍",
+    description: "MySQL 8 query performance tuning - open source book",
     url: "https://github.com/zxyle/MySQL-8-Query-Performance-Tuning",
     category: "DevOps",
     icon: "https://github.com/favicon.ico",
@@ -420,7 +420,7 @@ export const navItems = [
   {
     id: "dovkWKHg",
     title: "常用设计模式",
-    description: "开源书籍 - 常用设计模式 ",
+    description: "Refactoring Guru design patterns reference",
     url: "https://refactoringguru.cn/design-patterns",
     category: "DevOps",
     icon: "https://refactoringguru.cn/favicon.ico",
@@ -428,7 +428,7 @@ export const navItems = [
   {
     id: "JwS1uP7E",
     title: "Ventoy",
-    description: "A New Bootable USB Solution",
+    description: "A new bootable USB solution",
     url: "https://ventoy.net/cn/index.html",
     category: "DevOps",
     icon: "https://ventoy.net/favicon.ico",
@@ -454,55 +454,55 @@ export const navItems = [
     title: "阿里巴巴开源镜像站",
     description: "阿里巴巴开源镜像站-OPSX镜像站",
     url: "https://developer.aliyun.com/mirror/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://developer.aliyun.com/favicon.ico",
   },
   {
     id: "1eFqXRMN",
     title: "USTC Open Source Software Mirror",
-    description: "USTC Open Source Software Mirror",
+    description: "中国科学技术大学开源镜像站",
     url: "https://mirrors.ustc.edu.cn/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://mirrors.ustc.edu.cn/static/img/favicon.png",
   },
   {
     id: "ijsmVmOQ",
     title: "Tsinghua Open Source Mirror",
-    description: "Tsinghua Open Source Mirror",
+    description: "清华大学开源镜像站",
     url: "https://mirrors.tuna.tsinghua.edu.cn/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://mirrors.tuna.tsinghua.edu.cn/static/img/favicon.png",
   },
   {
     id: "DuGo3uEk",
     title: "华为开源镜像站",
-    description: "华为开源镜像站",
+    description: "华为云开源镜像站",
     url: "https://mirrors.huaweicloud.com/home",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://devcloud-res.hc-cdn.com/MirrorPortal-CDN/2025.4.0/hws/favicon.ico",
   },
   {
     id: "3rISCdF4",
     title: "Open Source Software Mirror",
-    description: "Open Source Software Mirror",
+    description: "DNS & open source software mirror collection",
     url: "https://dns.iui.im/mirrors/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://dns.iui.im/favicon.ico",
   },
   {
     id: "FTcLK8JD",
     title: "中科大镜像加速源",
-    description: "中科大镜像加速源",
+    description: "USTC mirror usage guide and help",
     url: "https://mirrors.ustc.edu.cn/help/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://mirrors.ustc.edu.cn/static/img/favicon.png",
   },
   {
     id: "ucij0trF",
     title: "GitHub 加速下载",
-    description: "GitHub 加速下载在线工具",
+    description: "GitHub file download accelerator",
     url: "https://toolwa.com/github/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://toolwa.com/favicon.ico",
   },
   {
@@ -510,15 +510,15 @@ export const navItems = [
     title: "Thanks-Mirror",
     description: "包管理器以及一些其他常用软件，系统镜像的国内镜像",
     url: "https://github.com/eryajf/Thanks-Mirror",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://github.com/favicon.ico",
   },
   {
     id: "dxtuh5BI",
     title: "Fast Download",
-    description: "Fast Download",
+    description: "Fast file download service",
     url: "https://www.fastdownload.io/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://www.fastdownload.io/favicon.ico",
   },
   {
@@ -526,13 +526,13 @@ export const navItems = [
     title: "jsDelivr",
     description: "A free, fast, and reliable CDN for JS and open source",
     url: "https://www.jsdelivr.com/",
-    category: "Mirros",
+    category: "Mirrors",
     icon: "https://www.jsdelivr.com/favicon.ico",
   },
   {
     id: "eugiiOIe",
     title: "百度网盘",
-    description: "百度网盘",
+    description: "百度云存储服务",
     url: "https://pan.baidu.com/disk/home",
     category: "Netdisc",
     icon: "https://nd-static.bdstatic.com/m-static/wp-brand/favicon.ico",
@@ -540,7 +540,7 @@ export const navItems = [
   {
     id: "9L3n3Som",
     title: "阿里云盘",
-    description: "阿里云盘",
+    description: "阿里巴巴云存储服务",
     url: "https://www.aliyundrive.com/",
     category: "Netdisc",
     icon: "https://www.aliyundrive.com/favicon.ico",
@@ -548,7 +548,7 @@ export const navItems = [
   {
     id: "1gQusqm8",
     title: "MEGA",
-    description: "MEGA",
+    description: "Encrypted cloud storage",
     url: "https://mega.io/",
     category: "Netdisc",
     icon: "https://mega.io/favicon.ico",
@@ -556,7 +556,7 @@ export const navItems = [
   {
     id: "Ko91CCu6",
     title: "腾讯微云",
-    description: "腾讯微云",
+    description: "腾讯云存储服务",
     url: "https://www.weiyun.com/disk",
     category: "Netdisc",
     icon: "https://www.weiyun.com/favicon.ico",
@@ -564,7 +564,7 @@ export const navItems = [
   {
     id: "ZmuFKaof",
     title: "OneDrive",
-    description: "OneDrive",
+    description: "Microsoft cloud storage",
     url: "https://onedrive.live.com/",
     category: "Netdisc",
     icon: "https://onedrive.live.com/favicon.ico",
@@ -572,7 +572,7 @@ export const navItems = [
   {
     id: "aAfDoU0p",
     title: "坚果云",
-    description: "坚果云",
+    description: "企业级云存储与协作",
     url: "https://www.jianguoyun.com/#/",
     category: "Netdisc",
     icon: "https://www.jianguoyun.com/favicon.ico",
@@ -580,7 +580,7 @@ export const navItems = [
   {
     id: "kLoRRdp5",
     title: "SM.MS",
-    description: "图床 - SM.MS",
+    description: "Free image hosting service",
     url: "https://sm.ms/home/picture",
     category: "Netdisc",
     icon: "https://sm.ms/favicon.ico",
@@ -596,7 +596,7 @@ export const navItems = [
   {
     id: "TDPnNmb5",
     title: "随机密码生成器",
-    description: "随机密码生成器",
+    description: "Avast random password generator",
     url: "https://www.avast.com/zh-cn/random-password-generator",
     category: "OnlineTools",
     icon: "https://www.avast.com/favicon.ico",
@@ -613,7 +613,7 @@ export const navItems = [
   {
     id: "vfM9efn1",
     title: "JSON.cn",
-    description: "JSON在线解析格式化验证",
+    description: "JSON 在线解析格式化验证",
     url: "https://www.json.cn/",
     category: "OnlineTools",
     icon: "https://www.json.cn/favicon.ico",
@@ -621,7 +621,7 @@ export const navItems = [
   {
     id: "EtdyoBYz",
     title: "tool.lu",
-    description: "时间戳(Unix timestamp)转换工具",
+    description: "Unix timestamp converter tool",
     url: "https://tool.lu/timestamp/",
     category: "OnlineTools",
     icon: "https://tool.lu/favicon.ico",
@@ -629,7 +629,7 @@ export const navItems = [
   {
     id: "DacFC725",
     title: "draw.io",
-    description: "app.diagrams.net",
+    description: "Free online diagram editor",
     url: "https://draw.io",
     category: "OnlineTools",
     icon: "https://app.diagrams.net/favicon.ico",
@@ -645,7 +645,7 @@ export const navItems = [
   {
     id: "XhYjBndA",
     title: "IP.SB",
-    description: "IP.SB",
+    description: "IP address lookup tool",
     url: "https://ip.sb/",
     category: "OnlineTools",
     icon: "https://ip.sb/favicon.ico",
@@ -653,7 +653,7 @@ export const navItems = [
   {
     id: "sXKaNepz",
     title: "ipapi.is",
-    description: "ipapi.is",
+    description: "IP geolocation API service",
     url: "https://ipapi.is/",
     category: "OnlineTools",
     icon: "https://ipapi.is/img/favicon/favicon-32x32.png",
@@ -661,7 +661,7 @@ export const navItems = [
   {
     id: "xEPUeNQ6",
     title: "awesome-console-services",
-    description: "开源 IP 库",
+    description: "Curated list of console-accessible IP & utility services",
     url: "https://github.com/chubin/awesome-console-services",
     category: "OnlineTools",
     icon: "https://github.com/favicon.ico",
@@ -677,7 +677,7 @@ export const navItems = [
   {
     id: "abaGES8T",
     title: "endpoints.dev",
-    description: "临时接口测试在线工具",
+    description: "Temporary webhook endpoint for API testing",
     url: "https://www.endpoints.dev/",
     category: "OnlineTools",
     icon: "https://www.endpoints.dev/favicon.ico",
@@ -693,7 +693,7 @@ export const navItems = [
   {
     id: "dOuo8rKR",
     title: "Sendfiles.online",
-    description: "在线发送文件工具",
+    description: "Online file sharing tool",
     url: "https://sendfiles.online/",
     category: "OnlineTools",
     icon: "https://sendfiles.online/favicon.ico",
@@ -709,7 +709,7 @@ export const navItems = [
   {
     id: "4cPA1oxz",
     title: "MingCute Icon",
-    description: "Carefully Designed Icon Library",
+    description: "Carefully designed icon library",
     url: "https://www.mingcute.com/",
     category: "OnlineTools",
     icon: "https://www.mingcute.com/favicon.ico",
@@ -717,7 +717,7 @@ export const navItems = [
   {
     id: "7vgmXkN0",
     title: "archive.org",
-    description: "archive.org",
+    description: "Internet Archive digital library",
     url: "https://archive.org/",
     category: "Others",
     icon: "https://archive.org/favicon.ico",
@@ -725,7 +725,7 @@ export const navItems = [
   {
     id: "KC3v5HfS",
     title: "Open Library",
-    description: "openlibrary.org",
+    description: "Free online book lending library",
     url: "https://openlibrary.org/",
     category: "Others",
     icon: "https://openlibrary.org/favicon.ico",
@@ -733,7 +733,7 @@ export const navItems = [
   {
     id: "YwVXJJhe",
     title: "Follow",
-    description: "Follow",
+    description: "RSS reader and content aggregator",
     url: "https://app.follow.is/",
     category: "Others",
     icon: "https://app.follow.is/favicon.ico",
@@ -741,7 +741,7 @@ export const navItems = [
   {
     id: "J8xDc3yH",
     title: "Discord",
-    description: "Discord",
+    description: "Chat and community platform",
     url: "https://discord.com/channels/@me",
     category: "Others",
     icon: "https://discord.com/assets/favicon.ico",
@@ -749,15 +749,15 @@ export const navItems = [
   {
     id: "rH7Jv3l3",
     title: "体育直播",
-    description: "体育直播",
-    url: "http://www.lanqiuzhi.live/index.html?ref2M",
+    description: "Sports live streaming",
+    url: "https://www.lanqiuzhi.live/index.html?ref2M",
     category: "Others",
-    icon: "http://www.lanqiuzhi.live/favicon.ico",
+    icon: "https://www.lanqiuzhi.live/favicon.ico",
   },
   {
     id: "1Miqv41R",
     title: "微博",
-    description: "微博",
+    description: "Chinese social media platform",
     url: "https://weibo.com/",
     category: "Others",
     icon: "https://weibo.com/favicon.ico",
@@ -773,7 +773,7 @@ export const navItems = [
   {
     id: "wlEtupYX",
     title: "自然语言处理基础--基础与应用",
-    description: "自然语言处理基础--基础与应用",
+    description: "NLP fundamentals course on Bilibili",
     url: "https://www.bilibili.com/video/BV1UG411p7zv/?spm_id_from=333.788.videopod.episodes&vd_source=19d788bd976177a2dd4744df940159c7&p=4",
     category: "Others",
     icon: "https://www.bilibili.com/favicon.ico",
@@ -781,7 +781,7 @@ export const navItems = [
   {
     id: "iYFURCpU",
     title: "趣弹の尤克里里零基础教程（弹唱/指弹）",
-    description: "趣弹の尤克里里零基础教程（弹唱/指弹）",
+    description: "Ukulele beginner tutorial",
     url: "https://mp.weixin.qq.com/s/2462nNwk-Q7zh_8dHMjNBA",
     category: "Others",
     icon: "https://mp.weixin.qq.com/favicon.ico",
@@ -789,7 +789,7 @@ export const navItems = [
   {
     id: "US0YieJm",
     title: "尤克里里教学1~10课",
-    description: "尤克里里教学1~10课",
+    description: "Ukulele lessons 1-10 on Bilibili",
     url: "https://www.bilibili.com/video/BV1Kx41147iq?p=2&spm_id_from=pageDriver",
     category: "Others",
     icon: "https://www.bilibili.com/favicon.ico",
@@ -797,7 +797,7 @@ export const navItems = [
   {
     id: "S82KXAM2",
     title: "威尔伯TV-海外华人在线影院",
-    description: "威尔伯TV-海外华人在线影院",
+    description: "Overseas Chinese streaming platform",
     url: "https://wei2bo.com/",
     category: "Others",
     icon: "https://wei2bo.com/favicon.ico",

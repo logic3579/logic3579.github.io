@@ -1,4 +1,4 @@
-/* 自定义 CSS 变量 */
+/* Custom CSS variables */
 :root {
   --vp-c-brand-1: #3b82f6;
   --vp-c-brand-2: #2563eb;
@@ -8,7 +8,7 @@
   --vp-c-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* 暗色主题变量 */
+/* Dark theme variables */
 .dark {
   --vp-c-brand-1: #60a5fa;
   --vp-c-brand-2: #3b82f6;
@@ -18,7 +18,7 @@
   --vp-c-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* 页面标题样式优化 */
+/* Page title gradient */
 .VPContent .content-container h1 {
   text-align: center;
   margin-bottom: 1rem;
@@ -28,7 +28,7 @@
   background-clip: text;
 }
 
-/* 页面内容区域优化 */
+/* Page content area */
 .VPContent .content-container {
   max-width: none !important;
   padding: 0 !important;
@@ -38,14 +38,14 @@
   padding: 2rem 0 !important;
 }
 
-/* 响应式优化 */
+/* Responsive */
 @media (max-width: 768px) {
   .VPContent .content {
     padding: 1rem 0 !important;
   }
 }
 
-/* 滚动条样式 */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -64,59 +64,17 @@
   background: var(--vp-c-brand-2);
 }
 
-/* 动画效果 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-card {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.nav-card:nth-child(odd) {
-  animation-delay: 0.1s;
-}
-
-.nav-card:nth-child(even) {
-  animation-delay: 0.2s;
-}
-
-/* 大纲样式优化 - 添加分割线与内容的间距 */
-.outline-marker {
-  left: 0 !important;
-  width: 100% !important;
-  height: 32px !important;
-  background: transparent !important;
-  border-left: 2px solid transparent;
-  transition: all 0.2s ease;
-  pointer-events: none;
-}
-
-.outline-marker.active {
-  border-left-color: var(--vp-c-brand-1) !important;
-  background-color: var(--vp-c-brand-soft) !important;
-}
-
-/* 大纲标题与内容的间距 */
+/* Outline title spacing */
 .outline-title {
   margin-bottom: 16px !important;
   padding-left: 12px !important;
 }
 
-/* 大纲链接样式优化 */
+/* Outline link styles */
 .VPDocOutlineItem .outline-link {
   position: relative;
   display: block;
   padding: 1px 16px 1px 24px !important;
-  /* 二级标题缩进 */
   margin-left: 0 !important;
   margin-bottom: 4px !important;
   border-radius: 4px;
@@ -127,10 +85,9 @@
   font-size: 0.9em;
 }
 
-/* 三级标题样式 */
+/* Third-level heading indent */
 .VPDocOutlineItem .outline-link[data-level="3"] {
   padding-left: 40px !important;
-  /* 三级标题增加缩进 */
   font-size: 0.85em;
   color: var(--vp-c-text-3);
 }
@@ -147,13 +104,13 @@
   border-left-color: var(--vp-c-brand-1);
 }
 
-/* 三级标题激活状态 */
+/* Third-level heading active state */
 .VPDocOutlineItem .outline-link[data-level="3"].active {
   font-weight: 500;
   color: var(--vp-c-brand-1);
 }
 
-/* 完全移除 outline-marker 的样式 */
+/* Hide default outline marker */
 .outline-marker {
   display: none !important;
   width: 0 !important;
@@ -162,7 +119,7 @@
   pointer-events: none !important;
 }
 
-/* 整个大纲容器的内边距 */
+/* Outline container padding */
 .VPDocAsideOutline .content {
   padding: 16px 8px !important;
 }
