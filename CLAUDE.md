@@ -46,6 +46,42 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 - Dead links are intentionally ignored (`ignoreDeadLinks: true`) since submodule content may lag behind sidebar definitions
 - Search is Algolia (appId: `DV059DHAUJ`, index: `yakir`)
 
+## Submodule Workflow
+
+Never modify submodule files directly in this repo. To fix content in `docs/gitbook/`:
+
+1. Edit in the source repo (`/Users/logic/Projects/gitbook`), commit and push
+2. Back in this repo: `git submodule update --remote docs/gitbook`
+3. Commit the updated submodule reference
+
 ## Deployment
 
 GitHub Actions (`.github/workflows/deploy.yml`): pushes to `main` trigger build with Bun 1.2.15 and deploy to GitHub Pages. Checkout uses `submodules: recursive` and `fetch-depth: 0`.
+
+## Known Issues & Past Fixes
+
+### VitePress build fails on angle brackets in Markdown (fixed)
+Markdown files using `<StatusName>` syntax (e.g. `<Pending SQL Execution>`) cause Vue template compilation errors (`Element is missing end tag`). Fix: wrap in backticks to make them inline code. Affected file: `gitbook/Misc/JiraCDflow/README.md`.
+
+### NavSite.vue audit fixes (2026-03-04)
+- **Memory leak**: global `keydown` listener was never removed — added `onUnmounted` cleanup
+- **Icon fallback broken**: `handleIconError` hid `<img>` but `v-else` never triggered — now tracks failed icons via `reactive(new Set())` by item ID
+- **No a11y**: cards were `<div @click>` — changed to `<a>` tags with `rel="noopener noreferrer"`; tabs have `role="tab"` + `aria-pressed`; search has `aria-label`
+- **No empty state**: added "No matching results found" when filters return nothing
+- **Unnecessary reactivity**: removed `ref()` wrapper on static `navItems` import
+- **Animation split**: moved `fadeInUp` from global `custom.css` into component `<style scoped>`
+- **Duplicate import**: removed redundant `<script setup>` NavSite import in `index.md` (already registered globally in `theme/index.js`)
+
+### navItems.js data fixes (2026-03-04)
+- Category typo: `"Mirros"` → `"Mirrors"` (10 items)
+- HTTP URLs upgraded to HTTPS (`yuan316.com`, `lanqiuzhi.live`)
+- Filled in ~25 empty or title-duplicating descriptions
+
+### custom.css cleanup (2026-03-04)
+- Removed dead `.outline-marker` styling block (was overridden by `display: none` below it)
+- Removed `.nav-card` animation (moved into NavSite.vue scoped styles)
+- Comments normalized to English
+
+### deploy.yml cleanup (2026-03-04)
+- Removed commented-out Node.js setup and alternative package manager comments
+- Upgraded `oven-sh/setup-bun` v1 → v2, `actions/upload-pages-artifact` v3 → v4
