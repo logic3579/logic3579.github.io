@@ -27,9 +27,9 @@ export default defineConfig({
 
   // theme config
   themeConfig: {
-    // outline config
+    // outline: show h2, h3, h4 in right TOC
     outline: {
-      level: [2, 3], // show h2, h3 in outline
+      level: [2, 3, 4],
       label: 'On this page'
     },
 

@@ -28,9 +28,9 @@
   background-clip: text;
 }
 
-/* Page content area */
-.VPContent .content-container {
-  max-width: none !important;
+/* Page content area – readable max-width for doc body */
+.VPDoc .content-container {
+  max-width: 48rem; /* 768px, GitBook-style reading width */
   padding: 0 !important;
 }
 
@@ -64,32 +64,58 @@
   background: var(--vp-c-brand-2);
 }
 
-/* Outline title spacing */
+/* Right outline (TOC) – GitBook-style hierarchy and spacing */
 .outline-title {
-  margin-bottom: 16px !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  margin-bottom: 12px !important;
   padding-left: 12px !important;
+  line-height: 1.4;
 }
 
-/* Outline link styles */
+.VPDocOutlineItem {
+  margin-bottom: 0;
+}
+
+/* Level 2 (h2): primary outline items */
 .VPDocOutlineItem .outline-link {
   position: relative;
   display: block;
-  padding: 1px 16px 1px 24px !important;
+  padding: 6px 16px 6px 24px !important;
   margin-left: 0 !important;
-  margin-bottom: 4px !important;
+  margin-bottom: 2px !important;
   border-radius: 4px;
   transition: all 0.2s ease;
   color: var(--vp-c-text-2);
   text-decoration: none;
   border-left: 2px solid transparent;
-  font-size: 0.9em;
+  font-size: 0.9375rem;   /* 15px – clear primary level */
+  line-height: 1.5;
+  font-weight: 400;
 }
 
-/* Third-level heading indent */
+/* Level 3 (h3): nested outline items – smaller, indented */
 .VPDocOutlineItem .outline-link[data-level="3"] {
-  padding-left: 40px !important;
-  font-size: 0.85em;
+  padding: 4px 16px 4px 32px !important;
+  font-size: 0.8125rem;   /* 13px */
+  line-height: 1.5;
   color: var(--vp-c-text-3);
+}
+
+/* Level 4 (h4): deeper outline items */
+.VPDocOutlineItem .outline-link[data-level="4"] {
+  padding: 2px 16px 2px 44px !important;
+  font-size: 0.75rem;     /* 12px */
+  line-height: 1.5;
+  color: var(--vp-c-text-3);
+}
+
+.VPDocOutlineItem .outline-link[data-level="4"].active {
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
 }
 
 .VPDocOutlineItem .outline-link:hover {
@@ -104,7 +130,6 @@
   border-left-color: var(--vp-c-brand-1);
 }
 
-/* Third-level heading active state */
 .VPDocOutlineItem .outline-link[data-level="3"].active {
   font-weight: 500;
   color: var(--vp-c-brand-1);
@@ -119,7 +144,6 @@
   pointer-events: none !important;
 }
 
-/* Outline container padding */
 .VPDocAsideOutline .content {
   padding: 16px 8px !important;
 }

@@ -165,10 +165,10 @@ export const gitbookSidebar = [
                     {
                         text: 'Automation & Configuration',
                         items: [
-                            { text: 'Ansible', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/ansible/README' },
+                            { text: 'Ansible', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/ansible' },
                             { text: 'Apollo', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/apollo' },
                             { text: 'OpenStack', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/openstack' },
-                            { text: 'Salt Project', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/saltproject/README' },
+                            { text: 'Salt Project', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/saltproject' },
                             { text: 'Terraform', link: '/gitbook/CNCF/Provisioning/AutomationConfiguration/terraform' }
                         ]
                     },
@@ -237,13 +237,12 @@ export const gitbookSidebar = [
         text: 'Development',
         collapsed: false,
         items: [
-            { text: 'Bash', link: '/gitbook/Development/Bash/README' },
-            { text: 'Golang', link: '/gitbook/Development/Golang/README' },
-            { text: 'Java', link: '/gitbook/Development/Java/README' },
-            { text: 'Lua', link: '/gitbook/Development/Lua/README' },
-            { text: 'Node.js', link: '/gitbook/Development/Node.js/README' },
-            { text: 'Python', link: '/gitbook/Development/Python/README' },
-            { text: 'Ruby', link: '/gitbook/Development/Ruby/README' },
+            { text: 'Bash', link: '/gitbook/DevOps/Bash' },
+            { text: 'Golang', link: '/gitbook/DevOps/Golang' },
+            { text: 'Java', link: '/gitbook/DevOps/Java' },
+            { text: 'Node.js', link: '/gitbook/DevOps/NodeJS' },
+            { text: 'Python', link: '/gitbook/DevOps/Python' },
+            { text: 'Ruby', link: '/gitbook/DevOps/Ruby' },
         ]
     },
     {
@@ -261,64 +260,64 @@ export const gitbookSidebar = [
                 text: 'Command Manual',
                 collapsed: true,
                 items: [
-                    { text: 'Automation', link: '/gitbook/Operations/CommandManual/Automation' },
-                    { text: 'Build Tools', link: '/gitbook/Operations/CommandManual/BuildTools' },
-                    { text: 'Container Runtime', link: '/gitbook/Operations/CommandManual/ContainerRuntime' },
-                    { text: 'Database', link: '/gitbook/Operations/CommandManual/Database' },
-                    { text: 'IO Tools', link: '/gitbook/Operations/CommandManual/IOTools' },
-                    { text: 'Memory Tools', link: '/gitbook/Operations/CommandManual/MemoryTools' },
-                    { text: 'Network Tools', link: '/gitbook/Operations/CommandManual/NetworkTools' },
-                    { text: 'OpenSSL', link: '/gitbook/Operations/CommandManual/OpenSSL' },
-                    { text: 'Package', link: '/gitbook/Operations/CommandManual/Package' },
-                    { text: 'Streaming Messaging', link: '/gitbook/Operations/CommandManual/StreamingMessaging' },
-                    { text: 'System Tools', link: '/gitbook/Operations/CommandManual/SystemTools' },
-                    { text: 'Systemd', link: '/gitbook/Operations/CommandManual/Systemd' },
-                    { text: 'Text Swordsman', link: '/gitbook/Operations/CommandManual/TextSwordsman' },
-                    { text: 'Version Control', link: '/gitbook/Operations/CommandManual/VersionControl' },
-                    { text: 'Video Tools', link: '/gitbook/Operations/CommandManual/VideoTools' }
+                    { text: 'Automation', link: '/gitbook/DevOps/CommandManual/Automation' },
+                    { text: 'Build Tools', link: '/gitbook/DevOps/CommandManual/BuildTools' },
+                    { text: 'Container Runtime', link: '/gitbook/DevOps/CommandManual/ContainerRuntime' },
+                    { text: 'Database', link: '/gitbook/DevOps/CommandManual/Database' },
+                    { text: 'IO Tools', link: '/gitbook/DevOps/CommandManual/IOTools' },
+                    { text: 'Memory Tools', link: '/gitbook/DevOps/CommandManual/MemoryTools' },
+                    { text: 'Network Tools', link: '/gitbook/DevOps/CommandManual/NetworkTools' },
+                    { text: 'OpenSSL', link: '/gitbook/DevOps/CommandManual/OpenSSL' },
+                    { text: 'Package', link: '/gitbook/DevOps/CommandManual/Package' },
+                    { text: 'Streaming Messaging', link: '/gitbook/DevOps/CommandManual/StreamingMessaging' },
+                    { text: 'System Tools', link: '/gitbook/DevOps/CommandManual/SystemTools' },
+                    { text: 'Systemd', link: '/gitbook/DevOps/CommandManual/Systemd' },
+                    { text: 'Text Swordsman', link: '/gitbook/DevOps/CommandManual/TextSwordsman' },
+                    { text: 'Version Control', link: '/gitbook/DevOps/CommandManual/VersionControl' },
+                    { text: 'Video Tools', link: '/gitbook/DevOps/CommandManual/VideoTools' }
                 ]
             },
             {
                 text: 'Network',
                 collapsed: true,
                 items: [
-                    { text: 'CDN', link: '/gitbook/Operations/Network/cdn' },
-                    { text: 'Computer Network', link: '/gitbook/Operations/Network/computer-network' },
-                    { text: 'HTTP', link: '/gitbook/Operations/Network/http' },
-                    { text: 'Kubernetes Network', link: '/gitbook/Operations/Network/k8s-network' },
-                    { text: 'NFS', link: '/gitbook/Operations/Network/nfs' },
-                    { text: 'TCP', link: '/gitbook/Operations/Network/tcp' }
+                    { text: 'CDN', link: '/gitbook/DevOps/Network/cdn' },
+                    { text: 'Computer Network', link: '/gitbook/DevOps/Network/computer-network' },
+                    { text: 'HTTP', link: '/gitbook/DevOps/Network/http' },
+                    { text: 'Kubernetes Network', link: '/gitbook/DevOps/Network/k8s-network' },
+                    { text: 'NFS', link: '/gitbook/DevOps/Network/nfs' },
+                    { text: 'TCP', link: '/gitbook/DevOps/Network/tcp' }
                 ]
             },
             {
                 text: 'Service Configuration',
                 collapsed: true,
                 items: [
-                    { text: 'Elastic', link: '/gitbook/Operations/ServiceConf/sc-elastic' },
-                    { text: 'Fluentd', link: '/gitbook/Operations/ServiceConf/sc-fluentd' },
-                    { text: 'Kafka', link: '/gitbook/Operations/ServiceConf/sc-kafka' },
-                    { text: 'Logstash', link: '/gitbook/Operations/ServiceConf/sc-logstash' },
-                    { text: 'MongoDB', link: '/gitbook/Operations/ServiceConf/sc-mongodb' },
-                    { text: 'Monitoring', link: '/gitbook/Operations/ServiceConf/sc-monitoring' },
-                    { text: 'MySQL', link: '/gitbook/Operations/ServiceConf/sc-mysqld' },
-                    { text: 'Nginx', link: '/gitbook/Operations/ServiceConf/sc-nginx' },
-                    { text: 'PostgreSQL', link: '/gitbook/Operations/ServiceConf/sc-postgresql' },
-                    { text: 'Redis', link: '/gitbook/Operations/ServiceConf/sc-redis' },
-                    { text: 'SaltStack', link: '/gitbook/Operations/ServiceConf/sc-saltstack' }
+                    { text: 'Elastic', link: '/gitbook/DevOps/ServiceConf/elasticsearch' },
+                    { text: 'Grafana', link: '/gitbook/DevOps/ServiceConf/grafana' },
+                    { text: 'Jenkins', link: '/gitbook/DevOps/ServiceConf/jenkins' },
+                    { text: 'Kafka', link: '/gitbook/DevOps/ServiceConf/kafka' },
+                    { text: 'MongoDB', link: '/gitbook/DevOps/ServiceConf/mongodb' },
+                    { text: 'Monitoring', link: '/gitbook/DevOps/ServiceConf/observability' },
+                    { text: 'MySQL', link: '/gitbook/DevOps/ServiceConf/mysql' },
+                    { text: 'Nginx', link: '/gitbook/DevOps/ServiceConf/nginx' },
+                    { text: 'PostgreSQL', link: '/gitbook/DevOps/ServiceConf/postgresql' },
+                    { text: 'Redis', link: '/gitbook/DevOps/ServiceConf/redis' },
+                    { text: 'SaltStack', link: '/gitbook/DevOps/ServiceConf/saltstack' }
                 ]
             },
             {
                 text: 'System',
                 collapsed: true,
                 items: [
-                    { text: 'Boot', link: '/gitbook/Operations/System/boot' },
-                    { text: 'iptables', link: '/gitbook/Operations/System/iptables' },
-                    { text: 'KVM', link: '/gitbook/Operations/System/kvm' },
-                    { text: 'Linnux From Scratch', link: '/gitbook/Operations/System/lfs' },
-                    { text: 'Nix', link: '/gitbook/Operations/System/nix' }
+                    { text: 'Boot', link: '/gitbook/DevOps/System/boot' },
+                    { text: 'iptables', link: '/gitbook/DevOps/System/iptables' },
+                    { text: 'KVM', link: '/gitbook/DevOps/System/kvm' },
+                    { text: 'Linux From Scratch', link: '/gitbook/DevOps/System/lfs' },
+                    { text: 'Nix', link: '/gitbook/DevOps/System/nix' }
                 ]
             },
-            { text: 'Kernel', link: '/gitbook/Operations/Kernel' },
+            { text: 'Kernel', link: '/gitbook/DevOps/Kernel' },
         ]
     },
     {
