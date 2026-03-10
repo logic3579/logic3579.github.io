@@ -32,7 +32,7 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 ## Architecture
 
 - **VitePress config**: `docs/.vitepress/config.mts` — site settings, nav, sidebar, Algolia search
-- **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — 400+ item hierarchical sidebar (mirrors gitbook submodule structure)
+- **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — hierarchical sidebar for `/gitbook/` routes, **generated from** `docs/gitbook/SUMMARY.md` via `scripts/sync-gitbook-sidebar.py` so it always matches the gitbook submodule structure (do not edit `gitbook.ts` by hand after submodule updates)
 - **Nav data**: `docs/.vitepress/data/navItems.js` — 90+ external link items with categories (AI, CNCF, DevOps, etc.)
 - **Custom component**: `docs/.vitepress/components/NavSite.vue` — interactive card-grid navigation with search/filter, used on the home page (`docs/index.md`)
 - **Theme customization**: `docs/.vitepress/theme/index.js` (registers NavSite component) and `docs/.vitepress/theme/custom.css` (brand colors, scrollbar, h1 gradient, outline styling)
@@ -52,7 +52,8 @@ Never modify submodule files directly in this repo. To fix content in `docs/gitb
 
 1. Edit in the source repo (`/Users/logic/Projects/gitbook`), commit and push
 2. Back in this repo: `git submodule update --remote docs/gitbook`
-3. Commit the updated submodule reference
+3. **Sync sidebar to match gitbook structure**: run `python3 scripts/sync-gitbook-sidebar.py` so `docs/.vitepress/data/gitbook.ts` is regenerated from `docs/gitbook/SUMMARY.md`. All gitbook pages in this site must stay aligned with the gitbook submodule structure.
+4. Commit the updated submodule reference and any changed `gitbook.ts`
 
 ## Deployment
 
