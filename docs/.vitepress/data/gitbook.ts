@@ -474,27 +474,27 @@ export const gitbookSidebar = [
             },
             {
                 text: "Bash",
-                link: "/gitbook/DevOps/Bash",
+                link: "/gitbook/DevOps/bash",
             },
             {
                 text: "Golang",
-                link: "/gitbook/DevOps/Golang",
+                link: "/gitbook/DevOps/golang",
             },
             {
                 text: "Java",
-                link: "/gitbook/DevOps/Java",
+                link: "/gitbook/DevOps/java",
             },
             {
                 text: "Node.js",
-                link: "/gitbook/DevOps/NodeJS",
+                link: "/gitbook/DevOps/nodejs",
             },
             {
                 text: "Python",
-                link: "/gitbook/DevOps/Python",
+                link: "/gitbook/DevOps/python",
             },
             {
                 text: "Ruby",
-                link: "/gitbook/DevOps/Ruby",
+                link: "/gitbook/DevOps/ruby",
             },
             {
                 text: "Command Manual",
@@ -502,63 +502,67 @@ export const gitbookSidebar = [
                 items: [
                     {
                         text: "Automation",
-                        link: "/gitbook/DevOps/CommandManual/Automation",
+                        link: "/gitbook/DevOps/CommandManual/automation",
+                    },
+                    {
+                        text: "Big Data",
+                        link: "/gitbook/DevOps/CommandManual/big-data",
                     },
                     {
                         text: "Build Tools",
-                        link: "/gitbook/DevOps/CommandManual/BuildTools",
+                        link: "/gitbook/DevOps/CommandManual/build-tools",
                     },
                     {
                         text: "Container Runtime",
-                        link: "/gitbook/DevOps/CommandManual/ContainerRuntime",
+                        link: "/gitbook/DevOps/CommandManual/container-runtime",
                     },
                     {
                         text: "Database",
-                        link: "/gitbook/DevOps/CommandManual/Database",
+                        link: "/gitbook/DevOps/CommandManual/database",
                     },
                     {
                         text: "IO Tools",
-                        link: "/gitbook/DevOps/CommandManual/IOTools",
+                        link: "/gitbook/DevOps/CommandManual/io-tools",
                     },
                     {
                         text: "Memory Tools",
-                        link: "/gitbook/DevOps/CommandManual/MemoryTools",
+                        link: "/gitbook/DevOps/CommandManual/memory-tools",
                     },
                     {
                         text: "Network Tools",
-                        link: "/gitbook/DevOps/CommandManual/NetworkTools",
+                        link: "/gitbook/DevOps/CommandManual/network-tools",
                     },
                     {
                         text: "OpenSSL",
-                        link: "/gitbook/DevOps/CommandManual/OpenSSL",
+                        link: "/gitbook/DevOps/CommandManual/openssl",
                     },
                     {
                         text: "Package",
-                        link: "/gitbook/DevOps/CommandManual/Package",
+                        link: "/gitbook/DevOps/CommandManual/package",
                     },
                     {
                         text: "Streaming Messaging",
-                        link: "/gitbook/DevOps/CommandManual/StreamingMessaging",
+                        link: "/gitbook/DevOps/CommandManual/streaming-messaging",
                     },
                     {
                         text: "System Tools",
-                        link: "/gitbook/DevOps/CommandManual/SystemTools",
+                        link: "/gitbook/DevOps/CommandManual/system-tools",
                     },
                     {
                         text: "Systemd",
-                        link: "/gitbook/DevOps/CommandManual/Systemd",
+                        link: "/gitbook/DevOps/CommandManual/systemd",
                     },
                     {
                         text: "Text Swordsman",
-                        link: "/gitbook/DevOps/CommandManual/TextSwordsman",
+                        link: "/gitbook/DevOps/CommandManual/text-swordsman",
                     },
                     {
                         text: "Version Control",
-                        link: "/gitbook/DevOps/CommandManual/VersionControl",
+                        link: "/gitbook/DevOps/CommandManual/version-control",
                     },
                     {
                         text: "Video Tools",
-                        link: "/gitbook/DevOps/CommandManual/VideoTools",
+                        link: "/gitbook/DevOps/CommandManual/video-tools",
                     },
                 ],
                 collapsed: true,
@@ -666,7 +670,7 @@ export const gitbookSidebar = [
             },
             {
                 text: "Kernel",
-                link: "/gitbook/DevOps/Kernel",
+                link: "/gitbook/DevOps/kernel",
             },
         ],
     },
