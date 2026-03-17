@@ -158,6 +158,10 @@ export const gitbookSidebar = [
                                 text: "OpenCost",
                                 link: "/gitbook/CNCF/ObservabilityAnalysis/ContinuousOptimization/opencost",
                             },
+                            {
+                                text: "Kubecost",
+                                link: "/gitbook/CNCF/ObservabilityAnalysis/ContinuousOptimization/kubecost",
+                            },
                         ],
                         collapsed: true,
                     },
