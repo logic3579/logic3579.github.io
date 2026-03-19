@@ -86,3 +86,9 @@ Markdown files using `<StatusName>` syntax (e.g. `<Pending SQL Execution>`) caus
 ### deploy.yml cleanup (2026-03-04)
 - Removed commented-out Node.js setup and alternative package manager comments
 - Upgraded `oven-sh/setup-bun` v1 → v2, `actions/upload-pages-artifact` v3 → v4
+
+### navItems.js updates (2026-03-19)
+- **New entries**: added OpenRouter (`openrouter.ai`) and Mimo (`mimo.xiaomi.com`) to AI category
+- **Alphabetical sorting**: all categories sorted alphabetically by title (English first, Chinese last)
+- **Icon fixes**: replaced broken icon URLs for OpenAI (→ `cdn.oaistatic.com` CDN), Mimo (→ Xiaomi CDN), OneDrive (→ SharePoint CDN SVG)
+- **Known broken icons**: `bwh88.net` (404, no favicon available), `tool.lu` (204, site returns no content), `cjting.me` and `sysctl-explorer.net` (DNS fails, sites offline)
