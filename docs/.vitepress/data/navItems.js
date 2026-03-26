@@ -50,7 +50,7 @@ export const navItems = [
   },
   {
     id: "hY1Z0TJIS",
-    title: "KIMI",
+    title: "Kimi",
     description: "Moonshot AI assistant",
     url: "https://www.kimi.com/",
     category: "AI",
@@ -66,7 +66,7 @@ export const navItems = [
   },
   {
     id: "ztWqU9XLZ",
-    title: "MINIMAX",
+    title: "MiniMax",
     description: "MiniMax AI and voice models",
     url: "https://minimaxi.com/",
     category: "AI",

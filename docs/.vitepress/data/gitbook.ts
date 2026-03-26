@@ -595,57 +595,6 @@ export const gitbookSidebar = [
                 collapsed: true,
             },
             {
-                text: "Service Conf",
-                link: "/gitbook/DevOps/ServiceConf/README",
-                items: [
-                    {
-                        text: "Elasticsearch",
-                        link: "/gitbook/DevOps/ServiceConf/elasticsearch",
-                    },
-                    {
-                        text: "Grafana",
-                        link: "/gitbook/DevOps/ServiceConf/grafana",
-                    },
-                    {
-                        text: "Jenkins",
-                        link: "/gitbook/DevOps/ServiceConf/jenkins",
-                    },
-                    {
-                        text: "Kafka",
-                        link: "/gitbook/DevOps/ServiceConf/kafka",
-                    },
-                    {
-                        text: "Mongodb",
-                        link: "/gitbook/DevOps/ServiceConf/mongodb",
-                    },
-                    {
-                        text: "Mysql",
-                        link: "/gitbook/DevOps/ServiceConf/mysql",
-                    },
-                    {
-                        text: "Nginx",
-                        link: "/gitbook/DevOps/ServiceConf/nginx",
-                    },
-                    {
-                        text: "Observability",
-                        link: "/gitbook/DevOps/ServiceConf/observability",
-                    },
-                    {
-                        text: "PostgreSQL",
-                        link: "/gitbook/DevOps/ServiceConf/postgresql",
-                    },
-                    {
-                        text: "Redis",
-                        link: "/gitbook/DevOps/ServiceConf/redis",
-                    },
-                    {
-                        text: "Saltstack",
-                        link: "/gitbook/DevOps/ServiceConf/saltstack",
-                    },
-                ],
-                collapsed: true,
-            },
-            {
                 text: "System",
                 link: "/gitbook/DevOps/System/README",
                 items: [
