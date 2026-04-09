@@ -73,6 +73,14 @@ export const navItems = [
     icon: "https://minimaxi.com/favicon.ico",
   },
   {
+    id: "nV8bR3kXw",
+    title: "NVIDIA Build",
+    description: "NVIDIA cloud platform for building and deploying AI models",
+    url: "https://build.nvidia.com/",
+    category: "AI",
+    icon: "https://build.nvidia.com/favicon.ico",
+  },
+  {
     id: "wTwP6XPBe",
     title: "OpenAI",
     description: "AI research and products",

@@ -31,20 +31,27 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 
 ## Architecture
 
-- **VitePress config**: `docs/.vitepress/config.mts` — site settings, nav, sidebar, Algolia search
+- **VitePress config**: `docs/.vitepress/config.mts` — site settings, nav, sidebar, Algolia search, `cleanUrls: true`, `lastUpdated: true`, markdown code theme (github-light/github-dark)
 - **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — hierarchical sidebar for `/gitbook/` routes, **generated from** `docs/gitbook/SUMMARY.md` via `scripts/sync-gitbook-sidebar.py` so it always matches the gitbook submodule structure (do not edit `gitbook.ts` by hand after submodule updates)
-- **Nav data**: `docs/.vitepress/data/navItems.js` — 90+ external link items with categories (AI, CNCF, DevOps, etc.)
-- **Custom component**: `docs/.vitepress/components/NavSite.vue` — interactive card-grid navigation with search/filter, used on the home page (`docs/index.md`)
-- **Theme customization**: `docs/.vitepress/theme/index.js` (registers NavSite component) and `docs/.vitepress/theme/custom.css` (brand colors, scrollbar, h1 gradient, outline styling)
-- **Static assets**: `docs/public/` (favicon SVG/PNG)
+- **Nav data**: `docs/.vitepress/data/navItems.js` — 90+ external link items with categories (AI, Blog, CloudPlatform, CNCF, Community, Dev, Mirrors, Monitoring, News, Other, Platform, Recommended, Tools)
+- **NavSite component**: `docs/.vitepress/components/NavSite.vue` — interactive card-grid navigation with search/filter, icon fallback to first letter, category tabs, responsive layout, used on the home page (`docs/index.md`)
+- **Custom layout**: `docs/.vitepress/theme/Layout.vue` — extends DefaultTheme layout, injects Breadcrumb component into the `doc-top` slot
+- **Breadcrumb component**: `docs/.vitepress/theme/components/Breadcrumb.vue` — path hierarchy navigation (Home › Gitbook › Section), humanizes slugs (kebab-case → Title Case, README → Overview)
+- **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme, registers custom Layout and NavSite component globally
+- **Theme styles**: `docs/.vitepress/theme/custom.css` — blue brand colors (#3b82f6 primary), h1 gradient, scrollbar styling, outline (TOC) hierarchy for h2/h3/h4, content max-width 48rem
+- **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), outputs TypeScript sidebar export
+- **Static assets**: `docs/public/` (favicon `books.svg` and `books.png`)
+- **Home page**: `docs/index.md` — uses `layout: page` with `<NavSite />` component
 
 ## Key Patterns
 
 - Content is Markdown in submodules; this repo handles only site config, theme, and navigation
 - `navItems.js` entries follow the shape: `{ id, title, description, url, category, icon }`
+- Categories in `navItems.js` are sorted alphabetically by title (English entries first, Chinese entries last within each category)
 - `gitbook.ts` sidebar entries must match actual file paths in the `docs/gitbook/` submodule
 - Dead links are intentionally ignored (`ignoreDeadLinks: true`) since submodule content may lag behind sidebar definitions
 - Search is Algolia (appId: `DV059DHAUJ`, index: `yakir`)
+- Nav has three top-level links: Home (`/`), Gitbook (`/gitbook/README`), About (`/about/README`)
 
 ## Submodule Workflow
 
@@ -57,7 +64,7 @@ Never modify submodule files directly in this repo. To fix content in `docs/gitb
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/deploy.yml`): pushes to `main` trigger build with Bun 1.2.15 and deploy to GitHub Pages. Checkout uses `submodules: recursive` and `fetch-depth: 0`.
+GitHub Actions (`.github/workflows/deploy.yml`): pushes to `main` trigger build with Bun 1.2.15 and deploy to GitHub Pages. Checkout uses `submodules: recursive` and `fetch-depth: 0`. Uses `oven-sh/setup-bun@v2` and `actions/upload-pages-artifact@v4`.
 
 ## Known Issues & Past Fixes
 
@@ -92,3 +99,6 @@ Markdown files using `<StatusName>` syntax (e.g. `<Pending SQL Execution>`) caus
 - **Alphabetical sorting**: all categories sorted alphabetically by title (English first, Chinese last)
 - **Icon fixes**: replaced broken icon URLs for OpenAI (→ `cdn.oaistatic.com` CDN), Mimo (→ Xiaomi CDN), OneDrive (→ SharePoint CDN SVG)
 - **Known broken icons**: `bwh88.net` (404, no favicon available), `tool.lu` (204, site returns no content), `cjting.me` and `sysctl-explorer.net` (DNS fails, sites offline)
+
+### navItems.js updates (2026-04-09)
+- **New entry**: added NVIDIA Build (`build.nvidia.com`) to AI category

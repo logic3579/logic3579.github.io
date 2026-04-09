@@ -740,6 +740,14 @@ export const gitbookSidebar = [
                 text: "Docker Standards",
                 link: "/gitbook/Standards/docker-standards",
             },
+            {
+                text: "GitHub Actions CI/CD - Monorepo",
+                link: "/gitbook/Standards/github-actions-cicd-monorepo",
+            },
+            {
+                text: "GitHub Actions CI/CD - Multirepo",
+                link: "/gitbook/Standards/github-actions-cicd-multirepo",
+            },
         ],
     },
     {
