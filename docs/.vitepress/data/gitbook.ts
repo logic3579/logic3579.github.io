@@ -501,6 +501,10 @@ export const gitbookSidebar = [
                 link: "/gitbook/DevOps/ruby",
             },
             {
+                text: "Rust",
+                link: "/gitbook/DevOps/rust",
+            },
+            {
                 text: "Command Manual",
                 link: "/gitbook/DevOps/CommandManual/README",
                 items: [
@@ -741,12 +745,20 @@ export const gitbookSidebar = [
                 link: "/gitbook/Standards/docker-standards",
             },
             {
+                text: "GitHub Actions CD",
+                link: "/gitbook/Standards/github-actions-cd",
+            },
+            {
                 text: "GitHub Actions CI/CD - Monorepo",
                 link: "/gitbook/Standards/github-actions-cicd-monorepo",
             },
             {
                 text: "GitHub Actions CI/CD - Multirepo",
                 link: "/gitbook/Standards/github-actions-cicd-multirepo",
+            },
+            {
+                text: "GitLab CI/CD - Multirepo",
+                link: "/gitbook/Standards/gitlab-cicd-multirepo",
             },
         ],
     },
