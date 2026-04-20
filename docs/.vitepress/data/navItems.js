@@ -289,6 +289,14 @@ export const navItems = [
     icon: "https://laf.dev/favicon.ico",
   },
   {
+    id: "pWm4kBvN2",
+    title: "NVIDIA Brev",
+    description: "NVIDIA Brev cloud development console",
+    url: "https://brev.nvidia.com/",
+    category: "CloudPlatform",
+    icon: "https://brev.nvidia.com/favicon.ico",
+  },
+  {
     id: "3XWuuXYxe",
     title: "self-hostable",
     description: "Open-source Heroku / Netlify / Vercel alternative",
@@ -728,6 +736,15 @@ export const navItems = [
     url: "https://discord.com/channels/@me",
     category: "Others",
     icon: "https://discord.com/assets/favicon.ico",
+  },
+  {
+    id: "vH3kLm9Np",
+    title: "Docking",
+    description:
+      "Open-source Linux dock with applets, themes, and desktop integration",
+    url: "https://docking.cc/",
+    category: "Others",
+    icon: "https://raw.githubusercontent.com/edumucelli/docking/master/packaging/deb/icons/hicolor/32x32/apps/org.docking.Docking.png",
   },
   {
     id: "RYNlR3a1u",
