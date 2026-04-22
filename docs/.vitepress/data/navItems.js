@@ -97,6 +97,14 @@ export const navItems = [
     icon: "https://openrouter.ai/favicon.ico",
   },
   {
+    id: "mK9pL2xQw",
+    title: "xAI",
+    description: "xAI Grok assistant and AI research",
+    url: "https://x.ai/",
+    category: "AI",
+    icon: "https://x.ai/favicon.ico",
+  },
+  {
     id: "Hjp4Y1kNF",
     title: "Z.ai",
     description: "Zhipu AI chat powered by GLM",
