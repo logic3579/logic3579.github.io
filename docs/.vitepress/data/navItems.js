@@ -17,6 +17,14 @@ export const navItems = [
     icon: "https://claude.ai/favicon.ico",
   },
   {
+    id: "cP8nK2mQx",
+    title: "Coding Plan Benchmark",
+    description: "Benchmark for coding plans and AI-assisted workflows",
+    url: "https://coding.15o.cc/",
+    category: "AI",
+    icon: "https://coding.15o.cc/logo108.png",
+  },
+  {
     id: "fncA9YPF0",
     title: "DeepSeek",
     description: "DeepSeek AI assistant and API",
@@ -39,6 +47,15 @@ export const navItems = [
     url: "https://gemini.google.com/",
     category: "AI",
     icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg",
+  },
+  {
+    id: "hR4vN7kLm",
+    title: "Hermes Agent",
+    description:
+      "Open-source self-hosted AI agent with persistent memory (Nous Research)",
+    url: "https://hermes-agent.org/",
+    category: "AI",
+    icon: "https://hermes-agent.org/favicon.ico",
   },
   {
     id: "6QLrc7q3t",
