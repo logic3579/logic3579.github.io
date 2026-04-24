@@ -22,6 +22,17 @@ export default defineConfig({
     },
     headers: {
       level: [2, 3, 4] // show h2, h3, h4
+    },
+    config: (md) => {
+      // Prevent Vue template interpolation in inline code.
+      // Without this, {{ }} patterns (e.g. GitHub Actions ${{ github.ref }})
+      // in backtick-quoted code within tables/text cause SSR build failures.
+      // Fenced code blocks are already handled by VitePress's built-in v-pre.
+      const defaultRender = md.renderer.rules.code_inline
+      md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        return `<code v-pre>${md.utils.escapeHtml(token.content)}</code>`
+      }
     }
   },
 
