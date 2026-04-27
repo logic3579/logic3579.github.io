@@ -201,6 +201,10 @@ export const gitbookSidebar = [
                                 text: "Prometheus",
                                 link: "/gitbook/CNCF/ObservabilityAnalysis/Observability/prometheus",
                             },
+                            {
+                                text: "VictoriaMetrics",
+                                link: "/gitbook/CNCF/ObservabilityAnalysis/Observability/victoriametrics",
+                            },
                         ],
                         collapsed: true,
                     },
@@ -275,10 +279,6 @@ export const gitbookSidebar = [
                                     {
                                         text: "Kubernetes RBAC",
                                         link: "/gitbook/CNCF/OrchestrationManagement/SchedulingOrchestration/Kubernetes/k8s-rbac",
-                                    },
-                                    {
-                                        text: "Kubeadm Deploy",
-                                        link: "/gitbook/CNCF/OrchestrationManagement/SchedulingOrchestration/Kubernetes/kubeadm-deploy",
                                     },
                                     {
                                         text: "Kube Eventer",
