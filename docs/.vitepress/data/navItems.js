@@ -258,6 +258,14 @@ export const navItems = [
     icon: "https://opswill.com/favicon.ico",
   },
   {
+    id: "nW2kLm8Qx",
+    title: "我没有三颗心脏的博客",
+    description: "Weekly picks beyond code, AI, and engineering notes",
+    url: "https://wmyskxz.cn/",
+    category: "Blog",
+    icon: "https://wmyskxz.cn/img/logo.jpg",
+  },
+  {
     id: "oZ3lLaesb",
     title: "Alibaba Cloud",
     description: "Alibaba Cloud services",
