@@ -140,7 +140,3 @@ dist
 **/.DS_Store
 .AppleDouble
 .LSOverride
-
-# Claude Code
-.claude/settings.local.json
-.claude/memory/
