@@ -1,6 +1,14 @@
 // Navigation items data
 export const navItems = [
   {
+    id: "aG7kLm2Px",
+    title: "AutoGLM",
+    description: "Zhipu AI assistant for reports and documents",
+    url: "https://autoglm.zhipuai.cn/",
+    category: "AI",
+    icon: "https://autoglm.zhipuai.cn/favicon.ico",
+  },
+  {
     id: "t4soIQcjq",
     title: "BigModel",
     description: "BigModel large model platform",
@@ -136,6 +144,15 @@ export const navItems = [
     url: "https://bailian.console.aliyun.com/#/home",
     category: "AI",
     icon: "https://gw.alicdn.com/imgextra/i4/O1CN01vVn7g32134zNZEeAR_!!6000000006928-55-tps-24-24.svg",
+  },
+  {
+    id: "sC9nK4mQx",
+    title: "超算互联网",
+    description:
+      "National supercomputing internet: AI compute, models, and app marketplace",
+    url: "https://www.scnet.cn/ui/mall/",
+    category: "AI",
+    icon: "https://www.scnet.cn/favicon.ico",
   },
   {
     id: "x7c7Gv2NX",
