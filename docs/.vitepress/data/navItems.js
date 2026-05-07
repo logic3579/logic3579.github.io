@@ -587,6 +587,14 @@ export const navItems = [
     icon: "https://mirrors.ustc.edu.cn/static/img/favicon.png",
   },
   {
+    id: "dR8kLm3Nx",
+    title: "Google Drive",
+    description: "Google cloud storage and file sync",
+    url: "https://drive.google.com/drive/my-drive",
+    category: "Netdisc",
+    icon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png",
+  },
+  {
     id: "r6pU93uRw",
     title: "MEGA",
     description: "Encrypted cloud storage",
