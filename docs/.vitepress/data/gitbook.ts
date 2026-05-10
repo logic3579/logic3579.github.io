@@ -771,40 +771,44 @@ export const gitbookSidebar = [
                 link: "/gitbook/Misc/README",
             },
             {
-                text: "Science",
-                link: "/gitbook/Misc/Science/README",
+                text: "Science Surf",
+                link: "/gitbook/Misc/ScienceSurf/README",
                 items: [
                     {
                         text: "V2Ray",
-                        link: "/gitbook/Misc/Science/v2ray",
+                        link: "/gitbook/Misc/ScienceSurf/v2ray",
+                    },
+                    {
+                        text: "sing-box",
+                        link: "/gitbook/Misc/ScienceSurf/sing-box",
                     },
                     {
                         text: "IPsec",
-                        link: "/gitbook/Misc/Science/ipsec",
+                        link: "/gitbook/Misc/ScienceSurf/ipsec",
                     },
                     {
                         text: "OpenVPN",
-                        link: "/gitbook/Misc/Science/openvpn",
+                        link: "/gitbook/Misc/ScienceSurf/openvpn",
                     },
                     {
                         text: "SSH Tunnel",
-                        link: "/gitbook/Misc/Science/sshtunnel",
+                        link: "/gitbook/Misc/ScienceSurf/sshtunnel",
                     },
                     {
                         text: "WireGuard",
-                        link: "/gitbook/Misc/Science/wireguard",
+                        link: "/gitbook/Misc/ScienceSurf/wireguard",
                     },
                     {
                         text: "Outline",
-                        link: "/gitbook/Misc/Science/outline",
+                        link: "/gitbook/Misc/ScienceSurf/outline",
                     },
                     {
                         text: "ShadowsocksR",
-                        link: "/gitbook/Misc/Science/ssr",
+                        link: "/gitbook/Misc/ScienceSurf/ssr",
                     },
                     {
                         text: "Hosting",
-                        link: "/gitbook/Misc/Science/hosting",
+                        link: "/gitbook/Misc/ScienceSurf/hosting",
                     },
                 ],
                 collapsed: true,
