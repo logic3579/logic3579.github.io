@@ -283,6 +283,14 @@ export const navItems = [
     icon: "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
   },
   {
+    id: "ls9nKm4Qx",
+    title: "AWS Lightsail",
+    description: "Simple virtual private servers on AWS",
+    url: "https://aws.amazon.com/lightsail/",
+    category: "CloudPlatform",
+    icon: "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
+  },
+  {
     id: "icvO4qx76",
     title: "Bandwagong",
     description: "Bandwagong VPS hosting",
@@ -323,6 +331,14 @@ export const navItems = [
     icon: "https://laf.dev/favicon.ico",
   },
   {
+    id: "ln8pK2mNz",
+    title: "Linode",
+    description: "Akamai cloud computing and VPS hosting",
+    url: "https://www.linode.com/",
+    category: "CloudPlatform",
+    icon: "https://assets.linode.com/icons/favicon.ico",
+  },
+  {
     id: "pWm4kBvN2",
     title: "NVIDIA Brev",
     description: "NVIDIA Brev cloud development console",
@@ -353,6 +369,14 @@ export const navItems = [
     url: "https://vercel.com/",
     category: "CloudPlatform",
     icon: "https://vercel.com/favicon.ico",
+  },
+  {
+    id: "vu3kLm9Np",
+    title: "Vultr",
+    description: "High performance cloud servers and VPS hosting",
+    url: "https://www.vultr.com/",
+    category: "CloudPlatform",
+    icon: "https://icons.duckduckgo.com/ip3/vultr.com.ico",
   },
   {
     id: "1Dlc6qm6T",
@@ -885,6 +909,15 @@ export const navItems = [
     url: "https://getoutline.org/",
     category: "ScienceSurf",
     icon: "https://getoutline.org/img/outline-favicon.png",
+  },
+  {
+    id: "xPr8kLm2N",
+    title: "Project X",
+    description:
+      "Xray-core docs and guides — VLESS, XTLS, REALITY, and routing (Project X community)",
+    url: "https://xtls.github.io/",
+    category: "ScienceSurf",
+    icon: "https://xtls.github.io/logo-light.svg",
   },
   {
     id: "sBx9kLm2N",
