@@ -668,6 +668,14 @@ export const navItems = [
     icon: "https://ipapi.is/img/favicon/favicon-32x32.png",
   },
   {
+    id: "iS4nK8Lm",
+    title: "ip.skk.moe",
+    description: "IP info, network diagnostics, and utility tools (Sukka)",
+    url: "https://ip.skk.moe/",
+    category: "OnlineTools",
+    icon: "https://icons.duckduckgo.com/ip3/ip.skk.moe.ico",
+  },
+  {
     id: "dedWzI7y2",
     title: "JSON.cn",
     description: "JSON online parser and formatter",
@@ -690,6 +698,14 @@ export const navItems = [
     url: "https://openlibrary.org/",
     category: "OnlineTools",
     icon: "https://openlibrary.org/favicon.ico",
+  },
+  {
+    id: "pP9kLm3Nx",
+    title: "Ping.pe",
+    description: "Multi-location ping, MTR, dig, TCP checks, and BGP looking glass",
+    url: "https://ping.pe/",
+    category: "OnlineTools",
+    icon: "https://icons.duckduckgo.com/ip3/ping.pe.ico",
   },
   {
     id: "1KIR18nc6",

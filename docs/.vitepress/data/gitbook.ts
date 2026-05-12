@@ -775,24 +775,12 @@ export const gitbookSidebar = [
                 link: "/gitbook/Misc/ScienceSurf/README",
                 items: [
                     {
-                        text: "V2Ray",
-                        link: "/gitbook/Misc/ScienceSurf/v2ray",
-                    },
-                    {
                         text: "sing-box",
                         link: "/gitbook/Misc/ScienceSurf/sing-box",
                     },
                     {
-                        text: "IPsec",
-                        link: "/gitbook/Misc/ScienceSurf/ipsec",
-                    },
-                    {
-                        text: "OpenVPN",
-                        link: "/gitbook/Misc/ScienceSurf/openvpn",
-                    },
-                    {
-                        text: "SSH Tunnel",
-                        link: "/gitbook/Misc/ScienceSurf/sshtunnel",
+                        text: "Xray",
+                        link: "/gitbook/Misc/ScienceSurf/xray",
                     },
                     {
                         text: "WireGuard",
@@ -803,8 +791,8 @@ export const gitbookSidebar = [
                         link: "/gitbook/Misc/ScienceSurf/outline",
                     },
                     {
-                        text: "ShadowsocksR",
-                        link: "/gitbook/Misc/ScienceSurf/ssr",
+                        text: "Legacy VPN",
+                        link: "/gitbook/Misc/ScienceSurf/legacy-vpn",
                     },
                     {
                         text: "Hosting",
