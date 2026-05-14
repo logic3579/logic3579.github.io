@@ -557,10 +557,6 @@ export const gitbookSidebar = [
                         link: "/gitbook/DevOps/CommandManual/streaming-messaging",
                     },
                     {
-                        text: "System Tools",
-                        link: "/gitbook/DevOps/CommandManual/system-tools",
-                    },
-                    {
                         text: "Systemd",
                         link: "/gitbook/DevOps/CommandManual/systemd",
                     },

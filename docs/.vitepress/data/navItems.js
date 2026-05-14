@@ -764,6 +764,14 @@ export const navItems = [
     icon: "https://www.ventoy.net/favicon.ico",
   },
   {
+    id: "wHk2sT9bP",
+    title: "Webhook.site",
+    description: "Inspect, test, and debug HTTP requests and webhooks online",
+    url: "https://webhook.site/",
+    category: "OnlineTools",
+    icon: "https://webhook.site/favicon.ico",
+  },
+  {
     id: "DwjpN16ow",
     title: "随机密码生成器",
     description: "Avast random password generator",
