@@ -1,14 +1,6 @@
 // Navigation items data
 export const navItems = [
   {
-    id: "aG7kLm2Px",
-    title: "AutoGLM",
-    description: "Zhipu AI assistant for reports and documents",
-    url: "https://autoglm.zhipuai.cn/",
-    category: "AI",
-    icon: "https://autoglm.zhipuai.cn/favicon.ico",
-  },
-  {
     id: "t4soIQcjq",
     title: "BigModel",
     description: "BigModel large model platform",
@@ -120,6 +112,14 @@ export const navItems = [
     url: "https://openrouter.ai/",
     category: "AI",
     icon: "https://openrouter.ai/favicon.ico",
+  },
+  {
+    id: "pI7kLm3Nx",
+    title: "Pi",
+    description: "Terminal-based coding agent (Earendil)",
+    url: "https://pi.dev/",
+    category: "AI",
+    icon: "https://pi.dev/favicon.svg",
   },
   {
     id: "mK9pL2xQw",
@@ -401,6 +401,14 @@ export const navItems = [
     url: "https://istio.io/latest/zh/docs/",
     category: "CNCF",
     icon: "https://istio.io/latest/favicons/favicon.svg",
+  },
+  {
+    id: "aTm8kLm2P",
+    title: "AtomGit",
+    description: "Chinese code hosting and open source platform",
+    url: "https://atomgit.com/",
+    category: "DevOps",
+    icon: "https://cdn-static.gitcode.host/static/images/logo-favicon.png",
   },
   {
     id: "dvXQOUMsw",
