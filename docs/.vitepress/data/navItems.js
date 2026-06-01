@@ -403,12 +403,28 @@ export const navItems = [
     icon: "https://istio.io/latest/favicons/favicon.svg",
   },
   {
+    id: "aH7kLm3Nx",
+    title: "Artifact Hub",
+    description: "Find, install, and publish Kubernetes packages and Helm charts",
+    url: "https://artifacthub.io/",
+    category: "DevOps",
+    icon: "https://icons.duckduckgo.com/ip3/artifacthub.io.ico",
+  },
+  {
     id: "aTm8kLm2P",
     title: "AtomGit",
     description: "Chinese code hosting and open source platform",
     url: "https://atomgit.com/",
     category: "DevOps",
     icon: "https://cdn-static.gitcode.host/static/images/logo-favicon.png",
+  },
+  {
+    id: "dH8kLm2Px",
+    title: "Docker Hub",
+    description: "Container image registry and Docker community",
+    url: "https://hub.docker.com/",
+    category: "DevOps",
+    icon: "https://hub.docker.com/favicon.ico",
   },
   {
     id: "dvXQOUMsw",
@@ -465,6 +481,14 @@ export const navItems = [
     url: "https://linux.org/",
     category: "DevOps",
     icon: "https://linux.org/favicon.ico",
+  },
+  {
+    id: "qY9kLm4Nx",
+    title: "Quay",
+    description: "Enterprise container image registry (Red Hat Quay)",
+    url: "https://quay.io/",
+    category: "DevOps",
+    icon: "https://icons.duckduckgo.com/ip3/quay.io.ico",
   },
   {
     id: "88W5vuhM8",
@@ -730,6 +754,15 @@ export const navItems = [
     url: "https://openlibrary.org/",
     category: "OnlineTools",
     icon: "https://openlibrary.org/favicon.ico",
+  },
+  {
+    id: "oRs8kLm3Nx",
+    title: "OpenResume",
+    description:
+      "Free open-source resume builder and ATS parser — no sign-up required",
+    url: "https://www.open-resume.com/",
+    category: "OnlineTools",
+    icon: "https://www.open-resume.com/favicon.ico",
   },
   {
     id: "pP9kLm3Nx",
