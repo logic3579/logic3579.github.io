@@ -35,6 +35,10 @@ export const gitbookSidebar = [
                                 link: "/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/argo",
                             },
                             {
+                                text: "Bytebase",
+                                link: "/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/bytebase",
+                            },
+                            {
                                 text: "GitLab",
                                 link: "/gitbook/CNCF/AppDefinitionDevelopment/ContinuousIntegrationDelivery/gitlab",
                             },
