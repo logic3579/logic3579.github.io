@@ -299,20 +299,20 @@ export const navItems = [
     icon: "https://bwh88.net/favicon.ico",
   },
   {
-    id: "q7rDh89l8",
-    title: "ClawCloud",
-    description: "ClawCloud VPS hosting",
-    url: "https://claw.cloud/clientarea.php",
-    category: "CloudPlatform",
-    icon: "https://claw.cloud/favicon.ico",
-  },
-  {
     id: "OlBkkfcde",
     title: "Cloudflare",
     description: "Leading internet infrastructure and security services",
     url: "https://dash.cloudflare.com/",
     category: "CloudPlatform",
     icon: "https://dash.cloudflare.com/favicon.ico",
+  },
+  {
+    id: "dMt9kLm4Nx",
+    title: "DMIT",
+    description: "High performance VPS and cloud hosting",
+    url: "https://www.dmit.io/",
+    category: "CloudPlatform",
+    icon: "https://www.dmit.io/favicon.ico",
   },
   {
     id: "AgrKKFzaW",
@@ -714,6 +714,15 @@ export const navItems = [
     url: "https://ip.sb/",
     category: "OnlineTools",
     icon: "https://ip.sb/favicon.ico",
+  },
+  {
+    id: "iP66kLm8Nx",
+    title: "IP66",
+    description:
+      "Free MMDB IP geolocation database with ASN, country, and continent data",
+    url: "https://ip66.dev/",
+    category: "OnlineTools",
+    icon: "https://ip66.dev/favicon.svg",
   },
   {
     id: "cYNS9CwxC",
