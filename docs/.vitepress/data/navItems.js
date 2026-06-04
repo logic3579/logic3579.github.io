@@ -283,14 +283,6 @@ export const navItems = [
     icon: "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
   },
   {
-    id: "ls9nKm4Qx",
-    title: "AWS Lightsail",
-    description: "Simple virtual private servers on AWS",
-    url: "https://aws.amazon.com/lightsail/",
-    category: "CloudPlatform",
-    icon: "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
-  },
-  {
     id: "icvO4qx76",
     title: "Bandwagong",
     description: "Bandwagong VPS hosting",
@@ -405,7 +397,8 @@ export const navItems = [
   {
     id: "aH7kLm3Nx",
     title: "Artifact Hub",
-    description: "Find, install, and publish Kubernetes packages and Helm charts",
+    description:
+      "Find, install, and publish Kubernetes packages and Helm charts",
     url: "https://artifacthub.io/",
     category: "DevOps",
     icon: "https://icons.duckduckgo.com/ip3/artifacthub.io.ico",
@@ -776,7 +769,8 @@ export const navItems = [
   {
     id: "pP9kLm3Nx",
     title: "Ping.pe",
-    description: "Multi-location ping, MTR, dig, TCP checks, and BGP looking glass",
+    description:
+      "Multi-location ping, MTR, dig, TCP checks, and BGP looking glass",
     url: "https://ping.pe/",
     category: "OnlineTools",
     icon: "https://icons.duckduckgo.com/ip3/ping.pe.ico",
