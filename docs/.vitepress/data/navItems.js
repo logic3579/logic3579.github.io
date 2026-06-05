@@ -379,6 +379,14 @@ export const navItems = [
     icon: "https://vercel.com/favicon.ico",
   },
   {
+    id: "vMs8kLm3Nx",
+    title: "Vmiss",
+    description: "High performance VPS with optimized global network routes",
+    url: "https://vmiss.com",
+    category: "CloudPlatform",
+    icon: "https://icons.duckduckgo.com/ip3/vmiss.com.ico",
+  },
+  {
     id: "vu3kLm9Np",
     title: "Vultr",
     description: "High performance cloud servers and VPS hosting",
