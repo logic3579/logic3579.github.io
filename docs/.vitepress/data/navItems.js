@@ -291,6 +291,14 @@ export const navItems = [
     icon: "https://bwh88.net/favicon.ico",
   },
   {
+    id: "cLc9kMn2Px",
+    title: "CloudClone",
+    description: "Cloud hosting and VPS services",
+    url: "https://cloudclone.com",
+    category: "CloudPlatform",
+    icon: "https://icons.duckduckgo.com/ip3/cloudclone.com.ico",
+  },
+  {
     id: "OlBkkfcde",
     title: "Cloudflare",
     description: "Leading internet infrastructure and security services",
@@ -337,6 +345,14 @@ export const navItems = [
     url: "https://brev.nvidia.com/",
     category: "CloudPlatform",
     icon: "https://brev.nvidia.com/favicon.ico",
+  },
+  {
+    id: "rNk7mK4Qw",
+    title: "RackNerd",
+    description: "Affordable KVM VPS and dedicated servers worldwide",
+    url: "https://www.racknerd.com/",
+    category: "CloudPlatform",
+    icon: "https://www.racknerd.com/favicon.ico",
   },
   {
     id: "3XWuuXYxe",
@@ -994,5 +1010,14 @@ export const navItems = [
     url: "https://www.wireguard.com/",
     category: "ScienceSurf",
     icon: "https://www.wireguard.com/img/icons/favicon-32.png",
+  },
+  {
+    id: "p3Tx9kLm2",
+    title: "P3TERX VPS 推荐",
+    description:
+      "Curated cheap and reliable overseas VPS picks from long-term personal use",
+    url: "https://p3terx.com/archives/cheap-and-costeffective-vps-recommended.html",
+    category: "ScienceSurf",
+    icon: "https://p3terx.com/favicon.ico",
   },
 ];
