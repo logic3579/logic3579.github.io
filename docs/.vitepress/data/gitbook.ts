@@ -654,16 +654,28 @@ export const gitbookSidebar = [
                 link: "/gitbook/Platform/README",
             },
             {
-                text: "Alibaba Cloud",
-                link: "/gitbook/Platform/AlibabaCloud/README",
+                text: "Aliyun",
+                link: "/gitbook/Platform/Aliyun/README",
                 items: [
                     {
-                        text: "RAM",
-                        link: "/gitbook/Platform/AlibabaCloud/ram",
+                        text: "ACK",
+                        link: "/gitbook/Platform/Aliyun/ack",
                     },
                     {
-                        text: "VPC",
-                        link: "/gitbook/Platform/AlibabaCloud/vpc",
+                        text: "ECS",
+                        link: "/gitbook/Platform/Aliyun/ecs",
+                    },
+                    {
+                        text: "Network",
+                        link: "/gitbook/Platform/Aliyun/network",
+                    },
+                    {
+                        text: "OSS",
+                        link: "/gitbook/Platform/Aliyun/oss",
+                    },
+                    {
+                        text: "RAM",
+                        link: "/gitbook/Platform/Aliyun/ram",
                     },
                 ],
                 collapsed: true,
@@ -684,6 +696,14 @@ export const gitbookSidebar = [
                         text: "EKS",
                         link: "/gitbook/Platform/AWS/eks",
                     },
+                    {
+                        text: "Network",
+                        link: "/gitbook/Platform/AWS/network",
+                    },
+                    {
+                        text: "S3",
+                        link: "/gitbook/Platform/AWS/s3",
+                    },
                 ],
                 collapsed: true,
             },
@@ -692,20 +712,32 @@ export const gitbookSidebar = [
                 link: "/gitbook/Platform/distribution-installer",
             },
             {
-                text: "Google Cloud",
-                link: "/gitbook/Platform/GoogleCloud/README",
+                text: "GCP",
+                link: "/gitbook/Platform/GCP/README",
                 items: [
                     {
-                        text: "gcloud",
-                        link: "/gitbook/Platform/GoogleCloud/gcloud",
+                        text: "Artifact Registry",
+                        link: "/gitbook/Platform/GCP/artifact-registry",
                     },
                     {
                         text: "GCE",
-                        link: "/gitbook/Platform/GoogleCloud/gce",
+                        link: "/gitbook/Platform/GCP/gce",
+                    },
+                    {
+                        text: "GCS",
+                        link: "/gitbook/Platform/GCP/gcs",
                     },
                     {
                         text: "GKE",
-                        link: "/gitbook/Platform/GoogleCloud/gke",
+                        link: "/gitbook/Platform/GCP/gke",
+                    },
+                    {
+                        text: "IAM",
+                        link: "/gitbook/Platform/GCP/iam",
+                    },
+                    {
+                        text: "Network",
+                        link: "/gitbook/Platform/GCP/network",
                     },
                 ],
                 collapsed: true,
