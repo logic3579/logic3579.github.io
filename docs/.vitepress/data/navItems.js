@@ -17,14 +17,6 @@ export const navItems = [
     icon: "https://claude.ai/favicon.ico",
   },
   {
-    id: "cP8nK2mQx",
-    title: "Coding Plan Benchmark",
-    description: "Benchmark for coding plans and AI-assisted workflows",
-    url: "https://coding.15o.cc/",
-    category: "AI",
-    icon: "https://coding.15o.cc/logo108.png",
-  },
-  {
     id: "fncA9YPF0",
     title: "DeepSeek",
     description: "DeepSeek AI assistant and API",
