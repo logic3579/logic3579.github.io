@@ -17,6 +17,15 @@ export const navItems = [
     icon: "https://claude.ai/favicon.ico",
   },
   {
+    id: "cPl9kLm7Nx",
+    title: "Coding Plan 一站通",
+    description:
+      "Compare AI Coding Plan and Token Plan pricing across providers",
+    url: "https://www.coding-plan.xyz/",
+    category: "AI",
+    icon: "https://www.coding-plan.xyz/favicon.ico",
+  },
+  {
     id: "fncA9YPF0",
     title: "DeepSeek",
     description: "DeepSeek AI assistant and API",
