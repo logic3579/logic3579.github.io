@@ -107,6 +107,15 @@ export const navItems = [
     icon: "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico",
   },
   {
+    id: "oCd8kLm4Nx",
+    title: "OpenCode",
+    description:
+      "Open-source AI coding agent for terminal, IDE, and desktop",
+    url: "https://opencode.ai/",
+    category: "AI",
+    icon: "https://opencode.ai/favicon.ico",
+  },
+  {
     id: "rX7mK2nPq",
     title: "OpenRouter",
     description: "Unified API gateway for accessing multiple AI models",
@@ -420,6 +429,14 @@ export const navItems = [
     icon: "https://istio.io/latest/favicons/favicon.svg",
   },
   {
+    id: "CIf0Viojt",
+    title: "Discord",
+    description: "Chat and community platform",
+    url: "https://discord.com/channels/@me",
+    category: "Community",
+    icon: "https://discord.com/assets/favicon.ico",
+  },
+  {
     id: "v2x9kLm4Nx",
     title: "V2EX",
     description:
@@ -427,6 +444,14 @@ export const navItems = [
     url: "https://v2ex.com/",
     category: "Community",
     icon: "https://v2ex.com/favicon.ico",
+  },
+  {
+    id: "fMmLRdllE",
+    title: "哔哩哔哩",
+    description: "Bilibili video platform",
+    url: "https://www.bilibili.com/",
+    category: "Community",
+    icon: "https://www.bilibili.com/favicon.ico",
   },
   {
     id: "bNc7kLm3Px",
@@ -915,14 +940,6 @@ export const navItems = [
     icon: "https://archive.org/favicon.ico",
   },
   {
-    id: "CIf0Viojt",
-    title: "Discord",
-    description: "Chat and community platform",
-    url: "https://discord.com/channels/@me",
-    category: "Others",
-    icon: "https://discord.com/assets/favicon.ico",
-  },
-  {
     id: "vH3kLm9Np",
     title: "Docking",
     description:
@@ -940,28 +957,12 @@ export const navItems = [
     icon: "https://eynytv.com/template/dianyingim/img/logo.png",
   },
   {
-    id: "RYNlR3a1u",
-    title: "Follow",
-    description: "RSS reader and content aggregator",
-    url: "https://app.follow.is/",
-    category: "Others",
-    icon: "https://app.follow.is/favicon.ico",
-  },
-  {
     id: "pPn7xK2mQ",
     title: "PPnix",
     description: "Online movies and TV shows streaming",
     url: "https://www.ppnix.com/",
     category: "Others",
     icon: "https://www.ppnix.com/favicon.ico",
-  },
-  {
-    id: "fMmLRdllE",
-    title: "哔哩哔哩",
-    description: "Bilibili video platform",
-    url: "https://www.bilibili.com/",
-    category: "Others",
-    icon: "https://www.bilibili.com/favicon.ico",
   },
   {
     id: "dDy5nK8Lm",
@@ -986,14 +987,6 @@ export const navItems = [
     url: "https://wei2bo.com/",
     category: "Others",
     icon: "https://wei2bo.com/favicon.ico",
-  },
-  {
-    id: "cX6UWhBgK",
-    title: "微博",
-    description: "Chinese social media platform",
-    url: "https://weibo.com/",
-    category: "Others",
-    icon: "https://weibo.com/favicon.ico",
   },
   {
     id: "bNQYwQ1bG",
