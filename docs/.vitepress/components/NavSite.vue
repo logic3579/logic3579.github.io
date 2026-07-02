@@ -16,18 +16,20 @@
       </div>
     </div>
 
-    <!-- Category tabs -->
-    <div class="category-tabs" role="tablist">
-      <button
-        v-for="category in categories"
-        :key="category"
-        :class="['tab', { active: activeCategory === category }]"
-        :aria-pressed="activeCategory === category"
-        role="tab"
-        @click="setActiveCategory(category)"
-      >
-        {{ category }}
-      </button>
+    <!-- Category tabs (single-row horizontal scroll) -->
+    <div class="category-tabs-wrapper">
+      <div class="category-tabs" role="tablist" aria-label="Filter by category">
+        <button
+          v-for="category in categories"
+          :key="category"
+          :class="['tab', { active: activeCategory === category }]"
+          :aria-pressed="activeCategory === category"
+          role="tab"
+          @click="setActiveCategory(category, $event)"
+        >
+          {{ category }}
+        </button>
+      </div>
     </div>
 
     <!-- Navigation cards -->
@@ -102,8 +104,13 @@ const filteredItems = computed(() => {
 })
 
 // Methods
-const setActiveCategory = (category) => {
+const setActiveCategory = (category, event) => {
   activeCategory.value = category
+  event?.currentTarget?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'nearest',
+  })
 }
 
 const handleKeydown = (event) => {
@@ -188,15 +195,37 @@ onUnmounted(() => {
 }
 
 /* Category tabs */
+.category-tabs-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 1.5rem,
+    black calc(100% - 1.5rem),
+    transparent
+  );
+}
+
 .category-tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  padding-bottom: 0.125rem;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab {
+  flex-shrink: 0;
+  scroll-snap-align: center;
   padding: 0.5rem 1rem;
   border: 1px solid var(--vp-c-border);
   border-radius: 20px;
@@ -337,6 +366,12 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .nav-site {
     padding: 1rem;
+  }
+
+  .category-tabs-wrapper {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem;
   }
 
   .nav-grid {
