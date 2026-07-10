@@ -382,6 +382,30 @@ export const navItems = [
     icon: "https://icons.duckduckgo.com/ip3/bybit.com.ico",
   },
   {
+    id: "cMc9kLm5Px",
+    title: "CoinMarketCap",
+    description: "Cryptocurrency prices, charts, and market capitalizations",
+    url: "https://coinmarketcap.com/",
+    category: "Crypto",
+    icon: "https://coinmarketcap.com/favicon.ico",
+  },
+  {
+    id: "cRv8kLm4Dx",
+    title: "Curve",
+    description: "Decentralized exchange for stablecoin and low-slippage swaps",
+    url: "https://www.curve.finance/dex/ethereum/swap",
+    category: "Crypto",
+    icon: "https://www.curve.finance/favicon.ico",
+  },
+  {
+    id: "dFl7kLm3Lx",
+    title: "DefiLlama",
+    description: "DeFi TVL analytics and chain rankings across protocols",
+    url: "https://defillama.com/chains",
+    category: "Crypto",
+    icon: "https://defillama.com/favicon.ico",
+  },
+  {
     id: "hYp8kLm6Tx",
     title: "Hyperliquid",
     description:
@@ -389,6 +413,14 @@ export const navItems = [
     url: "https://app.hyperliquid.xyz/trade",
     category: "Crypto",
     icon: "https://app.hyperliquid.xyz/favicon-32x32.png",
+  },
+  {
+    id: "kRk9kLm2Px",
+    title: "Kraken Pro",
+    description: "Advanced cryptocurrency trading platform for spot and futures",
+    url: "https://pro.kraken.com/",
+    category: "Crypto",
+    icon: "https://pro.kraken.com/favicon.ico",
   },
   {
     id: "mMk9kLm5Px",
