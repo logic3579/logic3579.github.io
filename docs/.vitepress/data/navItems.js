@@ -577,12 +577,12 @@ export const navItems = [
     icon: "https://www.inoreader.com/favicon.ico",
   },
   {
-    id: "qCGqrqrox",
-    title: "This Cute World",
-    description: "Cloud-native and Linux tech blog",
-    url: "https://thiscute.world/",
+    id: "bKe9kLm4Bx",
+    title: "博客大联盟",
+    description: "Independent Chinese blog directory and article aggregator",
+    url: "https://bo.ke/",
     category: "Feeds",
-    icon: "https://thiscute.world/favicon.ico",
+    icon: "https://bo.ke/assets/favicon-32x32.png",
   },
   {
     id: "5rqAhCXs6",
@@ -591,14 +591,6 @@ export const navItems = [
     url: "https://xiaolincoding.com/",
     category: "Feeds",
     icon: "https://cdn.xiaolincoding.com/icon.webp",
-  },
-  {
-    id: "2qLwmp7El",
-    title: "杨杨得亿",
-    description: "DevOps and development blog",
-    url: "https://yangpin.link/",
-    category: "Feeds",
-    icon: "https://yangpin.link/favicon.ico",
   },
   {
     id: "x6C8o4SS9",
