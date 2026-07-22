@@ -374,6 +374,14 @@ export const navItems = [
     icon: "https://bin.bnbstatic.com/static/images/common/favicon.ico",
   },
   {
+    id: "bMt8kLm5Tx",
+    title: "BitMart",
+    description: "Cryptocurrency exchange for spot, futures, and earn products",
+    url: "https://www.bitmart.com/",
+    category: "Crypto",
+    icon: "https://www.bitmart.com/fav-icon.ico",
+  },
+  {
     id: "bYt8kLm2Nx",
     title: "Bybit",
     description: "Cryptocurrency derivatives and spot trading exchange",
