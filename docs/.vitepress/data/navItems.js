@@ -1041,4 +1041,12 @@ export const navItems = [
     category: "ScienceSurf",
     icon: "https://p3terx.com/favicon.ico",
   },
+  {
+    id: "aGw9kLm7Mx",
+    title: "安格超市",
+    description: "Curated discounts for VPS, proxy services, residential IPs, and AI APIs",
+    url: "https://blog.angeworld.cc/market",
+    category: "ScienceSurf",
+    icon: "https://blog.angeworld.cc/favicon.svg",
+  },
 ];
