@@ -350,6 +350,14 @@ export const navItems = [
     icon: "https://www.bilibili.com/favicon.ico",
   },
   {
+    id: "sBs8kLm4Fx",
+    title: "烧饼论坛",
+    description: "Chinese forum for AI, domains, hosting, and tech discussion",
+    url: "https://sb.sb/",
+    category: "Community",
+    icon: "https://sb.sb/favicon.ico",
+  },
+  {
     id: "aCr8kLm3Bx",
     title: "Across",
     description: "Cross-chain bridge for fast token transfers between L2s and mainnet",
