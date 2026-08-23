@@ -269,6 +269,14 @@ export const navItems = [
     icon: "https://console.qcloud.com/favicon.ico",
   },
   {
+    id: "vPs9kLm5Vx",
+    title: "V.PS",
+    description: "Cloud KVM VPS for developers with premium Tier 1 network",
+    url: "https://v.ps/",
+    category: "CloudPlatform",
+    icon: "https://v.ps/favicon.svg",
+  },
+  {
     id: "TR14RGiXa",
     title: "Vercel",
     description: "Frontend cloud platform",
