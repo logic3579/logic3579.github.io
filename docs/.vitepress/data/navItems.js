@@ -237,6 +237,14 @@ export const navItems = [
     icon: "https://assets.linode.com/icons/favicon.ico",
   },
   {
+    id: "mSf9kLm4Mx",
+    title: "Microsoft",
+    description: "Microsoft products, cloud, and developer platforms",
+    url: "https://www.microsoft.com/",
+    category: "CloudPlatform",
+    icon: "https://icons.duckduckgo.com/ip3/microsoft.com.ico",
+  },
+  {
     id: "pWm4kBvN2",
     title: "NVIDIA Brev",
     description: "NVIDIA Brev cloud development console",
