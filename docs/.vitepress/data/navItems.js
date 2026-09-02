@@ -705,14 +705,6 @@ export const navItems = [
     icon: "https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/onedrive_48x1.svg",
   },
   {
-    id: "OiEoGjK5z",
-    title: "SM.MS",
-    description: "Free image hosting service",
-    url: "https://sm.ms/home/picture",
-    category: "Netdisc",
-    icon: "https://sm.ms/favicon.ico",
-  },
-  {
     id: "7CRgNMZAE",
     title: "阿里云盘",
     description: "Alibaba cloud storage",
@@ -885,6 +877,15 @@ export const navItems = [
     icon: "https://rapidapi.com/favicon.ico",
   },
   {
+    id: "sEe9kLm3Nx",
+    title: "S.EE",
+    description:
+      "URL shortener and link management with analytics, QR codes, and file sharing",
+    url: "https://s.ee/",
+    category: "OnlineTools",
+    icon: "https://s.ee/favicon.ico",
+  },
+  {
     id: "jS1iQ0qrM",
     title: "Sendfiles.online",
     description: "Online file sharing tool",
@@ -964,14 +965,6 @@ export const navItems = [
     url: "https://wei2bo.com/",
     category: "Others",
     icon: "https://wei2bo.com/favicon.ico",
-  },
-  {
-    id: "bNQYwQ1bG",
-    title: "尤克里里教学1~10课",
-    description: "Ukulele lessons 1-10 on Bilibili",
-    url: "https://www.bilibili.com/video/BV1Kx41147iq?p=2&spm_id_from=pageDriver",
-    category: "Others",
-    icon: "https://www.bilibili.com/favicon.ico",
   },
   {
     id: "MzvP823ID",
