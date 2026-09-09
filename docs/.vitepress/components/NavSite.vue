@@ -11,18 +11,15 @@
     </header>
 
     <div class="nav-filter">
-      <div class="nav-search-row">
-        <input
-          ref="searchInput"
-          v-model="query"
-          type="search"
-          class="nav-search"
-          :placeholder="`搜索 ${sortedItems.length} 个链接…`"
-          aria-label="Search navigation links"
-          @keydown="onSearchKeydown"
-        />
-        <kbd v-show="!query" class="nav-kbd" aria-hidden="true">/</kbd>
-      </div>
+      <input
+        ref="searchInput"
+        v-model="query"
+        type="search"
+        class="nav-search"
+        :placeholder="`搜索 ${sortedItems.length} 个链接…`"
+        aria-label="Search navigation links"
+        @keydown="onSearchKeydown"
+      />
       <div class="nav-chips" role="group" aria-label="Filter by category">
         <button
           :class="{ active: activeCategory === ALL }"
@@ -86,7 +83,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { navItems } from '../data/navItems.js'
 
 const ALL = 'ALL'
@@ -134,34 +131,14 @@ const shownCount = computed(() =>
 )
 const isFiltered = computed(() => Boolean(query.value.trim()) || activeCategory.value !== ALL)
 
-const focusSearch = () => searchInput.value?.focus()
-
-const onGlobalKeydown = (event) => {
-  if ((event.key === 'k' || event.key === 'K') && (event.metaKey || event.ctrlKey)) {
-    event.preventDefault()
-    focusSearch()
-    return
-  }
-
-  if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return
-  const target = event.target
-  const typing =
-    target instanceof HTMLElement &&
-    (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
-  if (typing) return
-
-  event.preventDefault()
-  focusSearch()
-}
-
+// No global hotkey here on purpose: Algolia DocSearch already owns '/' and
+// Cmd/Ctrl-K for site-wide search, and that is the more useful action. This
+// filter is sticky at the top of the page, so clicking it is enough.
 const onSearchKeydown = (event) => {
   if (event.key !== 'Escape') return
   query.value = ''
   searchInput.value?.blur()
 }
-
-onMounted(() => document.addEventListener('keydown', onGlobalKeydown))
-onUnmounted(() => document.removeEventListener('keydown', onGlobalKeydown))
 </script>
 
 <style scoped>
@@ -245,15 +222,9 @@ onUnmounted(() => document.removeEventListener('keydown', onGlobalKeydown))
   border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.nav-search-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
 .nav-search {
-  flex: 1;
-  min-width: 0;
+  display: block;
+  width: 100%;
   padding: 0.1rem 0 0.55rem;
   background: transparent;
   border: 0;
@@ -270,18 +241,6 @@ onUnmounted(() => document.removeEventListener('keydown', onGlobalKeydown))
 .nav-search::-webkit-search-cancel-button {
   filter: grayscale(1);
   opacity: 0.5;
-}
-
-.nav-kbd {
-  flex-shrink: 0;
-  margin-bottom: 0.45rem;
-  padding: 0.15rem 0.4rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 4px;
-  color: var(--vp-c-text-3);
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.7rem;
-  line-height: 1.2;
 }
 
 .nav-chips {

@@ -105,12 +105,19 @@
 
 | 项 | 现状 | 改为 |
 | --- | --- | --- |
-| 键盘聚焦 | 任意字母键抢焦点 | `/` 或 `⌘K` / `Ctrl+K` 聚焦；输入框内按键不拦截 |
+| 键盘聚焦 | 任意字母键抢焦点 | 不注册任何全局快捷键（见下方「已推翻的方案」） |
 | 挂载 | `autofocus` 搜索框 | 不自动聚焦（避免移动端弹键盘、避免抢走页面焦点） |
 | Escape | 清空 + blur | 保留 |
 | 分类标签 | 每张卡片渲染一次 | 移除，改为分区标题 |
 | 搜索图标 | emoji 🔍 | 移除（占位文案已说明用途） |
 | 描述截断 | 2 行 clamp | 单行 ellipsis + `title` 属性提供完整描述 |
+
+**已推翻的方案：`/` 与 `⌘K` 聚焦筛选框**
+
+最初设计为按 `/` 或 `⌘K` 聚焦首页筛选框。实测发现 VitePress 的 Algolia DocSearch 已经全局占用
+了这两个键用于站内搜索，且 DocSearch 优先响应。站内搜索比首页筛选更重要，不应被抢占；而筛选框
+本身 sticky 常驻页面顶部，点击即可。因此最终不注册任何全局 `keydown` 监听 —— 既消除冲突，也少
+一个监听器。仅保留输入框自身的 Escape 清空。
 
 **可访问性**
 
@@ -123,16 +130,20 @@
 ### 5.2 响应式
 
 ```css
-.nav { max-width: 1440px; padding: 0 1.5rem; }
-.nav-rows { grid-template-columns: repeat(var(--nav-cols, 1), minmax(0, 1fr)); }
+.nav { max-width: var(--vp-layout-max-width); padding: 0 1.5rem; --nav-cols: 1 }
+.nav-rows { grid-template-columns: repeat(var(--nav-cols), minmax(0, 1fr)); }
 
 @media (min-width: 900px)  { .nav { --nav-cols: 2 } }
-@media (min-width: 1360px) { .nav { --nav-cols: 3 } }
+@media (min-width: 1360px) { .nav { --nav-cols: 3; padding: 0 2rem } }
 @media (max-width: 768px)  { .nav { padding: 0 1rem } }
 ```
 
-1440px 与 VitePress 自身的 `--vp-layout-max-width`(1440px) 一致，因此首页容器与顶部导航栏
-内容宽度对齐，不会出现两套宽度。
+容器用 `var(--vp-layout-max-width)`（1440px）而非硬编码。三列档的内边距是 **2rem 而非 1.5rem**：
+VitePress 导航栏容器是 `calc(--vp-layout-max-width - 64px)` = 1376px，只有 2rem 内边距能让首页
+内容盒同样落在 1376px 上，与导航栏左右边缘精确对齐；1.5rem 会宽出 16px 造成肉眼可见的错位。
+
+实测结果：列轨道宽 435px、描述截断 49/129（38%），与 mockup 预估的 36% 相差 2 个百分点，
+来自这 16px 的内边距差异。
 
 ### 5.3 文档页
 
@@ -165,5 +176,5 @@
 4. 分类按钮与分区标题顺序为
    `AI · CloudPlatform · CNCF · Community · Crypto · DevOps · Feeds · Mirrors · Netdisc · OnlineTools · Others · ScienceSurf`
 5. 浅色 / 深色两种模式下首页与文档页均无对比度问题，无蓝色残留
-6. 键盘：`/` 与 `⌘K` 聚焦搜索、Escape 清空；在输入框内输入字母不被拦截
+6. 键盘：`/` 与 `⌘K` 仍归 Algolia 站内搜索；筛选框内 Escape 清空并失焦；输入字母不被拦截
 7. 无控制台错误
