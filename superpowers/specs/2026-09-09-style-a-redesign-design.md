@@ -156,9 +156,16 @@ VitePress 导航栏容器是 `calc(--vp-layout-max-width - 64px)` = 1376px，只
 - 侧栏顶层分组默认折叠：修改 `scripts/sync-gitbook-sidebar.py`，把 section 与顶层节点的
   `collapsed` 从 `False` 改为 `True`，然后重新生成 `docs/.vitepress/data/gitbook.ts`
 
-### 5.4 无需改动
+### 5.4 实现中追加：删除失效的面包屑层
 
-- `Layout.vue` / `Breadcrumb.vue` —— 已是中性配色，结构不变
+原计划这两个文件不动。实现时发现 `Breadcrumb.vue` 从未在任何页面渲染过：`Layout.vue` 用
+`v-for="(_, name) in useSlots()"` 转发插槽，但它作为主题根布局被实例化时不接收任何插槽，循环体
+永不执行。180 个构建页面中 0 个包含它，自 `e4e3e61`（2026-03-05）起即为死代码。
+
+由于 `Layout.vue` 存在的唯一目的就是注入这个面包屑，而 `extends: DefaultTheme` 本身已提供默认
+布局，两个文件一并删除而非修复 —— 已确认的 Style A mockup 中文档页本就没有面包屑。
+
+### 5.5 无需改动
 - `docs/index.md` —— 保持 `layout: page` + `<NavSite />`；VitePress 的 `VPPage` 是无限宽裸
   div，宽度完全由组件控制，无需覆盖
 - `theme/index.js` —— 组件注册方式不变

@@ -35,9 +35,7 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 - **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — hierarchical sidebar for `/gitbook/` routes, **generated from** `docs/gitbook/SUMMARY.md` via `scripts/sync-gitbook-sidebar.py` so it always matches the gitbook submodule structure (do not edit `gitbook.ts` by hand after submodule updates)
 - **Nav data**: `docs/.vitepress/data/navItems.js` — 129 external link items across 12 categories (AI, CloudPlatform, CNCF, Community, Crypto, DevOps, Feeds, Mirrors, Netdisc, OnlineTools, Others, ScienceSurf)
 - **NavSite component**: `docs/.vitepress/components/NavSite.vue` — monochrome row-dense navigation index used on the home page (`docs/index.md`). One section per category, each entry a single line of `18px favicon + title + muted description + hover arrow`. 3 columns at ≥1360px, 2 at 900–1359px, 1 below; container tracks `--vp-layout-max-width` (1440px) with a 2rem gutter so it lines up with the navbar. Sticky search + category filter, icon fallback to first letter
-- **Custom layout**: `docs/.vitepress/theme/Layout.vue` — extends DefaultTheme layout. **Its slot forwarding does not work**: it loops over `useSlots()`, but as the root theme layout it is instantiated with no slots, so the loop body never runs and the Breadcrumb it means to inject is never rendered (verified: 0 of 180 built pages contain it)
-- **Breadcrumb component**: `docs/.vitepress/theme/components/Breadcrumb.vue` — path hierarchy navigation (Home › Gitbook › Section), humanizes slugs (kebab-case → Title Case, README → Overview). **Currently dead code** — see the Layout note above
-- **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme, registers custom Layout and NavSite component globally
+- **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme and registers the NavSite component globally. There is no custom `Layout.vue`: `extends: DefaultTheme` already supplies the default layout, so the theme is just the token stylesheet plus one global component
 - **Theme styles**: `docs/.vitepress/theme/custom.css` — monochrome ink tokens (`--vp-c-brand-1` is `#111111` light / `#f2f2f2` dark), Inter as base font, left-aligned single-colour doc h1, neutral scrollbar, outline (TOC) hierarchy for h2/h3/h4
 - **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), marks every group `collapsed: true`, outputs TypeScript sidebar export
 - **Static assets**: `docs/public/` (favicon `books.svg` and `books.png`)
@@ -137,5 +135,9 @@ letter key grabbed focus into the search box, and the mount-time autofocus.
 render at 688px: VitePress ships `.VPDoc.has-aside .content-container[data-v-*] { max-width: 688px }`,
 which outranks that selector. Pre-existing, left as-is; only the misleading comment was fixed.
 
-**Found but not fixed:** the Breadcrumb component has never rendered (see the Layout.vue note
-in Architecture). It has been dead since `e4e3e61` (2026-03-05).
+**Removed the dead breadcrumb layer.** `Breadcrumb.vue` had never rendered on a single page —
+`Layout.vue` tried to forward slots with `v-for="(_, name) in useSlots()"`, but as the root theme
+layout it is instantiated with no slots, so the loop body never ran. Dead since `e4e3e61`
+(2026-03-05), confirmed by 0 hits across all 180 built pages. Since `Layout.vue` existed only to
+inject that breadcrumb, and `extends: DefaultTheme` already supplies the default layout, both
+files were deleted rather than repaired — the approved design has no breadcrumb on doc pages.
