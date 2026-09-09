@@ -5,7 +5,7 @@ export const gitbookSidebar = [
     },
     {
         text: "CNCF",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",
@@ -474,7 +474,7 @@ export const gitbookSidebar = [
     },
     {
         text: "DevOps",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",
@@ -637,7 +637,7 @@ export const gitbookSidebar = [
     },
     {
         text: "Environment",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",
@@ -647,7 +647,7 @@ export const gitbookSidebar = [
     },
     {
         text: "Platform",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",
@@ -746,7 +746,7 @@ export const gitbookSidebar = [
     },
     {
         text: "Standards",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",
@@ -796,7 +796,7 @@ export const gitbookSidebar = [
     },
     {
         text: "Misc",
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 text: "Overview",

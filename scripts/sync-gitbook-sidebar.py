@@ -83,7 +83,7 @@ def parse_summary(content: str, existing_paths: set[str]) -> list:
         if heading:
             current_section = {
                 "text": heading.group(1),
-                "collapsed": False,
+                "collapsed": True,
                 "items": [],
             }
             sections.append(current_section)
@@ -116,15 +116,17 @@ def parse_summary(content: str, existing_paths: set[str]) -> list:
         else:
             attach(current_section["items"], indent, item)
 
-    def finalize(node: dict, top_level: bool = False) -> dict:
+    def finalize(node: dict) -> dict:
+        """Mark every group collapsed, so the sidebar opens as a short list of
+        section titles instead of a full wall of links."""
         if "items" in node and node["items"]:
-            node["items"] = [finalize(c, top_level=False) for c in node["items"]]
-            node["collapsed"] = False if top_level else True
+            node["items"] = [finalize(c) for c in node["items"]]
+            node["collapsed"] = True
         return node
 
     result: list = []
     for item in root_items:
-        result.append(finalize(dict(item), top_level=True))
+        result.append(finalize(dict(item)))
     for section in sections:
         section["items"] = [finalize(c) for c in section["items"]]
         result.append(section)
