@@ -33,21 +33,23 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 
 - **VitePress config**: `docs/.vitepress/config.mts` — site settings, nav, sidebar, Algolia search, `cleanUrls: true`, `lastUpdated: true`, markdown code theme (github-light/github-dark)
 - **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — hierarchical sidebar for `/gitbook/` routes, **generated from** `docs/gitbook/SUMMARY.md` via `scripts/sync-gitbook-sidebar.py` so it always matches the gitbook submodule structure (do not edit `gitbook.ts` by hand after submodule updates)
-- **Nav data**: `docs/.vitepress/data/navItems.js` — 90+ external link items with categories (AI, Blog, CloudPlatform, CNCF, Community, Dev, Mirrors, Monitoring, News, Other, Platform, Recommended, Tools)
-- **NavSite component**: `docs/.vitepress/components/NavSite.vue` — interactive card-grid navigation with search/filter, icon fallback to first letter, category tabs, responsive layout, used on the home page (`docs/index.md`)
-- **Custom layout**: `docs/.vitepress/theme/Layout.vue` — extends DefaultTheme layout, injects Breadcrumb component into the `doc-top` slot
-- **Breadcrumb component**: `docs/.vitepress/theme/components/Breadcrumb.vue` — path hierarchy navigation (Home › Gitbook › Section), humanizes slugs (kebab-case → Title Case, README → Overview)
-- **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme, registers custom Layout and NavSite component globally
-- **Theme styles**: `docs/.vitepress/theme/custom.css` — blue brand colors (#3b82f6 primary), h1 gradient, scrollbar styling, outline (TOC) hierarchy for h2/h3/h4, content max-width 48rem
-- **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), outputs TypeScript sidebar export
-- **Static assets**: `docs/public/` (favicon `books.svg` and `books.png`)
+- **Nav data**: `docs/.vitepress/data/navItems.js` — 129 external link items across 12 categories (AI, CloudPlatform, CNCF, Community, Crypto, DevOps, Feeds, Mirrors, Netdisc, OnlineTools, Others, ScienceSurf)
+- **NavSite component**: `docs/.vitepress/components/NavSite.vue` — monochrome row-dense navigation index used on the home page (`docs/index.md`). One section per category, each entry a single line of `18px favicon + title + muted description + hover arrow`. 3 columns at ≥1360px, 2 at 900–1359px, 1 below; container tracks `--vp-layout-max-width` (1440px) with a 2rem gutter so it lines up with the navbar. Sticky search + category filter, icon fallback to first letter
+- **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme and registers the NavSite component globally. There is no custom `Layout.vue`: `extends: DefaultTheme` already supplies the default layout, so the theme is just the token stylesheet plus one global component
+- **Theme styles**: `docs/.vitepress/theme/custom.css` — monochrome ink tokens (`--vp-c-brand-1` is `#111111` light / `#f2f2f2` dark), Inter as base font, left-aligned single-colour doc h1, neutral scrollbar, outline (TOC) hierarchy for h2/h3/h4
+- **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), marks every group `collapsed: true`, outputs TypeScript sidebar export
+- **Static assets**: `docs/public/` — `logic-site.svg` (favicon + navbar logo) and `logic-site.png` (512px raster fallback). The SVG is an "L" monogram on a rounded tile and carries its own `prefers-color-scheme` block, so it inverts in dark mode; the PNG is fixed to the light variant (dark tile, white mark), which stays legible on both light and dark tab bars
 - **Home page**: `docs/index.md` — uses `layout: page` with `<NavSite />` component
 
 ## Key Patterns
 
+- **UI language is English.** `lang: 'en-US'` in `config.mts`; every string in `config.mts`, `NavSite.vue` and the theme is English. The one deliberate exception is `navItems.js`, where a linked site's own `title`/`description` keeps its original Chinese (`百炼`, `哔哩哔哩`, `阿里云盘`, …) because those are proper nouns — never translate them
 - Content is Markdown in submodules; this repo handles only site config, theme, and navigation
 - `navItems.js` entries follow the shape: `{ id, title, description, url, category, icon }`
 - Categories in `navItems.js` are sorted alphabetically by title (English entries first, Chinese entries last within each category)
+- `NavSite.vue` sorts categories and entries with a single module-level `Intl.Collator('en', { sensitivity: 'base' })`; base sensitivity gives case-insensitive A–Z and naturally pushes CJK titles to the end of each section. Sorting and per-category counts are computed once at module scope, not inside a computed
+- Do not add global `keydown` shortcuts in home-page components: Algolia DocSearch already owns `/` and `⌘K`/`Ctrl+K` for site-wide search and wins the race
+- `NavSite.vue` focuses its filter input on mount, but only behind `matchMedia('(hover: hover) and (pointer: fine)')` and with `focus({ preventScroll: true })` — so touch devices do not get the on-screen keyboard thrown over the index, and desktop does not jump-scroll
 - `gitbook.ts` sidebar entries must match actual file paths in the `docs/gitbook/` submodule
 - Dead links are intentionally ignored (`ignoreDeadLinks: true`) since submodule content may lag behind sidebar definitions
 - Search is Algolia (appId: `DV059DHAUJ`, index: `yakir`)
@@ -102,3 +104,42 @@ Markdown files using `<StatusName>` syntax (e.g. `<Pending SQL Execution>`) caus
 
 ### navItems.js updates (2026-04-09)
 - **New entry**: added NVIDIA Build (`build.nvidia.com`) to AI category
+
+### Monochrome redesign (2026-09-09)
+Branch `redesign/style-a-minimal`. Design doc: `superpowers/specs/2026-09-09-style-a-redesign-design.md`;
+plan: `superpowers/plans/2026-09-09-style-a-redesign.md`. Note these live outside `docs/`
+because `docs/` is the VitePress source root — Markdown placed there becomes a site page.
+
+**Why this layout.** Four directions were mocked up in a browser (monochrome minimal, bento,
+command palette, docs-native) and the monochrome row-dense one was chosen. Density was then
+measured against the real 129-item dataset:
+
+| Layout | Column width | Page height | Truncated descriptions |
+| --- | --- | --- | --- |
+| 2 columns / 1080px container (old baseline) | 516px | 3460px | 24/129 (19%) |
+| 3 columns / 1200px container | 360px | 2831px | 66/129 (51%) |
+| **3 columns / 1440px container (shipped)** | **435px** | **2986px** | **49/129 (38%)** |
+
+Container width is what makes 3 columns viable — at 1200px the column loss pushes truncation
+past half the entries. The 1360px breakpoint exists because a 1440px container gets clamped to
+about 1230px on a 1280px viewport, which sends truncation back up.
+
+**Overturned assumption:** "3 columns, title only" is not shorter than "3 columns with
+descriptions" — both measure 2831px in the mockup, because dropping the description does not
+change row height. Its only benefit was removing ellipses, so it was not adopted.
+
+**Global hotkeys removed.** The original plan bound `/` and `⌘K` to focus the home filter.
+Browser testing showed Algolia DocSearch already owns both and wins, so `NavSite.vue` now
+registers no `document`-level listener at all. This replaced the old behaviour where any letter
+key grabbed focus into the search box.
+
+**Doc reading width clarified.** `custom.css` says `max-width: 48rem`, but doc pages actually
+render at 688px: VitePress ships `.VPDoc.has-aside .content-container[data-v-*] { max-width: 688px }`,
+which outranks that selector. Pre-existing, left as-is; only the misleading comment was fixed.
+
+**Removed the dead breadcrumb layer.** `Breadcrumb.vue` had never rendered on a single page —
+`Layout.vue` tried to forward slots with `v-for="(_, name) in useSlots()"`, but as the root theme
+layout it is instantiated with no slots, so the loop body never ran. Dead since `e4e3e61`
+(2026-03-05), confirmed by 0 hits across all 180 built pages. Since `Layout.vue` existed only to
+inject that breadcrumb, and `extends: DefaultTheme` already supplies the default layout, both
+files were deleted rather than repaired — the approved design has no breadcrumb on doc pages.

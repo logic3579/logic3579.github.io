@@ -3,6 +3,7 @@ import { gitbookSidebar } from './data/gitbook'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'en-US',
   title: "Logic's Site",
   description: "A Knowledge Site",
   lastUpdated: true,
@@ -10,8 +11,11 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/books.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/books.png' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logic-site.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/logic-site.png' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' }]
   ],
 
   // markdown headers level config
@@ -44,12 +48,12 @@ export default defineConfig({
       label: 'On this page'
     },
 
-    logo: { src: '/books.svg', width: 24, height: 24 },
+    logo: { src: '/logic-site.svg', width: 24, height: 24 },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/logic3579/logic3579.github.io' }
     ],
     footer: {
-      message: 'Power by VitePress & Vue',
+      message: 'Powered by VitePress & Vue',
       copyright: 'Copyright © 2025-present Logic'
     },
 
