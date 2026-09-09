@@ -148,7 +148,10 @@ VitePress 导航栏容器是 `calc(--vp-layout-max-width - 64px)` = 1376px，只
 ### 5.3 文档页
 
 - h1 改为左对齐、去渐变、`letter-spacing: -0.035em`
-- 正文限宽保持现状 **48rem 不变**（mockup 里画的是 46rem，此处以现有实现为准，避免无意义改动）
+- 正文限宽**保持现状不变**。实测澄清一点：`custom.css` 里写的 `48rem` 在带右侧 outline 的
+  页面上其实是失效的 —— VitePress 自带
+  `.VPDoc.has-aside .content-container[data-v-*] { max-width: 688px }` 特异性更高，所以绝大多数
+  文档页一直渲染在 688px。这是重构前就存在的情况，本次不改渲染结果，只把那条误导性注释写清楚
 - 右侧 outline 层级样式保留，颜色随 brand token 自动转为单色
 - 侧栏顶层分组默认折叠：修改 `scripts/sync-gitbook-sidebar.py`，把 section 与顶层节点的
   `collapsed` 从 `False` 改为 `True`，然后重新生成 `docs/.vitepress/data/gitbook.ts`
@@ -175,6 +178,8 @@ VitePress 导航栏容器是 `calc(--vp-layout-max-width - 64px)` = 1376px，只
 3. 浏览器实测首页：视口 1280px 下列数降为 2
 4. 分类按钮与分区标题顺序为
    `AI · CloudPlatform · CNCF · Community · Crypto · DevOps · Feeds · Mirrors · Netdisc · OnlineTools · Others · ScienceSurf`
-5. 浅色 / 深色两种模式下首页与文档页均无对比度问题，无蓝色残留
+5. 浅色 / 深色两种模式下首页与文档页均无对比度问题，无蓝色残留。注意验证正文链接下划线时要
+   选中真正的内容链接：文档里第一个 `<a>` 是 h1 的 `.header-anchor`，它本身就是
+   `text-decoration: none`，用 `querySelector('.vp-doc a')` 会误判成下划线丢失
 6. 键盘：`/` 与 `⌘K` 仍归 Algolia 站内搜索；筛选框内 Escape 清空并失焦；输入字母不被拦截
 7. 无控制台错误

@@ -30,9 +30,13 @@
   margin-bottom: 0.75rem;
 }
 
-/* Page content area – readable max-width for doc body */
+/* Doc body reading width. Note this 48rem only takes effect on doc pages with
+   no right-hand outline: VitePress ships
+   `.VPDoc.has-aside .content-container[data-v-*] { max-width: 688px }`, which
+   outranks this selector, so pages with an aside stay at 688px. Left as-is
+   because 688px is the width the site has always rendered at. */
 .VPDoc .content-container {
-  max-width: 48rem; /* 768px, GitBook-style reading width */
+  max-width: 48rem;
   padding: 0 !important;
 }
 
