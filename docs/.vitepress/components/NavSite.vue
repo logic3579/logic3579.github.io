@@ -2,11 +2,10 @@
   <div class="nav">
     <header class="nav-hero">
       <h1>Logic</h1>
-      <p>云原生 / DevOps / 平台工程。这里是我的知识库和常用入口。</p>
+      <p>Cloud native, DevOps and platform engineering. My knowledge base and everyday links.</p>
       <div class="nav-hero-meta">
         <a href="https://github.com/logic3579" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/gitbook/README">Gitbook</a>
-        <span>{{ sortedItems.length }} 个常用入口 · {{ categories.length }} 个分类</span>
       </div>
     </header>
 
@@ -16,7 +15,7 @@
         v-model="query"
         type="search"
         class="nav-search"
-        :placeholder="`搜索 ${sortedItems.length} 个链接…`"
+        :placeholder="`Search ${sortedItems.length} links…`"
         aria-label="Search navigation links"
         @keydown="onSearchKeydown"
       />
@@ -26,7 +25,7 @@
           :aria-pressed="activeCategory === ALL"
           @click="activeCategory = ALL"
         >
-          全部
+          All
         </button>
         <button
           v-for="category in categories"
@@ -70,20 +69,20 @@
       </div>
     </section>
 
-    <p v-if="!groups.length" class="nav-empty">没有匹配 “{{ query }}” 的链接</p>
+    <p v-if="!groups.length" class="nav-empty">No links match “{{ query }}”</p>
 
     <footer class="nav-total">
       {{
         isFiltered
-          ? `显示 ${shownCount} / ${sortedItems.length} 条`
-          : `共 ${sortedItems.length} 条 · ${categories.length} 个分类`
+          ? `Showing ${shownCount} of ${sortedItems.length} links`
+          : `${sortedItems.length} links · ${categories.length} categories`
       }}
     </footer>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { navItems } from '../data/navItems.js'
 
 const ALL = 'ALL'
@@ -132,13 +131,19 @@ const shownCount = computed(() =>
 const isFiltered = computed(() => Boolean(query.value.trim()) || activeCategory.value !== ALL)
 
 // No global hotkey here on purpose: Algolia DocSearch already owns '/' and
-// Cmd/Ctrl-K for site-wide search, and that is the more useful action. This
-// filter is sticky at the top of the page, so clicking it is enough.
+// Cmd/Ctrl-K for site-wide search, and it wins the race anyway.
 const onSearchKeydown = (event) => {
   if (event.key !== 'Escape') return
   query.value = ''
   searchInput.value?.blur()
 }
+
+onMounted(() => {
+  // Skipped on touch-first devices, where taking focus would raise the
+  // on-screen keyboard and cover the index the visitor came here to scan.
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  searchInput.value?.focus({ preventScroll: true })
+})
 </script>
 
 <style scoped>
@@ -185,9 +190,10 @@ const onSearchKeydown = (event) => {
 
 .nav-hero p {
   margin: 0;
-  max-width: 44ch;
+  max-width: 52ch;
   color: var(--vp-c-text-2);
   font-size: 0.92rem;
+  text-wrap: balance;
 }
 
 .nav-hero-meta {

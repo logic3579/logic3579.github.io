@@ -38,16 +38,18 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 - **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme and registers the NavSite component globally. There is no custom `Layout.vue`: `extends: DefaultTheme` already supplies the default layout, so the theme is just the token stylesheet plus one global component
 - **Theme styles**: `docs/.vitepress/theme/custom.css` — monochrome ink tokens (`--vp-c-brand-1` is `#111111` light / `#f2f2f2` dark), Inter as base font, left-aligned single-colour doc h1, neutral scrollbar, outline (TOC) hierarchy for h2/h3/h4
 - **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), marks every group `collapsed: true`, outputs TypeScript sidebar export
-- **Static assets**: `docs/public/` (favicon `books.svg` and `books.png`)
+- **Static assets**: `docs/public/` — `logic-site.svg` (favicon + navbar logo) and `logic-site.png` (512px raster fallback). The SVG is an "L" monogram on a rounded tile and carries its own `prefers-color-scheme` block, so it inverts in dark mode; the PNG is fixed to the light variant (dark tile, white mark), which stays legible on both light and dark tab bars
 - **Home page**: `docs/index.md` — uses `layout: page` with `<NavSite />` component
 
 ## Key Patterns
 
+- **UI language is English.** `lang: 'en-US'` in `config.mts`; every string in `config.mts`, `NavSite.vue` and the theme is English. The one deliberate exception is `navItems.js`, where a linked site's own `title`/`description` keeps its original Chinese (`百炼`, `哔哩哔哩`, `阿里云盘`, …) because those are proper nouns — never translate them
 - Content is Markdown in submodules; this repo handles only site config, theme, and navigation
 - `navItems.js` entries follow the shape: `{ id, title, description, url, category, icon }`
 - Categories in `navItems.js` are sorted alphabetically by title (English entries first, Chinese entries last within each category)
 - `NavSite.vue` sorts categories and entries with a single module-level `Intl.Collator('en', { sensitivity: 'base' })`; base sensitivity gives case-insensitive A–Z and naturally pushes CJK titles to the end of each section. Sorting and per-category counts are computed once at module scope, not inside a computed
 - Do not add global `keydown` shortcuts in home-page components: Algolia DocSearch already owns `/` and `⌘K`/`Ctrl+K` for site-wide search and wins the race
+- `NavSite.vue` focuses its filter input on mount, but only behind `matchMedia('(hover: hover) and (pointer: fine)')` and with `focus({ preventScroll: true })` — so touch devices do not get the on-screen keyboard thrown over the index, and desktop does not jump-scroll
 - `gitbook.ts` sidebar entries must match actual file paths in the `docs/gitbook/` submodule
 - Dead links are intentionally ignored (`ignoreDeadLinks: true`) since submodule content may lag behind sidebar definitions
 - Search is Algolia (appId: `DV059DHAUJ`, index: `yakir`)
@@ -128,8 +130,8 @@ change row height. Its only benefit was removing ellipses, so it was not adopted
 
 **Global hotkeys removed.** The original plan bound `/` and `⌘K` to focus the home filter.
 Browser testing showed Algolia DocSearch already owns both and wins, so `NavSite.vue` now
-registers no `document`-level listener at all. This also replaced the old behaviour where any
-letter key grabbed focus into the search box, and the mount-time autofocus.
+registers no `document`-level listener at all. This replaced the old behaviour where any letter
+key grabbed focus into the search box.
 
 **Doc reading width clarified.** `custom.css` says `max-width: 48rem`, but doc pages actually
 render at 688px: VitePress ships `.VPDoc.has-aside .content-container[data-v-*] { max-width: 688px }`,
