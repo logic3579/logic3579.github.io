@@ -1,386 +1,436 @@
 <template>
-  <div class="nav-site">
-    <!-- Search bar -->
-    <div class="search-container">
-      <div class="search-box">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Search navigation..."
-          class="search-input"
-          aria-label="Search navigation"
-          @keydown="handleKeydown"
-          ref="searchInput"
-        />
-        <div class="search-icon">🔍</div>
+  <div class="nav">
+    <header class="nav-hero">
+      <h1>Logic</h1>
+      <p>云原生 / DevOps / 平台工程。这里是我的知识库和常用入口。</p>
+      <div class="nav-hero-meta">
+        <a href="https://github.com/logic3579" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/gitbook/README">Gitbook</a>
+        <span>{{ sortedItems.length }} 个常用入口 · {{ categories.length }} 个分类</span>
       </div>
-    </div>
+    </header>
 
-    <!-- Category tabs (single-row horizontal scroll) -->
-    <div class="category-tabs-wrapper">
-      <div class="category-tabs" role="tablist" aria-label="Filter by category">
+    <div class="nav-filter">
+      <div class="nav-search-row">
+        <input
+          ref="searchInput"
+          v-model="query"
+          type="search"
+          class="nav-search"
+          :placeholder="`搜索 ${sortedItems.length} 个链接…`"
+          aria-label="Search navigation links"
+          @keydown="onSearchKeydown"
+        />
+        <kbd v-show="!query" class="nav-kbd" aria-hidden="true">/</kbd>
+      </div>
+      <div class="nav-chips" role="group" aria-label="Filter by category">
+        <button
+          :class="{ active: activeCategory === ALL }"
+          :aria-pressed="activeCategory === ALL"
+          @click="activeCategory = ALL"
+        >
+          全部
+        </button>
         <button
           v-for="category in categories"
           :key="category"
-          :class="['tab', { active: activeCategory === category }]"
+          :class="{ active: activeCategory === category }"
           :aria-pressed="activeCategory === category"
-          role="tab"
-          @click="setActiveCategory(category, $event)"
+          @click="activeCategory = category"
         >
           {{ category }}
         </button>
       </div>
     </div>
 
-    <!-- Navigation cards -->
-    <div class="nav-grid" v-if="filteredItems.length">
-      <a
-        v-for="item in filteredItems"
-        :key="item.id"
-        :href="item.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-card"
-      >
-        <div class="card-icon">
+    <section v-for="group in groups" :key="group.category" class="nav-group">
+      <h2>{{ group.category }} <span>{{ group.total }}</span></h2>
+      <div class="nav-rows">
+        <a
+          v-for="item in group.items"
+          :key="item.id"
+          class="nav-row"
+          :href="item.url"
+          :title="`${item.title} — ${item.description}`"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             v-if="item.icon && !failedIcons.has(item.id)"
+            class="nav-icon"
             :src="item.icon"
-            :alt="item.title"
+            alt=""
             loading="lazy"
-            @error="handleIconError(item.id)"
+            @error="failedIcons.add(item.id)"
           />
-          <div v-else class="default-icon">{{ item.title.charAt(0).toUpperCase() }}</div>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">{{ item.title }}</h3>
-          <p class="card-description">{{ item.description }}</p>
-          <span class="card-category">{{ item.category }}</span>
-        </div>
-      </a>
-    </div>
+          <span v-else class="nav-icon nav-icon-fallback" aria-hidden="true">
+            {{ item.title.charAt(0).toUpperCase() }}
+          </span>
+          <b>{{ item.title }}</b>
+          <i>{{ item.description }}</i>
+          <em aria-hidden="true">↗</em>
+        </a>
+      </div>
+    </section>
 
-    <!-- Empty state -->
-    <div class="empty-state" v-else>
-      <p>No matching results found</p>
-    </div>
+    <p v-if="!groups.length" class="nav-empty">没有匹配 “{{ query }}” 的链接</p>
+
+    <footer class="nav-total">
+      {{
+        isFiltered
+          ? `显示 ${shownCount} / ${sortedItems.length} 条`
+          : `共 ${sortedItems.length} 条 · ${categories.length} 个分类`
+      }}
+    </footer>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { navItems } from '../data/navItems.js'
 
-// Reactive state
-const searchQuery = ref('')
-const activeCategory = ref('ALL')
+const ALL = 'ALL'
+
+// One collator instance, reused for every comparison. Base sensitivity gives
+// case-insensitive A-Z ordering, and pushes CJK titles after Latin ones.
+const collator = new Intl.Collator('en', { sensitivity: 'base' })
+
+// navItems never changes, so sort and index it once at module scope rather
+// than paying for it inside a computed.
+const sortedItems = [...navItems].sort(
+  (a, b) => collator.compare(a.category, b.category) || collator.compare(a.title, b.title)
+)
+const categories = [...new Set(sortedItems.map((item) => item.category))]
+const totalByCategory = sortedItems.reduce((acc, item) => {
+  acc[item.category] = (acc[item.category] || 0) + 1
+  return acc
+}, Object.create(null))
+
+const query = ref('')
+const activeCategory = ref(ALL)
 const searchInput = ref(null)
 const failedIcons = reactive(new Set())
 
-// Computed
-const categories = computed(() => {
-  return ['ALL', ...new Set(navItems.map(item => item.category))]
-})
+const groups = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  const wanted = activeCategory.value === ALL ? categories : [activeCategory.value]
+  const result = []
 
-const filteredItems = computed(() => {
-  let items = navItems
-
-  // Filter by category
-  if (activeCategory.value !== 'ALL') {
-    items = items.filter(item => item.category === activeCategory.value)
-  }
-
-  // Filter by search query
-  if (searchQuery.value.trim()) {
-    const query = searchQuery.value.toLowerCase()
-    items = items.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.description.toLowerCase().includes(query) ||
-      item.category.toLowerCase().includes(query)
+  for (const category of wanted) {
+    const items = sortedItems.filter(
+      (item) =>
+        item.category === category &&
+        (!q ||
+          item.title.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q))
     )
+    if (items.length) result.push({ category, total: totalByCategory[category], items })
   }
-
-  return items
+  return result
 })
 
-// Methods
-const setActiveCategory = (category, event) => {
-  activeCategory.value = category
-  event?.currentTarget?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'nearest',
-    inline: 'nearest',
-  })
-}
+const shownCount = computed(() =>
+  groups.value.reduce((count, group) => count + group.items.length, 0)
+)
+const isFiltered = computed(() => Boolean(query.value.trim()) || activeCategory.value !== ALL)
 
-const handleKeydown = (event) => {
-  if (event.key === 'Escape') {
-    searchQuery.value = ''
-    searchInput.value.blur()
+const focusSearch = () => searchInput.value?.focus()
+
+const onGlobalKeydown = (event) => {
+  if ((event.key === 'k' || event.key === 'K') && (event.metaKey || event.ctrlKey)) {
+    event.preventDefault()
+    focusSearch()
+    return
   }
+
+  if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return
+  const target = event.target
+  const typing =
+    target instanceof HTMLElement &&
+    (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
+  if (typing) return
+
+  event.preventDefault()
+  focusSearch()
 }
 
-const handleIconError = (id) => {
-  failedIcons.add(id)
+const onSearchKeydown = (event) => {
+  if (event.key !== 'Escape') return
+  query.value = ''
+  searchInput.value?.blur()
 }
 
-// Global keyboard handler - auto-focus search on letter/digit key press
-const globalKeyHandler = (event) => {
-  if (event.key.length === 1 && /[a-zA-Z0-9]/.test(event.key) && !event.ctrlKey && !event.metaKey) {
-    if (document.activeElement !== searchInput.value) {
-      searchInput.value.focus()
-    }
-  }
-}
-
-// Lifecycle
-onMounted(() => {
-  nextTick(() => {
-    if (searchInput.value) {
-      searchInput.value.focus()
-    }
-  })
-  document.addEventListener('keydown', globalKeyHandler)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('keydown', globalKeyHandler)
-})
+onMounted(() => document.addEventListener('keydown', onGlobalKeydown))
+onUnmounted(() => document.removeEventListener('keydown', onGlobalKeydown))
 </script>
 
 <style scoped>
-.nav-site {
-  max-width: 1200px;
+/* Padding is 2rem so the content box lands on 1376px, matching the width of
+   the VitePress navbar container (--vp-layout-max-width minus its 64px gutter). */
+.nav {
+  --nav-cols: 1;
+  max-width: var(--vp-layout-max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 1.5rem 4rem;
 }
 
-/* Search bar */
-.search-container {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
+@media (min-width: 900px) {
+  .nav {
+    --nav-cols: 2;
+  }
 }
 
-.search-box {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
+@media (min-width: 1360px) {
+  .nav {
+    --nav-cols: 3;
+    padding: 0 2rem 4rem;
+  }
 }
 
-.search-input {
-  width: 100%;
-  padding: 1rem 3rem 1rem 1rem;
-  font-size: 1.1rem;
-  border: 2px solid var(--vp-c-border);
-  border-radius: 12px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
-  transition: all 0.3s ease;
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1rem 3rem;
+  }
 }
 
-.search-input:focus {
-  outline: none;
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 0 0 3px var(--vp-c-brand-1-alpha);
+/* Hero */
+.nav-hero {
+  padding: 3.25rem 0 2rem;
 }
 
-.search-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
+.nav-hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.nav-hero p {
+  margin: 0;
+  max-width: 44ch;
   color: var(--vp-c-text-2);
+  font-size: 0.92rem;
 }
 
-/* Category tabs */
-.category-tabs-wrapper {
-  position: relative;
-  margin-bottom: 2rem;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 1.5rem,
-    black calc(100% - 1.5rem),
-    transparent
-  );
-}
-
-.category-tabs {
+.nav-hero-meta {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  justify-content: flex-start;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
-  padding-bottom: 0.125rem;
-}
-
-.category-tabs::-webkit-scrollbar {
-  display: none;
-}
-
-.tab {
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 20px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.tab:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-}
-
-.tab.active {
-  background: var(--vp-c-brand-1);
-  color: white;
-  border-color: var(--vp-c-brand-1);
-}
-
-/* Navigation card grid */
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.nav-card {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 12px;
-  background: var(--vp-c-bg);
-  cursor: pointer;
-  transition: all 0.3s ease;
+  flex-wrap: wrap;
   gap: 1rem;
-  text-decoration: none;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.nav-hero-meta a {
   color: inherit;
-  animation: fadeInUp 0.6s ease-out;
+  text-decoration: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
 }
 
-.nav-card:nth-child(odd) {
-  animation-delay: 0.1s;
+.nav-hero-meta a:hover {
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-text-1);
 }
 
-.nav-card:nth-child(even) {
-  animation-delay: 0.2s;
+/* Sticky search + category filter */
+.nav-filter {
+  position: sticky;
+  top: var(--vp-nav-height);
+  z-index: 5;
+  padding: 0.7rem 0;
+  background: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.nav-card:hover {
-  border-color: var(--vp-c-brand-1);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--vp-c-shadow);
-}
-
-.card-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+.nav-search-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+  gap: 0.75rem;
+}
+
+.nav-search {
+  flex: 1;
+  min-width: 0;
+  padding: 0.1rem 0 0.55rem;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--vp-c-text-1);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.nav-search::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+.nav-search::-webkit-search-cancel-button {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.nav-kbd {
+  flex-shrink: 0;
+  margin-bottom: 0.45rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  color: var(--vp-c-text-3);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+.nav-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+}
+
+.nav-chips button {
+  padding: 0.25rem 0.55rem;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  color: var(--vp-c-text-3);
+  font-family: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.nav-chips button:hover {
+  color: var(--vp-c-text-1);
   background: var(--vp-c-bg-soft);
 }
 
-.card-icon img {
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-}
-
-.default-icon {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--vp-c-brand-1);
-}
-
-.card-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  margin: 0 0 0.5rem 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card-description {
-  font-size: 0.9rem;
-  color: var(--vp-c-text-2);
-  margin: 0 0 0.5rem 0;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-category {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border-radius: 4px;
-  font-size: 0.8rem;
+.nav-chips button.active {
+  color: var(--vp-c-bg);
+  background: var(--vp-c-text-1);
   font-weight: 500;
 }
 
-/* Empty state */
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--vp-c-text-2);
-  font-size: 1.1rem;
+/* Category sections */
+.nav-group {
+  padding: 1.9rem 0 0.25rem;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.nav-group h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.8rem;
+  border: 0;
+  padding: 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-site {
-    padding: 1rem;
-  }
+.nav-group h2 span {
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
 
-  .category-tabs-wrapper {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding: 0 1rem;
-  }
+.nav-group h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--vp-c-divider);
+}
 
-  .nav-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+/* Link rows */
+.nav-rows {
+  display: grid;
+  grid-template-columns: repeat(var(--nav-cols), minmax(0, 1fr));
+  column-gap: 2rem;
+}
 
-  .nav-card {
-    padding: 1rem;
-  }
+.nav-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  margin: 0 -0.5rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.nav-row:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.nav-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.nav-icon-fallback {
+  display: grid;
+  place-items: center;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-3);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.nav-row b {
+  flex: 0 0 auto;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.855rem;
+  font-weight: 500;
+}
+
+.nav-row i {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--vp-c-text-3);
+  font-style: normal;
+  font-size: 0.795rem;
+}
+
+.nav-row em {
+  flex: 0 0 auto;
+  color: var(--vp-c-text-3);
+  font-style: normal;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.nav-row:hover em {
+  opacity: 1;
+}
+
+.nav-empty {
+  padding: 4rem 0;
+  color: var(--vp-c-text-3);
+}
+
+.nav-total {
+  margin-top: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-3);
+  font-size: 0.75rem;
 }
 </style>
