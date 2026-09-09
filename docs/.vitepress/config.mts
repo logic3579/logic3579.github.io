@@ -11,7 +11,10 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/books.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/books.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/books.png' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' }]
   ],
 
   // markdown headers level config
