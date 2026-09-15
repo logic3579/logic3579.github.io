@@ -6,9 +6,7 @@
   --vp-c-brand-2: #333333;
   --vp-c-brand-3: #555555;
   --vp-c-brand-soft: rgba(17, 17, 17, 0.06);
-  --vp-c-brand-1-alpha: rgba(17, 17, 17, 0.14);
   --vp-c-divider: #ebebeb;
-  --vp-c-shadow: rgba(0, 0, 0, 0.06);
   --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
@@ -18,9 +16,7 @@
   --vp-c-brand-2: #d4d4d4;
   --vp-c-brand-3: #a3a3a3;
   --vp-c-brand-soft: rgba(255, 255, 255, 0.08);
-  --vp-c-brand-1-alpha: rgba(255, 255, 255, 0.16);
   --vp-c-divider: #232323;
-  --vp-c-shadow: rgba(0, 0, 0, 0.4);
 }
 
 /* Doc page title: left-aligned, single ink colour, no gradient */
@@ -94,7 +90,7 @@
   margin-left: 0 !important;
   margin-bottom: 2px !important;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
   color: var(--vp-c-text-2);
   text-decoration: none;
   border-left: 2px solid transparent;
@@ -108,7 +104,7 @@
   padding: 4px 16px 4px 32px !important;
   font-size: 0.8125rem;   /* 13px */
   line-height: 1.5;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 /* Level 4 (h4): deeper outline items */
@@ -116,7 +112,7 @@
   padding: 2px 16px 2px 44px !important;
   font-size: 0.75rem;     /* 12px */
   line-height: 1.5;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .VPDocOutlineItem .outline-link[data-level="4"].active {
@@ -152,4 +148,27 @@
 
 .VPDocAsideOutline .content {
   padding: 16px 8px !important;
+}
+
+/* Favicon SVG inverts via prefers-color-scheme (browser chrome follows OS).
+   The navbar <img> uses the same file, so without this it ignores the site's
+   appearance toggle. Invert when the two disagree. */
+html.dark .VPNavBarTitle img.logo {
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.dark .VPNavBarTitle img.logo {
+    filter: none;
+  }
+
+  html:not(.dark) .VPNavBarTitle img.logo {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPDocOutlineItem .outline-link {
+    transition: none;
+  }
 }

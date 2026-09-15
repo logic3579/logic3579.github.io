@@ -34,11 +34,11 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 - **VitePress config**: `docs/.vitepress/config.mts` — site settings, nav, sidebar, Algolia search, `cleanUrls: true`, `lastUpdated: true`, markdown code theme (github-light/github-dark)
 - **Sidebar data**: `docs/.vitepress/data/gitbook.ts` — hierarchical sidebar for `/gitbook/` routes, **generated from** `docs/gitbook/SUMMARY.md` via `scripts/sync-gitbook-sidebar.py` so it always matches the gitbook submodule structure (do not edit `gitbook.ts` by hand after submodule updates)
 - **Nav data**: `docs/.vitepress/data/navItems.js` — 129 external link items across 12 categories (AI, CloudPlatform, CNCF, Community, Crypto, DevOps, Feeds, Mirrors, Netdisc, OnlineTools, Others, ScienceSurf)
-- **NavSite component**: `docs/.vitepress/components/NavSite.vue` — monochrome row-dense navigation index used on the home page (`docs/index.md`). One section per category, each entry a single line of `18px favicon + title + muted description + hover arrow`. 3 columns at ≥1360px, 2 at 900–1359px, 1 below; container tracks `--vp-layout-max-width` (1440px) with a 2rem gutter so it lines up with the navbar. Sticky search + category filter, icon fallback to first letter
+- **NavSite component**: `docs/.vitepress/components/NavSite.vue` — monochrome row-dense navigation index used on the home page (`docs/index.md`). One section per category, each entry a single line of `18px favicon + title + muted description + hover arrow`. Titles are `font-weight: 600`, descriptions use `--vp-c-text-2` (WCAG AA). 3 columns at ≥1360px, 2 at 900–1359px, 1 below; container tracks `--vp-layout-max-width` (1440px) with a 2rem gutter so it lines up with the navbar. Sticky search + category filter, icon fallback to first letter
 - **Theme entry**: `docs/.vitepress/theme/index.js` — extends DefaultTheme and registers the NavSite component globally. There is no custom `Layout.vue`: `extends: DefaultTheme` already supplies the default layout, so the theme is just the token stylesheet plus one global component
 - **Theme styles**: `docs/.vitepress/theme/custom.css` — monochrome ink tokens (`--vp-c-brand-1` is `#111111` light / `#f2f2f2` dark), Inter as base font, left-aligned single-colour doc h1, neutral scrollbar, outline (TOC) hierarchy for h2/h3/h4
 - **Sidebar sync script**: `scripts/sync-gitbook-sidebar.py` — Python 3 script that parses `SUMMARY.md` into nested tree, resolves paths (handles kebab-case and case-insensitive mismatches), marks every group `collapsed: true`, outputs TypeScript sidebar export
-- **Static assets**: `docs/public/` — `logic-site.svg` (favicon + navbar logo) and `logic-site.png` (512px raster fallback). The SVG is an "L" monogram on a rounded tile and carries its own `prefers-color-scheme` block, so it inverts in dark mode; the PNG is fixed to the light variant (dark tile, white mark), which stays legible on both light and dark tab bars
+- **Static assets**: `docs/public/` — `logic-site.svg` (favicon + navbar logo) and `logic-site.png` (512px raster fallback). The SVG is an "L" monogram on a rounded tile and carries its own `prefers-color-scheme` block, so the favicon inverts with the OS. The navbar `<img>` is aligned to the site appearance toggle with a CSS invert when OS scheme and `html.dark` disagree. The PNG is fixed to the light variant (dark tile, white mark), which stays legible on both light and dark tab bars
 - **Home page**: `docs/index.md` — uses `layout: page` with `<NavSite />` component
 
 ## Key Patterns
@@ -143,3 +143,10 @@ layout it is instantiated with no slots, so the loop body never ran. Dead since 
 (2026-03-05), confirmed by 0 hits across all 180 built pages. Since `Layout.vue` existed only to
 inject that breadcrumb, and `extends: DefaultTheme` already supplies the default layout, both
 files were deleted rather than repaired — the approved design has no breadcrumb on doc pages.
+
+### Contrast regression from the row rewrite (2026-09-15)
+The rewrite put descriptions, category chips, section headings, empty state and
+footer count on `--vp-c-text-3` (`#929295` / 3.10:1 at ~13px), below WCAG AA.
+Restored `--vp-c-text-2` (`#67676c` / 5.62:1) and split title vs description by
+weight (600/400) and size instead of lightness. Same bump on outline h3/h4.
+Search placeholder and the decorative hover arrow stay on `text-3` on purpose.
