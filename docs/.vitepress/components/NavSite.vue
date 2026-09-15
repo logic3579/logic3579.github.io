@@ -21,6 +21,7 @@
       />
       <div class="nav-chips" role="group" aria-label="Filter by category">
         <button
+          type="button"
           :class="{ active: activeCategory === ALL }"
           :aria-pressed="activeCategory === ALL"
           @click="activeCategory = ALL"
@@ -30,6 +31,7 @@
         <button
           v-for="category in categories"
           :key="category"
+          type="button"
           :class="{ active: activeCategory === category }"
           :aria-pressed="activeCategory === category"
           @click="activeCategory = category"
@@ -40,7 +42,7 @@
     </div>
 
     <section v-for="group in groups" :key="group.category" class="nav-group">
-      <h2>{{ group.category }} <span>{{ group.total }}</span></h2>
+      <h2>{{ group.category }} <span>{{ group.items.length }}</span></h2>
       <div class="nav-rows">
         <a
           v-for="item in group.items"
@@ -62,14 +64,16 @@
           <span v-else class="nav-icon nav-icon-fallback" aria-hidden="true">
             {{ item.title.charAt(0).toUpperCase() }}
           </span>
-          <b>{{ item.title }}</b>
-          <i>{{ item.description }}</i>
-          <em aria-hidden="true">↗</em>
+          <span class="nav-row-title">{{ item.title }}</span>
+          <span class="nav-row-desc">{{ item.description }}</span>
+          <span class="nav-row-go" aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
 
-    <p v-if="!groups.length" class="nav-empty">No links match “{{ query }}”</p>
+    <p v-if="!groups.length" class="nav-empty">
+      {{ query.trim() ? `No links match “${query.trim()}”` : 'No matching links' }}
+    </p>
 
     <footer class="nav-total">
       {{
@@ -97,10 +101,6 @@ const sortedItems = [...navItems].sort(
   (a, b) => collator.compare(a.category, b.category) || collator.compare(a.title, b.title)
 )
 const categories = [...new Set(sortedItems.map((item) => item.category))]
-const totalByCategory = sortedItems.reduce((acc, item) => {
-  acc[item.category] = (acc[item.category] || 0) + 1
-  return acc
-}, Object.create(null))
 
 const query = ref('')
 const activeCategory = ref(ALL)
@@ -120,7 +120,7 @@ const groups = computed(() => {
           item.title.toLowerCase().includes(q) ||
           item.description.toLowerCase().includes(q))
     )
-    if (items.length) result.push({ category, total: totalByCategory[category], items })
+    if (items.length) result.push({ category, items })
   }
   return result
 })
@@ -202,7 +202,7 @@ onMounted(() => {
   gap: 1rem;
   margin-top: 1.1rem;
   font-size: 0.78rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .nav-hero-meta a {
@@ -260,7 +260,7 @@ onMounted(() => {
   border: 0;
   border-radius: 5px;
   background: none;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
   font-family: inherit;
   font-size: 0.76rem;
   cursor: pointer;
@@ -290,7 +290,7 @@ onMounted(() => {
   margin: 0 0 0.8rem;
   border: 0;
   padding: 0;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
   font-size: 0.68rem;
   font-weight: 600;
   line-height: 1;
@@ -352,50 +352,61 @@ onMounted(() => {
   font-weight: 600;
 }
 
-.nav-row b {
+/* Title and description are separated by weight and size, not by lightness:
+   the description has to stay at text-2 to clear the WCAG AA 4.5:1 floor at
+   this size, which leaves too little contrast between them to lean on colour. */
+.nav-row-title {
   flex: 0 0 auto;
   max-width: 60%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 0.855rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-.nav-row i {
+.nav-row-desc {
   flex: 1;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--vp-c-text-3);
-  font-style: normal;
-  font-size: 0.795rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.81rem;
+  font-weight: 400;
 }
 
-.nav-row em {
+.nav-row-go {
   flex: 0 0 auto;
   color: var(--vp-c-text-3);
-  font-style: normal;
   font-size: 0.75rem;
   opacity: 0;
   transition: opacity 0.15s;
 }
 
-.nav-row:hover em {
+.nav-row:hover .nav-row-go {
   opacity: 1;
 }
 
 .nav-empty {
   padding: 4rem 0;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .nav-total {
   margin-top: 2rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
   font-size: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-hero-meta a,
+  .nav-chips button,
+  .nav-row,
+  .nav-row-go {
+    transition: none;
+  }
 }
 </style>
