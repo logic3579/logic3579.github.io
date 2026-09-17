@@ -150,6 +150,14 @@
   padding: 16px 8px !important;
 }
 
+/* VitePress only indents from .level-1 .items, so a section's first children
+   (About → Overview, CNCF → Overview) sit flush with the group title.
+   Reuse the same rail + 16px the theme already uses one level down. */
+.VPSidebarItem.level-0 > .items {
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 16px;
+}
+
 /* Favicon SVG inverts via prefers-color-scheme (browser chrome follows OS).
    The navbar <img> uses the same file, so without this it ignores the site's
    appearance toggle. Invert when the two disagree. */
