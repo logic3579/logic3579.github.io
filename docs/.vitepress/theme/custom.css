@@ -152,10 +152,24 @@
 
 /* VitePress only indents from .level-1 .items, so a section's first children
    (About → Overview, CNCF → Overview) sit flush with the group title.
-   Reuse the same rail + 16px the theme already uses one level down. */
-.VPSidebarItem.level-0 > .items {
+   Reuse the same rail + 16px the theme already uses one level down.
+   Target `.item + .items` only: getSidebarGroups wraps lone leaf links
+   (Introduction) in a title-less level-0 shell, and a bare `.items` rule
+   would indent those leaves as if they were nested under a section. */
+.VPSidebarItem.level-0 > .item + .items {
   border-left: 1px solid var(--vp-c-divider);
   padding-left: 16px;
+}
+
+/* Title-less shells (Introduction) have no `.item` — `.items` is the first
+   child — and their leaf renders as level-1. Match level-0 title weight. */
+.VPSidebarItem.level-0 > .items:first-child > .VPSidebarItem > .item .text {
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebarItem.level-0 > .items:first-child > .VPSidebarItem.is-active > .item .link > .text {
+  color: var(--vp-c-brand-1);
 }
 
 /* Favicon SVG inverts via prefers-color-scheme (browser chrome follows OS).
