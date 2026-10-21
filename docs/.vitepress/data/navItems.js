@@ -374,22 +374,6 @@ export const navItems = [
     icon: "https://sb.sb/favicon.ico",
   },
   {
-    id: "aCr8kLm3Bx",
-    title: "Across",
-    description: "Cross-chain bridge for fast token transfers between L2s and mainnet",
-    url: "https://across.to/",
-    category: "Crypto",
-    icon: "https://across.to/favicon.svg",
-  },
-  {
-    id: "aRb7kLm2Br",
-    title: "Arbitrum Bridge",
-    description: "Official bridge for moving assets to and from Arbitrum",
-    url: "https://bridge.arbitrum.io",
-    category: "Crypto",
-    icon: "https://icons.duckduckgo.com/ip3/arbitrum.io.ico",
-  },
-  {
     id: "bNc7kLm3Px",
     title: "Binance",
     description: "Leading cryptocurrency exchange and Web3 platform",
@@ -439,6 +423,14 @@ export const navItems = [
     icon: "https://metamask.io/favicon.ico",
   },
   {
+    id: "mXc8kLm3Ex",
+    title: "MEXC",
+    description: "Cryptocurrency exchange for spot and futures trading",
+    url: "https://www.mexc.com/",
+    category: "Crypto",
+    icon: "https://www.mexc.com/favicon.ico",
+  },
+  {
     id: "nXo8kLm4Px",
     title: "Nexo",
     description: "Crypto wealth platform for earning, borrowing, and spending",
@@ -470,14 +462,6 @@ export const navItems = [
     url: "https://pump.fun/",
     category: "Crypto",
     icon: "https://pump.fun/favicon.ico",
-  },
-  {
-    id: "uNs9kLm4Sw",
-    title: "Uniswap",
-    description: "Decentralized exchange for swapping tokens across EVM chains",
-    url: "https://app.uniswap.org/",
-    category: "Crypto",
-    icon: "https://app.uniswap.org/favicon.png",
   },
   {
     id: "aH7kLm3Nx",
