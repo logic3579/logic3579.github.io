@@ -1,0 +1,15 @@
+---
+description: Always update all submodules before every push
+alwaysApply: true
+---
+
+# Submodules before push
+
+Before every `git push` in this repository:
+
+1. Run `git submodule update --remote` so **all** submodules (`docs/gitbook`, `docs/about`) match their remotes.
+2. If `docs/gitbook` advanced, run `python3 scripts/sync-gitbook-sidebar.py`.
+3. Commit any updated submodule pointers and regenerated `docs/.vitepress/data/gitbook.ts` together with (or immediately before) the push.
+4. Do not push while submodule refs are stale or left unstaged.
+
+Never edit files inside submodule working trees from this repo; change content in the upstream repos, then bump pointers here.

@@ -58,12 +58,24 @@ git submodule update --remote [docs/gitbook]   # Pull latest submodule content
 
 ## Submodule Workflow
 
-Never modify submodule files in this repo. To update gitbook content:
+Never modify submodule files in this repo.
+
+**Before every `git push`:** update **all** submodules, sync the sidebar if gitbook moved, then commit the pointers (and `gitbook.ts` if regenerated) in the same push. Do not leave stale submodule refs behind.
+
+```bash
+git submodule update --remote
+python3 scripts/sync-gitbook-sidebar.py   # when docs/gitbook changed
+git add docs/gitbook docs/about docs/.vitepress/data/gitbook.ts
+git commit -m "chore: bump submodules"
+git push
+```
+
+To change gitbook **content** (in the source repo, not here):
 
 1. Edit in the source repo (`/Users/logic/Projects/gitbook` or equivalent), commit and push
-2. Here: `git submodule update --remote docs/gitbook`
+2. Here: `git submodule update --remote` (or at least `docs/gitbook`)
 3. Regenerate the sidebar: `python3 scripts/sync-gitbook-sidebar.py`
-4. Commit the submodule pointer and any changed `gitbook.ts`
+4. Commit the submodule pointer(s) and any changed `gitbook.ts`, then push
 
 ## Deployment
 
