@@ -513,10 +513,6 @@ export const gitbookSidebar = [
                 link: "/gitbook/DevOps/CommandManual/README",
                 items: [
                     {
-                        text: "AI Coding",
-                        link: "/gitbook/DevOps/CommandManual/ai-coding",
-                    },
-                    {
                         text: "Automation",
                         link: "/gitbook/DevOps/CommandManual/automation",
                     },
