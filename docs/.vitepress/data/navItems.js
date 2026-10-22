@@ -378,7 +378,7 @@ export const navItems = [
     title: "Binance",
     description: "Leading cryptocurrency exchange and Web3 platform",
     url: "https://www.binance.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://bin.bnbstatic.com/static/images/common/favicon.ico",
   },
   {
@@ -386,7 +386,7 @@ export const navItems = [
     title: "BiyaPay",
     description: "Multi-asset wallet for crypto exchange and cross-border payments",
     url: "https://www.biyapay.com/en",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://www.biyapay.com/favicon.ico",
   },
   {
@@ -394,8 +394,17 @@ export const navItems = [
     title: "Bybit",
     description: "Cryptocurrency derivatives and spot trading exchange",
     url: "https://www.bybit.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://icons.duckduckgo.com/ip3/bybit.com.ico",
+  },
+  {
+    id: "hSk8kLm4Ex",
+    title: "HashKey",
+    description:
+      "SFC-licensed crypto exchange for fiat and digital asset trading",
+    url: "https://www.hashkey.com/",
+    category: "Finance",
+    icon: "https://www.hashkey.com/favicon.ico",
   },
   {
     id: "hYp8kLm6Tx",
@@ -403,15 +412,24 @@ export const navItems = [
     description:
       "Onchain perpetual and spot trading for crypto, commodities, and indices",
     url: "https://app.hyperliquid.xyz/trade",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://app.hyperliquid.xyz/favicon-32x32.png",
+  },
+  {
+    id: "iFg8kLm3Bx",
+    title: "iFAST Global Bank",
+    description:
+      "Online banking for international personal and business accounts",
+    url: "https://www.ifastgb.com/",
+    category: "Finance",
+    icon: "https://www.ifastgb.com/favicon.ico",
   },
   {
     id: "kRk9kLm2Px",
     title: "Kraken Pro",
     description: "Advanced cryptocurrency trading platform for spot and futures",
     url: "https://pro.kraken.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://pro.kraken.com/favicon.ico",
   },
   {
@@ -419,7 +437,7 @@ export const navItems = [
     title: "MetaMask",
     description: "Multi-chain crypto wallet for buy, sell, swap, and earn",
     url: "https://metamask.io/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://metamask.io/favicon.ico",
   },
   {
@@ -427,7 +445,7 @@ export const navItems = [
     title: "MEXC",
     description: "Cryptocurrency exchange for spot and futures trading",
     url: "https://www.mexc.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://www.mexc.com/favicon.ico",
   },
   {
@@ -435,7 +453,7 @@ export const navItems = [
     title: "Nexo",
     description: "Crypto wealth platform for earning, borrowing, and spending",
     url: "https://nexo.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://nexo.com/favicon.ico",
   },
   {
@@ -444,7 +462,7 @@ export const navItems = [
     description:
       "Self-custodial crypto wallet for Solana and multi-chain trading",
     url: "https://phantom.com/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://icons.duckduckgo.com/ip3/phantom.com.ico",
   },
   {
@@ -452,7 +470,7 @@ export const navItems = [
     title: "Plasma",
     description: "Stablecoin account for spending, saving, and earning",
     url: "https://www.plasma.org/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://www.plasma.org/favicon.ico",
   },
   {
@@ -460,8 +478,16 @@ export const navItems = [
     title: "Pump.fun",
     description: "Launch and trade memecoins on Solana",
     url: "https://pump.fun/",
-    category: "Crypto",
+    category: "Finance",
     icon: "https://pump.fun/favicon.ico",
+  },
+  {
+    id: "wSe8kLm2Mx",
+    title: "Wise",
+    description: "International account for sending and receiving money abroad",
+    url: "https://wise.com/",
+    category: "Finance",
+    icon: "https://wise.com/public-resources/assets/icons/wise-personal/favicon_32x32.png",
   },
   {
     id: "aH7kLm3Nx",
